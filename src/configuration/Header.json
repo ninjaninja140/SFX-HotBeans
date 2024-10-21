@@ -1,0 +1,42 @@
+[
+	{
+		"title": "Our Works",
+		"content": [
+			{
+				"label": "Home",
+				"href": "/",
+				"target": "_blank"
+			}
+		]
+	},
+	{
+		"title": "About us",
+		"content": [
+			{
+				"label": "Who are we?",
+				"href": "/",
+				"target": "_blank"
+			},
+			{
+				"label": "Who are our Developers?",
+				"href": "/",
+				"target": "_blank"
+			}
+		]
+	},
+	{
+		"title": "Resources",
+		"content": [
+			{
+				"label": "Home",
+				"href": "/",
+				"target": "_blank"
+			}
+		]
+	},
+	{
+		"title": "Contact us",
+		"href": "/"
+	}
+]
+
