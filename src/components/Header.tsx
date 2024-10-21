@@ -39,10 +39,7 @@ export default () => {
 					alignItems: 'center',
 					height: '75px',
 					color: 'white',
-					backgroundColor: 'white',
-					borderBottomColor: '#1C092D',
-					borderBottomWidth: '3px',
-					borderBottomStyle: 'solid',
+					backgroundColor: '#fafafa',
 				}}>
 				<div
 					style={{
@@ -58,7 +55,16 @@ export default () => {
 							fill='#492A13'
 						/>
 					</a>
-					<a href='/' style={{ marginLeft: '20px' }}>
+					<a
+						href='/'
+						style={{
+							marginLeft: '18px',
+							fontFamily: 'Gotham',
+							textDecoration: 'none',
+							fontWeight: '700',
+							fontSize: '25px',
+							color: '#000000',
+						}}>
 						HotBeans WebDev
 					</a>
 					<div
