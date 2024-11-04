@@ -1,6 +1,8 @@
 @import url("./Fonts/Gotham/Font.css");
 @import url("./Fonts/Neuwelt/Font.css");
 
+@import url("./a.css");
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
