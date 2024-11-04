@@ -1,3 +1,6 @@
 [submodule "src/css/Fonts/Gotham"]
 	path = src/css/Fonts/Gotham
 	url = https://github.com/ninjaninja140/Fonts-Gotham
+[submodule "src/css/Fonts/Neuwelt"]
+	path = src/css/Fonts/Neuwelt
+	url = https://github.com/ninjaninja140/Fonts-Neuwelt
