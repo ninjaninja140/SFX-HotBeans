@@ -8,8 +8,11 @@ import '@css/application.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<Router />
 		<Head />
+
+		<div style={{ padding: '5px' }}>
+			<Router />
+		</div>
 	</React.StrictMode>
 );
 

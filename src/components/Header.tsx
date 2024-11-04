@@ -1,18 +1,10 @@
-import Dropdown from '@components/Dropdown';
 import LinkedContent from '@components/Links/LinkedContent';
 import Links from '@configuration/Header.json';
 import { CSSProperties } from 'react';
-import { BiSolidCoffeeBean } from 'react-icons/bi';
-
-interface HeaderLink {
-	label: string;
-	href: string;
-	target?: string;
-}
+import { PiCoffeeBeanFill } from 'react-icons/pi';
 
 interface HeaderProps {
 	title: string;
-	content?: Array<HeaderLink>;
 	href?: string;
 	target?: string;
 }
@@ -24,7 +16,6 @@ export default () => {
 		flex: '1',
 		display: 'flex',
 		justifyContent: 'left',
-		marginRight: '10px',
 	};
 
 	return (
@@ -39,7 +30,10 @@ export default () => {
 					alignItems: 'center',
 					height: '75px',
 					color: 'white',
-					backgroundColor: '#fafafa',
+					backgroundColor: '#5865F2',
+					borderRadius: '5px',
+					paddingLeft: '120px',
+					paddingRight: '120px',
 				}}>
 				<div
 					style={{
@@ -47,47 +41,54 @@ export default () => {
 						alignItems: 'center',
 						textAlign: 'left',
 						justifyContent: 'flex-start',
-						paddingLeft: '27px',
 					}}>
 					<a href='/'>
-						<BiSolidCoffeeBean
-							style={{ height: '50px', width: '50px' }}
-							fill='#492A13'
+						<PiCoffeeBeanFill
+							style={{ height: '40px', width: '40px' }}
+							fill='#ffffff'
 						/>
 					</a>
 					<a
 						href='/'
 						style={{
-							marginLeft: '18px',
-							fontFamily: 'Gotham',
+							marginLeft: '12px',
+							fontFamily: 'FF Neuwelt',
 							textDecoration: 'none',
 							fontWeight: '700',
-							fontSize: '25px',
-							color: '#000000',
+							fontSize: '18px',
+							color: '#ffffff',
 						}}>
 						HotBeans WebDev
 					</a>
+				</div>
+				<div
+					style={{
+						flex: '1',
+						display: 'flex',
+						justifyContent: 'flex-end',
+						alignItems: 'right',
+						textAlign: 'left',
+					}}>
 					<div
 						style={{
-							marginLeft: '27px',
 							display: 'flex',
-							textAlign: 'left',
+							textAlign: 'right',
 							whiteSpace: 'nowrap',
-							alignItems: 'center',
+							alignItems: 'right',
 						}}>
 						{NavigationLinks.map((Link: HeaderProps, index: number) => {
 							if (Link.href)
-								if (Link.href.startsWith('http')) {
+								if (Link.href.startsWith('http'))
 									return (
 										<a
 											href={Link.href}
 											key={index}
 											style={{
 												textAlign: 'center',
-												marginLeft: '25px',
+												marginRight: '25px',
 												display: 'inline-block',
 												fontWeight: '600',
-												color: '#1c092d',
+												color: '#ffffff',
 											}}
 											rel='noreferrer'
 											target='_blank'>
@@ -95,32 +96,23 @@ export default () => {
 											<LinkedContent />
 										</a>
 									);
-								} else {
+								else
 									return (
 										<a
 											href={Link.href}
 											key={index}
 											style={{
 												textAlign: 'center',
-												marginLeft: '25px',
+												marginRight: '25px',
 												display: 'inline-block',
 												fontWeight: '600',
-												color: '#1c092d',
+												color: '#ffffff',
 											}}
 											rel='noreferrer'
 											target='_blank'>
 											{Link.title}
 										</a>
 									);
-								}
-
-							if (Link.content && !Link.href)
-								return (
-									<Dropdown
-										content={Link.content}
-										label={Link.title}
-									/>
-								);
 						})}
 					</div>
 				</div>

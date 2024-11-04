@@ -1,38 +1,15 @@
 [
 	{
 		"title": "Our Works",
-		"content": [
-			{
-				"label": "Home",
-				"href": "/",
-				"target": "_blank"
-			}
-		]
+		"href": "/"
 	},
 	{
 		"title": "About us",
-		"content": [
-			{
-				"label": "Who are we?",
-				"href": "/",
-				"target": "_blank"
-			},
-			{
-				"label": "Who are our Developers?",
-				"href": "/",
-				"target": "_blank"
-			}
-		]
+		"href": "/"
 	},
 	{
 		"title": "Resources",
-		"content": [
-			{
-				"label": "Home",
-				"href": "/",
-				"target": "_blank"
-			}
-		]
+		"href": "/"
 	},
 	{
 		"title": "Contact us",
