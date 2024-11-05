@@ -4,3 +4,6 @@
 [submodule "src/css/Fonts/Neuwelt"]
 	path = src/css/Fonts/Neuwelt
 	url = https://github.com/ninjaninja140/Fonts-Neuwelt
+[submodule "src/css/Fonts/SegoeUI"]
+	path = src/css/Fonts/SegoeUI
+	url = https://github.com/ninjaninja140/Fonts-SegoeUI
