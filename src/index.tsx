@@ -3,6 +3,7 @@ import Router from '@src/router';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
+import Footer from '@components/Footer';
 import Header from '@components/Header';
 import Head from '@components/Meta/Head';
 import '@css/application.css';
@@ -31,5 +32,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 		<Head />
 		<Header />
 		<Application />
+		<Footer />
 	</React.StrictMode>
 );
+

@@ -81,10 +81,11 @@ export default () => {
 				color: 'white',
 				backgroundColor: '#5865F2',
 				borderRadius: '8px',
-				transition: 'all 0.3s ease-in-out',
+				transition: 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)',
 			}}>
 			<div
 				style={{
+					transition: 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)',
 					paddingLeft: isScrolled ? '1%' : '8%',
 					flex: '1',
 					display: 'flex',
@@ -97,7 +98,7 @@ export default () => {
 						style={{
 							height: isScrolled ? '35px' : '40px',
 							width: isScrolled ? '35px' : '40px',
-							transition: 'all 0.3s ease-in-out',
+							transition: 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)',
 						}}
 						fill='#ffffff'
 					/>
@@ -154,3 +155,4 @@ export default () => {
 		</header>
 	);
 };
+

@@ -1,5 +1,5 @@
-import Header from '@components/Header';
 import Hero from '@components/Homepage/Hero';
+import Hero2 from '@components/Homepage/Hero2';
 import Route from '@components/Meta/Route';
 
 export default (PageConfig: { Location: string; Description?: string }) => {
@@ -8,7 +8,8 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		<div>
 			<Route Location={PageConfig.Location} Description={PageConfig.Description} />
 			<Hero />
-			<div style={{ height: '200vh' }}></div>
+			<Hero2 />
 		</div>
 	);
 };
+

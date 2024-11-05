@@ -1,6 +1,6 @@
 [
 	{
-		"title": "Our Works",
+		"title": "Home",
 		"href": "/"
 	},
 	{
@@ -8,7 +8,15 @@
 		"href": "/"
 	},
 	{
-		"title": "Resources",
+		"title": "Our Clients",
+		"href": "/"
+	},
+	{
+		"title": "Our Developers",
+		"href": "/"
+	},
+	{
+		"title": "Pricing",
 		"href": "/"
 	},
 	{
