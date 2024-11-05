@@ -1,13 +1,17 @@
 @import url("./Fonts/Gotham/Font.css");
 @import url("./Fonts/Neuwelt/Font.css");
 @import url("./Fonts/SegoeUI/Font.css");
+@import url("./Fonts/GG\ Sans/Font.css");
+@import url("./Fonts/GG\ Studio/Font.css");
 
 @import url("./a.css");
+@import url("./p.css");
 @import url("./buttons.css");
+@import url("./headers.css");
 
 body {
   margin: 0;
-  font-family: 'Segoe UI';
+  font-family: 'SegoeUI';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
