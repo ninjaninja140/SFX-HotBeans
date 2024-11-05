@@ -1,6 +1,22 @@
 a {
-    text-decoration: solid;
-    text-decoration-thickness: 0px;
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    text-decoration-color: #5865f2;
 }
 
-a:hover {}
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+a:hover::after {
+    opacity: 1;
+}

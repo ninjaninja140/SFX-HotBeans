@@ -1,16 +1,17 @@
 @import url("./Fonts/Gotham/Font.css");
 @import url("./Fonts/Neuwelt/Font.css");
+@import url("./Fonts/SegoeUI/Font.css");
 
 @import url("./a.css");
+@import url("./buttons.css");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1b1b1b;
+  background-color: #ffffff;
+  padding: 8px
 }
 
 code {
