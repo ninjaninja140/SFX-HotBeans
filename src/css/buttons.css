@@ -15,7 +15,6 @@ button {
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 9999px;
-	min-width: 180px;
 	padding: 10px;
 	padding-left: 25px;
 	padding-right: 25px;
@@ -54,4 +53,18 @@ button:hover {
 .blurple-button:hover {
 	background-color: #ffffff;
 	color: #5865f2;
+}
+
+.inverted-button {
+	color: #ffffff;
+	background-color: #5865f2;
+	border-color: #ffffff;
+	transition: background-color 0.3s ease, color 0.3s ease,
+		border-color 0.3s ease;
+}
+
+.inverted-button:hover {
+	background-color: #ffffff;
+	color: #5865f2;
+	border-color: #5865f2
 }

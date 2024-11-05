@@ -10,7 +10,7 @@ export default () => {
 			<div
 				style={{
 					...defaults,
-					paddingLeft: '300px',
+					paddingLeft: '14.5%',
 					justifyContent: 'flex-end',
 					alignItems: 'center',
 					justifyItems: 'center',
@@ -21,8 +21,8 @@ export default () => {
 			<div
 				style={{
 					...defaults,
-					paddingRight: '300px',
-					paddingLeft: '300px',
+					paddingRight: '14.5%',
+					paddingLeft: '14.5%',
 					justifyContent: 'flex-start',
 					alignItems: 'left',
 					alignSelf: 'center',

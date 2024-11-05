@@ -1,6 +1,7 @@
 import LinkedContent from '@components/Links/LinkedContent';
 import Links from '@configuration/Header.json';
 import { useEffect, useState } from 'react';
+import { IoPricetag } from 'react-icons/io5';
 import { PiCoffeeBeanFill } from 'react-icons/pi';
 
 interface HeaderProps {
@@ -98,21 +99,26 @@ export default () => {
 						style={{
 							height: isScrolled ? '35px' : '40px',
 							width: isScrolled ? '35px' : '40px',
+
 							transition: 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)',
 						}}
 						fill='#ffffff'
 					/>
-					<span
-						style={{
-							marginLeft: '12px',
-							fontFamily: 'FF Neuwelt',
-							textDecoration: 'none',
-							fontWeight: '700',
-							fontSize: '18px',
-							color: '#ffffff',
-						}}>
-						HotBeans WebDev
-					</span>
+					{isScrolled ? undefined : (
+						<span
+							style={{
+								marginLeft: '12px',
+								fontFamily: 'FF Neuwelt',
+								textDecoration: 'none',
+								fontWeight: '700',
+								fontSize: '18px',
+								color: '#ffffff',
+								transition: 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)',
+								opacity: isScrolled ? '0' : '1',
+							}}>
+							HotBeans WebDev
+						</span>
+					)}
 				</a>
 			</div>
 			<div
@@ -149,7 +155,13 @@ export default () => {
 						whiteSpace: 'nowrap',
 						alignItems: 'right',
 					}}>
-					<button>Get a Quote</button>
+					<button>
+						{isScrolled ? (
+							<IoPricetag style={{ height: '100%', width: '100%' }} />
+						) : (
+							'Get a Quote'
+						)}
+					</button>
 				</div>
 			</div>
 		</header>
