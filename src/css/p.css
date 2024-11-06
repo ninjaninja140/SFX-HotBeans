@@ -1,9 +1,9 @@
 p {
     font-family: "GG Sans";
-    font-size: 95%;
+    font-size: clamp(100%, 120%, 150%);
 }
 
 i {
     font-family: "GG Sans";
-    font-size: 95%;
+    font-size: clamp(100%, 120%, 150%);
 }

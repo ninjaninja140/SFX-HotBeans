@@ -1,5 +1,8 @@
 h1 {
     font-family: 'GG Studio';
-    color: #5865f2;
     font-size: 45px;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    color: #5865f2;
 }

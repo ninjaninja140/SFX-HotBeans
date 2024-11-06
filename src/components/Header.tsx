@@ -71,7 +71,6 @@ export default () => {
 				zIndex: '30',
 				width: isScrolled ? '70%' : 'calc(100% - 16px)',
 				height: isScrolled ? '55px' : '75px',
-				maxWidth: 'calc(100% - 16px)',
 				position: 'fixed',
 				display: 'flex',
 				margin: '0 auto',
@@ -167,4 +166,3 @@ export default () => {
 		</header>
 	);
 };
-

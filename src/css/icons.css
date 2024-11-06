@@ -1,0 +1,41 @@
+.icon-3d {
+    transform:
+        perspective(800px) rotateY(-8deg);
+    transition: transform 1s ease 0s;
+    -webkit-filter:
+        drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.024)) drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.05)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+    filter:
+        drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.024)) drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.05)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+
+    &:hover {
+        transform: perspective(800px) rotateY(-4deg);
+    }
+}
+
+.icon-3d-right {
+    transform:
+        perspective(800px) rotateY(-8deg);
+    transition: transform 1s ease 0s;
+    -webkit-filter:
+        drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.024)) drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.05)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+    filter:
+        drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.024)) drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.05)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+
+    &:hover {
+        transform: perspective(800px) rotateY(-4deg);
+    }
+}
+
+.icon-3d-left {
+    transform:
+        perspective(800px) rotateY(8deg);
+    transition: transform 1s ease 0s;
+    -webkit-filter:
+        drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.024)) drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.05)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+    filter:
+        drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.024)) drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.05)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+
+    &:hover {
+        transform: perspective(800px) rotateY(4deg);
+    }
+}

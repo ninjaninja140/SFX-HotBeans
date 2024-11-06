@@ -6,28 +6,33 @@ export default () => {
 	};
 
 	return (
-		<div style={{ height: `40vh`, display: 'flex' }}>
+		<div style={{ height: `70vh`, display: 'flex' }}>
 			<div
 				style={{
 					...defaults,
-					paddingLeft: '14.5%',
+					paddingLeft: '15%',
 					justifyContent: 'flex-end',
 					alignItems: 'center',
 					justifyItems: 'center',
 					textAlign: 'left',
 				}}>
-				<IoCardSharp fill='#5865f2' style={{ height: '100%', width: '100%' }} />
+				<IoCardSharp
+					className='icon-3d-left'
+					fill='#5865f2'
+					style={{ height: '100%', width: '100%' }}
+				/>
 			</div>
 			<div
 				style={{
 					...defaults,
-					paddingRight: '14.5%',
-					paddingLeft: '14.5%',
+					paddingRight: '15%',
+					paddingLeft: '15%',
 					justifyContent: 'flex-start',
 					alignItems: 'left',
 					alignSelf: 'center',
 					textAlign: 'left',
 				}}>
+				<h1>We're Fair...</h1>
 				<p>
 					Working with us at HotBeans, we won't make you overpay any more then what price
 					can be agreed on. Pricing here at HotBeans is bespoke, based on the components,
@@ -41,4 +46,3 @@ export default () => {
 		</div>
 	);
 };
-

@@ -7,23 +7,12 @@ export default () => {
 		flex: '1',
 	};
 
-	const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
 	return (
-		<div style={{ height: `calc(100vh - ${isScrolled ? '55px' : '75px'} - 8px)`, display: 'flex' }}>
+		<div style={{ height: `70vh`, display: 'flex' }}>
 			<div
 				style={{
 					...defaults,
-					paddingLeft: '14.5%',
+					paddingLeft: '15%',
 					justifyContent: 'flex-end',
 					alignItems: 'center',
 					justifyItems: 'center',
@@ -47,15 +36,18 @@ export default () => {
 			<div
 				style={{
 					...defaults,
-					paddingRight: '14.5%',
-					paddingLeft: '14.5%',
+					paddingRight: '15%',
+					paddingLeft: '15%',
 					justifyContent: 'flex-start',
 					alignItems: 'left',
 					textAlign: 'left',
 				}}>
-				<IoCodeSlash fill='#5865f2' style={{ height: '100%', width: '100%' }} />
+				<IoCodeSlash
+					className='icon-3d'
+					fill='#5865f2'
+					style={{ height: '100%', width: '100%' }}
+				/>
 			</div>
 		</div>
 	);
 };
-
