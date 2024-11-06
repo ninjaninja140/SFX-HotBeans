@@ -1,51 +1,80 @@
 [
-	[
-		{
-			"label": "Home",
-			"href": "https://vrfy.bracketed.co.uk"
-		},
-		{
-			"label": "Documentation",
-			"href": "https://docs.vrfy.bracketed.co.uk",
-			"target": "_blank"
-		},
-		{
-			"label": "Dashboard",
-			"href": "https://vrfy.bracketed.co.uk/dashboard"
-		}
-	],
-	[
-		{
-			"label": "Bracketed",
-			"href": "https://www.bracketed.co.uk",
-			"target": "_blank"
-		},
-		{
-			"label": "Status Page",
-			"href": "https://status.bracketed.co.uk",
-			"target": "_blank"
-		},
-		{
-			"label": "Bot Invite",
-			"href": "https://discord.com/oauth2/authorize?client_id=1124056390449758388",
-			"target": "_blank"
-		}
-	],
-	[
-		{
-			"label": "Twitter [X]",
-			"href": "https://bracketed.co.uk/redirects/twitter",
-			"target": "_blank"
-		},
-		{
-			"label": "Github",
-			"href": "https://bracketed.co.uk/redirects/github",
-			"target": "_blank"
-		},
-		{
-			"label": "Discord",
-			"href": "https://bracketed.co.uk/redirects/discord",
-			"target": "_blank"
-		}
-	]
+	{
+		"title": "Quick Links",
+		"content": [
+			{
+				"label": "Home",
+				"href": "https://vrfy.bracketed.co.uk"
+			},
+			{
+				"label": "Documentation",
+				"href": "https://docs.vrfy.bracketed.co.uk",
+				"target": "_blank"
+			},
+			{
+				"label": "Dashboard",
+				"href": "https://vrfy.bracketed.co.uk/dashboard"
+			}
+		]
+	},
+	{
+		"title": "Quick Links",
+		"content": [
+			{
+				"label": "Bracketed",
+				"href": "https://www.bracketed.co.uk",
+				"target": "_blank"
+			},
+			{
+				"label": "Status Page",
+				"href": "https://status.bracketed.co.uk",
+				"target": "_blank"
+			},
+			{
+				"label": "Bot Invite",
+				"href": "https://discord.com/oauth2/authorize?client_id=1124056390449758388",
+				"target": "_blank"
+			}
+		]
+	},
+	{
+		"title": "Quick Links",
+		"content": [
+			{
+				"label": "Twitter [X]",
+				"href": "https://bracketed.co.uk/redirects/twitter",
+				"target": "_blank"
+			},
+			{
+				"label": "Github",
+				"href": "https://bracketed.co.uk/redirects/github",
+				"target": "_blank"
+			},
+			{
+				"label": "Discord",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			}
+		]
+	},
+	{
+		"title": "Quick Links",
+		"content": [
+			{
+				"label": "Twitter [X]",
+				"href": "https://bracketed.co.uk/redirects/twitter",
+				"target": "_blank"
+			},
+			{
+				"label": "Github",
+				"href": "https://bracketed.co.uk/redirects/github",
+				"target": "_blank"
+			},
+			{
+				"label": "Discord",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			}
+		]
+	}
 ]

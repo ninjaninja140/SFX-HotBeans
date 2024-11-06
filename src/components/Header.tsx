@@ -57,6 +57,8 @@ export default () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
 	useEffect(() => {
+		setIsScrolled(window.scrollY > 50);
+
 		const handleScroll = () => {
 			setIsScrolled(window.scrollY > 50);
 		};
