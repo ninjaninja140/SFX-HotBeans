@@ -12,6 +12,7 @@ export default () => {
 			<div
 				style={{
 					...defaults,
+					flex: '2',
 					paddingLeft: '15%',
 					justifyContent: 'flex-end',
 					alignItems: 'center',
@@ -51,3 +52,4 @@ export default () => {
 		</div>
 	);
 };
+

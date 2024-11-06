@@ -25,6 +25,7 @@ export default () => {
 			<div
 				style={{
 					...defaults,
+					flex: '2',
 					paddingRight: '15%',
 					paddingLeft: '15%',
 					justifyContent: 'flex-start',
@@ -46,3 +47,4 @@ export default () => {
 		</div>
 	);
 };
+

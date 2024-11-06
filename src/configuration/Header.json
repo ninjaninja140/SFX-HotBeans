@@ -1,14 +1,10 @@
 [
 	{
-		"title": "Home",
-		"href": "/"
-	},
-	{
 		"title": "About us",
 		"href": "/"
 	},
 	{
-		"title": "Our Clients",
+		"title": "Our Works",
 		"href": "/"
 	},
 	{
@@ -20,7 +16,12 @@
 		"href": "/"
 	},
 	{
+		"title": "Recruitment",
+		"href": "/"
+	},
+	{
 		"title": "Contact us",
 		"href": "/"
 	}
 ]
+

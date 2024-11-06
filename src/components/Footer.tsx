@@ -35,7 +35,7 @@ const KeyFooterLinks = () => {
 						key={index}
 						style={{
 							textAlign: 'center',
-							marginRight: '25px',
+							marginRight: '3%',
 							display: 'inline-block',
 						}}
 						rel='noreferrer'
@@ -51,7 +51,7 @@ const KeyFooterLinks = () => {
 						key={index}
 						style={{
 							textAlign: 'center',
-							marginRight: '25px',
+							marginRight: '3%',
 							display: 'inline-block',
 						}}
 						rel='noreferrer'
@@ -109,7 +109,7 @@ export default () => {
 							flex: '3',
 							display: 'flex',
 							flexDirection: 'column',
-							paddingLeft: '30px',
+							paddingLeft: '20px',
 							justifyContent: 'flex-start',
 							alignItems: 'flex-start',
 							justifyItems: 'left',
@@ -117,11 +117,18 @@ export default () => {
 							textAlign: 'left',
 							height: '100%',
 						}}>
-						<a href='/' style={{ display: 'flex', alignItems: 'center' }}>
+						<a
+							href='/'
+							style={{
+								display: 'flex',
+								alignItems: 'center',
+								whiteSpace: 'nowrap',
+								marginBottom: '5px',
+							}}>
 							<PiCoffeeBeanFill
 								style={{
-									height: '40px',
-									width: '40px',
+									height: '30px',
+									width: '30px',
 								}}
 								fill='#ffffff'
 							/>
@@ -131,7 +138,7 @@ export default () => {
 									fontFamily: 'FF Neuwelt',
 									textDecoration: 'none',
 									fontWeight: '700',
-									fontSize: '18px',
+									fontSize: '17px',
 									color: '#ffffff',
 								}}>
 								HotBeans WebDev
@@ -144,9 +151,10 @@ export default () => {
 				</div>
 				<div
 					style={{
-						flex: '1.5',
+						flex: '2',
 						padding: '50px',
 						paddingRight: '100px',
+						paddingLeft: '50px',
 						justifyContent: 'flex-start',
 						alignItems: 'center',
 						justifyItems: 'center',
@@ -154,6 +162,7 @@ export default () => {
 						textAlign: 'left',
 						fontFamily: 'GG Sans',
 						display: 'flex',
+						whiteSpace: 'nowrap',
 					}}>
 					{NavigationLinks.map((FooterProps, index: number) => (
 						<div
@@ -199,28 +208,31 @@ export default () => {
 					fontFamily: 'SegoeUI',
 					textDecoration: 'none',
 					fontSize: '12px',
+					whiteSpace: 'nowrap',
 					textAlign: 'center',
 				}}>
 				<span
 					style={{
 						display: 'flex',
 						alignItems: 'center',
-						marginRight: '25px',
+						marginRight: '3%',
 					}}>
-					<b
-						style={{
-							fontSize: '17px',
-							fontFamily: 'FF Neuwelt',
-							marginRight: '25px',
-							display: 'inline-flex',
-							alignItems: 'center',
-						}}>
-						[ / ]
-					</b>
-					Copyright © {new Date().getFullYear()} Eden Kneale WebDesigns and Partners.
+					<a href='https://bracketed.co.uk' style={{ marginRight: '6%' }}>
+						<b
+							style={{
+								fontSize: '17px',
+								fontFamily: 'FF Neuwelt',
+								display: 'inline-flex',
+								alignItems: 'center',
+							}}>
+							[ / ]
+						</b>
+					</a>
+					© {new Date().getFullYear()} Eden Kneale WebDesigns.
 				</span>
 				<KeyFooterLinks />
 			</div>
 		</footer>
 	);
 };
+
