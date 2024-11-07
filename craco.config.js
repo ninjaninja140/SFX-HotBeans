@@ -12,6 +12,7 @@ module.exports = {
 			'@content': path.resolve(__dirname, 'src/content'),
 			'@src': path.resolve(__dirname, 'src'),
 			'@configuration': path.resolve(__dirname, 'src/configuration'),
+			'@typings': path.resolve(__dirname, 'src/typings'),
 		},
 		module: {
 			rules: [
@@ -31,4 +32,3 @@ module.exports = {
 		},
 	},
 };
-

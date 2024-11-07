@@ -1,16 +1,13 @@
-import { ExternalLink, TargetLink } from '@components/Links/Link';
-import LinkedContent from '@components/Links/LinkedContent';
+import Link from '@components/Links/Link';
 import Links from '@configuration/Footer.json';
 import KeyLinks from '@configuration/FooterKey.json';
 import { PiCoffeeBeanFill } from 'react-icons/pi';
 
 interface HeaderProps {
 	title: string;
-	href?: string;
+	href: string;
 	target?: string;
 }
-
-const FooterKeyLinks: Array<HeaderProps> = KeyLinks;
 
 interface FooterLink {
 	label: string;
@@ -22,45 +19,6 @@ interface FooterProps {
 	title: string;
 	content: Array<FooterLink>;
 }
-
-const NavigationLinks: Array<FooterProps> = Links;
-
-const KeyFooterLinks = () => {
-	return FooterKeyLinks.map((Link: HeaderProps, index: number) => {
-		if (Link.href)
-			if (!Link.href.startsWith('/'))
-				return (
-					<a
-						href={Link.href}
-						key={index}
-						style={{
-							textAlign: 'center',
-							marginRight: '3%',
-							display: 'inline-block',
-						}}
-						rel='noreferrer'
-						target='_blank'>
-						{Link.title}
-						<LinkedContent />
-					</a>
-				);
-			else
-				return (
-					<a
-						href={Link.href}
-						key={index}
-						style={{
-							textAlign: 'center',
-							marginRight: '3%',
-							display: 'inline-block',
-						}}
-						rel='noreferrer'
-						target='_blank'>
-						{Link.title}
-					</a>
-				);
-	});
-};
 
 export default () => {
 	return (
@@ -84,6 +42,8 @@ export default () => {
 					style={{
 						flex: '1',
 						padding: '50px',
+						paddingTop: '100px',
+						paddingBottom: '100px',
 						paddingLeft: '100px',
 						justifyContent: 'flex-end',
 						alignItems: 'center',
@@ -153,6 +113,8 @@ export default () => {
 					style={{
 						flex: '2',
 						padding: '50px',
+						paddingTop: '100px',
+						paddingBottom: '100px',
 						paddingRight: '100px',
 						paddingLeft: '50px',
 						justifyContent: 'flex-start',
@@ -164,7 +126,7 @@ export default () => {
 						display: 'flex',
 						whiteSpace: 'nowrap',
 					}}>
-					{NavigationLinks.map((FooterProps, index: number) => (
+					{(Links as Array<FooterProps>).map((FooterProps, index: number) => (
 						<div
 							style={{ marginRight: '2%', color: '#ffffff', flex: '1' }}
 							key={index}>
@@ -179,15 +141,11 @@ export default () => {
 								}}>
 								{FooterProps.content.map((FooterLink, index) => (
 									<li key={index} style={{ marginBottom: '8px' }}>
-										<ExternalLink
-											label={FooterLink.label}
+										<Link
 											href={FooterLink.href}
-											target={
-												(FooterLink.target as TargetLink) ??
-												TargetLink.SELF
-											}
-											key={index}
-										/>
+											key={index}>
+											{FooterLink.label}
+										</Link>
 									</li>
 								))}
 							</ul>
@@ -230,9 +188,19 @@ export default () => {
 					</a>
 					© {new Date().getFullYear()} Eden Kneale WebDesigns.
 				</span>
-				<KeyFooterLinks />
+				{(KeyLinks as Array<HeaderProps>).map((LinkProperties: HeaderProps, index: number) => (
+					<Link
+						href={LinkProperties.href}
+						key={index}
+						style={{
+							textAlign: 'center',
+							marginRight: '3%',
+							display: 'inline-block',
+						}}>
+						{LinkProperties.title}
+					</Link>
+				))}
 			</div>
 		</footer>
 	);
 };
-

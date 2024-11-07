@@ -58,20 +58,35 @@
 		]
 	},
 	{
-		"title": "Quick Links",
+		"title": "Recruitment",
 		"content": [
 			{
-				"label": "Twitter [X]",
-				"href": "https://bracketed.co.uk/redirects/twitter",
-				"target": "_blank"
-			},
-			{
-				"label": "Github",
+				"label": "Jobs (We're hiring!)",
 				"href": "https://bracketed.co.uk/redirects/github",
 				"target": "_blank"
 			},
 			{
-				"label": "Discord",
+				"label": "Apprenticeships",
+				"href": "https://bracketed.co.uk/redirects/twitter",
+				"target": "_blank"
+			},
+			{
+				"label": "Junior Developers Program",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			},
+			{
+				"label": "Junior Designers Programs",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			},
+			{
+				"label": "Developer Courses",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			},
+			{
+				"label": "Design Courses",
 				"href": "https://bracketed.co.uk/redirects/discord",
 				"target": "_blank"
 			}

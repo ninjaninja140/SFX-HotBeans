@@ -22,9 +22,9 @@
 			"@css/*": ["css/*"],
 			"@content/*": ["content/*"],
 			"@src/*": ["*"],
-			"@configuration/*": ["configuration/*"]
+			"@configuration/*": ["configuration/*"],
+			"@typings/*": ["typings/*"]
 		}
 	},
 	"include": ["src"]
 }
-
