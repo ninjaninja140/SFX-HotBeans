@@ -4,92 +4,121 @@
 		"content": [
 			{
 				"label": "Home",
-				"href": "https://vrfy.bracketed.co.uk"
+				"href": "/"
 			},
 			{
-				"label": "Documentation",
-				"href": "https://docs.vrfy.bracketed.co.uk",
+				"label": "Our Developers",
+				"href": "/developers",
 				"target": "_blank"
 			},
 			{
-				"label": "Dashboard",
-				"href": "https://vrfy.bracketed.co.uk/dashboard"
+				"label": "Contact Us",
+				"href": "/contact",
+				"target": "_blank"
+			},
+			{
+				"label": "Careers Portal",
+				"href": "/portal/careers"
+			},
+			{
+				"label": "Programs Portal",
+				"href": "/portal/programs"
+			},
+			{
+				"label": "Courses Portal",
+				"href": "/portal/courses"
 			}
 		]
 	},
 	{
-		"title": "Quick Links",
+		"title": "Company",
 		"content": [
 			{
-				"label": "Bracketed",
-				"href": "https://www.bracketed.co.uk",
-				"target": "_blank"
-			},
-			{
-				"label": "Status Page",
-				"href": "https://status.bracketed.co.uk",
-				"target": "_blank"
-			},
-			{
-				"label": "Bot Invite",
-				"href": "https://discord.com/oauth2/authorize?client_id=1124056390449758388",
-				"target": "_blank"
-			}
-		]
-	},
-	{
-		"title": "Quick Links",
-		"content": [
-			{
-				"label": "Twitter [X]",
+				"label": "Companies House",
 				"href": "https://bracketed.co.uk/redirects/twitter",
 				"target": "_blank"
 			},
 			{
-				"label": "Github",
+				"label": "Legal",
+				"href": "https://bracketed.co.uk/redirects/twitter",
+				"target": "_blank"
+			},
+			{
+				"label": "Terms of Service",
 				"href": "https://bracketed.co.uk/redirects/github",
 				"target": "_blank"
 			},
 			{
-				"label": "Discord",
+				"label": "Privacy Policy",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			},
+			{
+				"label": "Right of Removal",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			},
+			{
+				"label": "Our \"Fair Pricing\" Policy",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			},
+			{
+				"label": "Course Offers",
+				"href": "https://bracketed.co.uk/redirects/discord",
+				"target": "_blank"
+			},
+			{
+				"label": "Training Offers",
 				"href": "https://bracketed.co.uk/redirects/discord",
 				"target": "_blank"
 			}
 		]
 	},
 	{
-		"title": "Recruitment",
+		"title": "Careers",
 		"content": [
 			{
 				"label": "Jobs (We're hiring!)",
-				"href": "https://bracketed.co.uk/redirects/github",
+				"href": "/careers",
 				"target": "_blank"
 			},
 			{
 				"label": "Apprenticeships",
-				"href": "https://bracketed.co.uk/redirects/twitter",
+				"href": "/careers/apprenticeships",
 				"target": "_blank"
 			},
 			{
 				"label": "Junior Developers Program",
-				"href": "https://bracketed.co.uk/redirects/discord",
+				"href": "/programs/developers",
 				"target": "_blank"
 			},
 			{
-				"label": "Junior Designers Programs",
-				"href": "https://bracketed.co.uk/redirects/discord",
+				"label": "Junior Designers Program",
+				"href": "/programs/designers",
 				"target": "_blank"
 			},
 			{
-				"label": "Developer Courses",
-				"href": "https://bracketed.co.uk/redirects/discord",
+				"label": "Developer Courses (We offer!)",
+				"href": "/courses/developers",
 				"target": "_blank"
 			},
 			{
-				"label": "Design Courses",
-				"href": "https://bracketed.co.uk/redirects/discord",
+				"label": "Design Courses (We offer!)",
+				"href": "/courses/designers",
+				"target": "_blank"
+			},
+			{
+				"label": "All Courses",
+				"href": "/courses",
+				"target": "_blank"
+			},
+			{
+				"label": "All Programs",
+				"href": "/programs",
 				"target": "_blank"
 			}
 		]
 	}
 ]
+

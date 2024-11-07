@@ -6,6 +6,7 @@ interface Params {
 	style?: React.CSSProperties;
 	children?: React.ReactNode;
 	highlightColour?: string;
+	classes?: Array<string>;
 }
 
 const LinkSymbol = ({ width = 16, height = 16 }: { width?: number; height?: number }) => (
@@ -25,17 +26,32 @@ const LinkSymbol = ({ width = 16, height = 16 }: { width?: number; height?: numb
 	</svg>
 );
 
-export default ({ children, href, style, highlightColour = '#56c586', target = TargetLinkType.SELF }: Params) => {
+export default ({
+	children,
+	href,
+	style,
+	classes,
+	highlightColour = '#56c586',
+	target = TargetLinkType.SELF,
+}: Params) => {
 	let processedChildren: React.ReactNode = children;
-	let isExternal = false;
+	let aTarget = target;
 
 	if (typeof children === 'string') {
-		if (!children.startsWith('/')) isExternal = true;
+		if (!href.startsWith('/')) aTarget = TargetLinkType.NEW_PAGE;
 
 		if (highlightColour !== 'none') {
 			const parts = children.split(/(\(.*?\))/g).map((part, index) =>
 				part.startsWith('(') && part.endsWith(')') ? (
-					<span key={index} style={{ color: highlightColour }}>
+					<span
+						key={index}
+						style={{
+							color: highlightColour,
+							textDecoration: 'underline',
+							textDecorationStyle: 'solid',
+							textDecorationColor: highlightColour,
+							textDecorationThickness: '1px',
+						}}>
 						{part}
 					</span>
 				) : (
@@ -48,13 +64,14 @@ export default ({ children, href, style, highlightColour = '#56c586', target = T
 	}
 
 	return (
-		<a href={href} target={isExternal ? TargetLinkType.NEW_PAGE : target} style={{ ...style }}>
+		<a
+			href={href}
+			target={aTarget}
+			style={{ ...style }}
+			className={classes ? classes.join(' ') : undefined}>
 			{processedChildren}
-			{isExternal ? (
-				<LinkSymbol />
-			) : (target as TargetLinkType) === TargetLinkType.NEW_PAGE ? (
-				<LinkSymbol />
-			) : undefined}
+			{aTarget === TargetLinkType.NEW_PAGE ? <LinkSymbol /> : undefined}
 		</a>
 	);
 };
+

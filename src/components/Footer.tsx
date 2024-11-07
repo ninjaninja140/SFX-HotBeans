@@ -1,7 +1,19 @@
-import Link from '@components/Links/Link';
+import Link from '@components/Text/Link';
 import Links from '@configuration/Footer.json';
 import KeyLinks from '@configuration/FooterKey.json';
+import Socials from '@configuration/FooterSocials.json';
+import {
+	IoGlobeOutline,
+	IoLogoDocker,
+	IoLogoFacebook,
+	IoLogoGithub,
+	IoLogoLinkedin,
+	IoLogoNpm,
+	IoLogoTwitter,
+	IoMail,
+} from 'react-icons/io5';
 import { PiCoffeeBeanFill } from 'react-icons/pi';
+import { getDomainWithoutSuffix } from 'tldts';
 
 interface HeaderProps {
 	title: string;
@@ -48,6 +60,7 @@ export default () => {
 						justifyContent: 'flex-end',
 						alignItems: 'center',
 						justifyItems: 'center',
+						flexDirection: 'column',
 						alignSelf: 'center',
 						textAlign: 'left',
 						display: 'flex',
@@ -55,58 +68,182 @@ export default () => {
 					<div
 						style={{
 							flex: '1',
-							justifyContent: 'flex-start',
+							padding: '50px',
+							paddingTop: '100px',
+							paddingLeft: '100px',
+							justifyContent: 'flex-end',
 							alignItems: 'center',
 							justifyItems: 'center',
+							flexDirection: 'row',
 							alignSelf: 'center',
 							textAlign: 'left',
+							display: 'flex',
 						}}>
-						<button style={{ width: '100%' }}>Get a Quote</button>
-						<button style={{ width: '100%' }}>Contact Us</button>
+						<div
+							style={{
+								flex: '1',
+								justifyContent: 'flex-start',
+								alignItems: 'center',
+								justifyItems: 'center',
+								alignSelf: 'center',
+								textAlign: 'left',
+							}}>
+							<button style={{ width: '100%' }}>Get a Quote</button>
+							<button style={{ width: '100%' }}>Contact Us</button>
+						</div>
+						<div
+							style={{
+								flex: '3',
+								display: 'flex',
+								flexDirection: 'column',
+								paddingLeft: '20px',
+								justifyContent: 'flex-start',
+								alignItems: 'flex-start',
+								justifyItems: 'left',
+								alignSelf: 'left',
+								textAlign: 'left',
+								height: '100%',
+							}}>
+							<a
+								href='/'
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									whiteSpace: 'nowrap',
+									marginBottom: '5px',
+								}}>
+								<PiCoffeeBeanFill
+									style={{
+										height: '30px',
+										width: '30px',
+									}}
+									fill='#ffffff'
+								/>
+								<span
+									style={{
+										marginLeft: '12px',
+										fontFamily: 'FF Neuwelt',
+										textDecoration: 'none',
+										fontWeight: '700',
+										fontSize: '17px',
+										color: '#ffffff',
+									}}>
+									HotBeans WebDev
+								</span>
+							</a>
+							<i style={{ fontSize: '100%' }}>
+								Professional Web Developers, at your arsenal!
+							</i>
+						</div>
 					</div>
 					<div
 						style={{
-							flex: '3',
-							display: 'flex',
-							flexDirection: 'column',
-							paddingLeft: '20px',
-							justifyContent: 'flex-start',
-							alignItems: 'flex-start',
-							justifyItems: 'left',
-							alignSelf: 'left',
+							flex: '1',
+							padding: '50px',
+							paddingTop: '10px',
+							paddingBottom: '100px',
+							paddingLeft: '100px',
+							justifyContent: 'flex-end',
+							alignItems: 'center',
+							justifyItems: 'center',
+							flexDirection: 'row',
+							alignSelf: 'center',
 							textAlign: 'left',
-							height: '100%',
+							display: 'flex',
+							gap: '18px',
 						}}>
-						<a
-							href='/'
-							style={{
-								display: 'flex',
-								alignItems: 'center',
-								whiteSpace: 'nowrap',
-								marginBottom: '5px',
-							}}>
-							<PiCoffeeBeanFill
-								style={{
-									height: '30px',
-									width: '30px',
-								}}
-								fill='#ffffff'
-							/>
-							<span
-								style={{
-									marginLeft: '12px',
-									fontFamily: 'FF Neuwelt',
-									textDecoration: 'none',
-									fontWeight: '700',
-									fontSize: '17px',
-									color: '#ffffff',
-								}}>
-								HotBeans WebDev
-							</span>
-						</a>
-						<i style={{ fontSize: '100%' }}>
-							Professional Web Developers, at your arsenal!
-						</i>
+						{(Socials as Array<string>).map((link: string) => {
+							const Starter = link.split(':')[0];
+
+							switch (Starter) {
+								case 'mailto':
+									return (
+										<IoMail
+											style={{
+												width: '20px',
+												height: '20px',
+											}}
+										/>
+									);
+								default:
+									const domain = getDomainWithoutSuffix(link);
+
+									switch (domain) {
+										case 'twitter':
+											return (
+												<IoLogoTwitter
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+										case 'linkedin':
+											return (
+												<IoLogoLinkedin
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+										case 'x':
+											return (
+												<IoLogoTwitter
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+										case 'facebook':
+											return (
+												<IoLogoFacebook
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+										case 'github':
+											return (
+												<IoLogoGithub
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+										case 'docker':
+											return (
+												<IoLogoDocker
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+										case 'npm':
+											return (
+												<IoLogoNpm
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+										default:
+											return (
+												<IoGlobeOutline
+													style={{
+														width: '20px',
+														height: '20px',
+													}}
+												/>
+											);
+									}
+							}
+						})}
 					</div>
 				</div>
 				<div
@@ -116,11 +253,11 @@ export default () => {
 						paddingTop: '100px',
 						paddingBottom: '100px',
 						paddingRight: '100px',
-						paddingLeft: '50px',
+						paddingLeft: '25px',
 						justifyContent: 'flex-start',
-						alignItems: 'center',
-						justifyItems: 'center',
-						alignSelf: 'center',
+						alignItems: 'left',
+						justifyItems: 'left',
+						alignSelf: 'left',
 						textAlign: 'left',
 						fontFamily: 'GG Sans',
 						display: 'flex',
@@ -128,7 +265,16 @@ export default () => {
 					}}>
 					{(Links as Array<FooterProps>).map((FooterProps, index: number) => (
 						<div
-							style={{ marginRight: '2%', color: '#ffffff', flex: '1' }}
+							style={{
+								marginRight: '2%',
+								color: '#ffffff',
+								flex: '1',
+								justifyContent: 'flex-start',
+								alignItems: 'left',
+								justifyItems: 'left',
+								alignSelf: 'left',
+								textAlign: 'left',
+							}}
 							key={index}>
 							<span style={{ fontWeight: '500' }}>{FooterProps.title}</span>
 							<ul
@@ -190,6 +336,7 @@ export default () => {
 				</span>
 				{(KeyLinks as Array<HeaderProps>).map((LinkProperties: HeaderProps, index: number) => (
 					<Link
+						classes={['no-underline']}
 						href={LinkProperties.href}
 						key={index}
 						style={{
@@ -204,3 +351,4 @@ export default () => {
 		</footer>
 	);
 };
+

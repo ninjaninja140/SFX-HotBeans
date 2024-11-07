@@ -2403,6 +2403,7 @@ __metadata:
     react-router: "npm:^6.28.0"
     react-router-dom: "npm:^6.28.0"
     react-scripts: "npm:5.0.1"
+    tldts: "npm:^6.1.58"
     typescript: "npm:^5.6.3"
   languageName: unknown
   linkType: soft
@@ -12882,6 +12883,24 @@ __metadata:
   version: 1.1.0
   resolution: "thunky@npm:1.1.0"
   checksum: 10c0/369764f39de1ce1de2ba2fa922db4a3f92e9c7f33bcc9a713241bc1f4a5238b484c17e0d36d1d533c625efb00e9e82c3e45f80b47586945557b45abb890156d2
+  languageName: node
+  linkType: hard
+
+"tldts-core@npm:^6.1.58":
+  version: 6.1.58
+  resolution: "tldts-core@npm:6.1.58"
+  checksum: 10c0/aadb37cad88c8ab59042471f6de7c269f9e4db4fc0b644787176ddc7ed1c95ebd486071836a3fc6e09c59421040a7002cc61b36c983eb66938630536aa042299
+  languageName: node
+  linkType: hard
+
+"tldts@npm:^6.1.58":
+  version: 6.1.58
+  resolution: "tldts@npm:6.1.58"
+  dependencies:
+    tldts-core: "npm:^6.1.58"
+  bin:
+    tldts: bin/cli.js
+  checksum: 10c0/dc2c95cf84e9bde5a86b37d3fd0e2d37cd3c1a9057cb122663899368ee45fa2b12a9d4848cb67785bf3a9a2bf9323bfac4c2ffadb815e1a6948b3e053c06f848
   languageName: node
   linkType: hard
 

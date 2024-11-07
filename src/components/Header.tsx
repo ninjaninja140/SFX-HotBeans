@@ -1,4 +1,4 @@
-import LinkedContent from '@components/Links/LinkedContent';
+import Link from '@components/Text/Link';
 import Links from '@configuration/Header.json';
 import { useEffect, useState } from 'react';
 import { IoPricetag } from 'react-icons/io5';
@@ -6,52 +6,9 @@ import { PiCoffeeBeanFill } from 'react-icons/pi';
 
 interface HeaderProps {
 	title: string;
-	href?: string;
+	href: string;
 	target?: string;
 }
-
-const NavigationLinks: Array<HeaderProps> = Links;
-
-const HeaderLinks = () => {
-	return NavigationLinks.map((Link: HeaderProps, index: number) => {
-		if (Link.href)
-			if (Link.href.startsWith('http'))
-				return (
-					<a
-						href={Link.href}
-						key={index}
-						style={{
-							textAlign: 'center',
-							marginRight: '25px',
-							display: 'inline-block',
-							fontWeight: '600',
-							color: '#ffffff',
-						}}
-						rel='noreferrer'
-						target='_blank'>
-						{Link.title}
-						<LinkedContent />
-					</a>
-				);
-			else
-				return (
-					<a
-						href={Link.href}
-						key={index}
-						style={{
-							textAlign: 'center',
-							marginRight: '25px',
-							display: 'inline-block',
-							fontWeight: '600',
-							color: '#ffffff',
-						}}
-						rel='noreferrer'
-						target='_blank'>
-						{Link.title}
-					</a>
-				);
-	});
-};
 
 export default () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -137,7 +94,22 @@ export default () => {
 						whiteSpace: 'nowrap',
 						alignItems: 'center',
 					}}>
-					<HeaderLinks />
+					{(Links as Array<HeaderProps>).map(
+						(LinkProperties: HeaderProps, index: number) => (
+							<Link
+								href={LinkProperties.href}
+								key={index}
+								style={{
+									textAlign: 'center',
+									marginRight: '25px',
+									display: 'inline-block',
+									fontWeight: '600',
+									color: '#ffffff',
+								}}>
+								{LinkProperties.title}
+							</Link>
+						)
+					)}
 				</div>
 			</div>
 			<div
@@ -168,3 +140,4 @@ export default () => {
 		</header>
 	);
 };
+
