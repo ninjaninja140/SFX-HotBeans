@@ -50,3 +50,4 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		</div>
 	);
 };
+
