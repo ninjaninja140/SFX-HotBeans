@@ -4,6 +4,7 @@
 	"private": true,
 	"dependencies": {
 		"@craco/craco": "^7.1.0",
+		"@types/webpack-env": "^1.18.5",
 		"browserify-fs": "^1.0.0",
 		"path-browserify": "^1.0.1",
 		"react": "^18.3.1",
@@ -14,7 +15,9 @@
 		"react-router-dom": "^6.28.0",
 		"react-scripts": "5.0.1",
 		"tldts": "^6.1.59",
-		"typescript": "^5.6.3"
+		"typescript": "^5.6.3",
+		"webpack": "^5.96.1",
+		"webpack-env": "^0.8.0"
 	},
 	"scripts": {
 		"start": "yarn node ./router.js && craco start",
