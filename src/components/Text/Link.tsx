@@ -6,7 +6,6 @@ interface Params {
 	style?: React.CSSProperties;
 	children?: React.ReactNode;
 	highlightColour?: string;
-	classes?: Array<string>;
 }
 
 const LinkSymbol = ({ width = 16, height = 16 }: { width?: number; height?: number }) => (
@@ -26,14 +25,7 @@ const LinkSymbol = ({ width = 16, height = 16 }: { width?: number; height?: numb
 	</svg>
 );
 
-export default ({
-	children,
-	href,
-	style,
-	classes,
-	highlightColour = '#56c586',
-	target = TargetLinkType.SELF,
-}: Params) => {
+export default ({ children, href, style, highlightColour = '#56c586', target = TargetLinkType.SELF }: Params) => {
 	let processedChildren: React.ReactNode = children;
 	let aTarget = target;
 
@@ -64,14 +56,9 @@ export default ({
 	}
 
 	return (
-		<a
-			href={href}
-			target={aTarget}
-			style={{ ...style }}
-			className={classes ? classes.join(' ') : undefined}>
+		<a href={href} target={aTarget} style={{ ...style }}>
 			{processedChildren}
 			{aTarget === TargetLinkType.NEW_PAGE ? <LinkSymbol /> : undefined}
 		</a>
 	);
 };
-

@@ -1,3 +1,4 @@
+import Banner from '@components/Banner';
 import Hero from '@components/Homepage/Hero';
 import Hero2 from '@components/Homepage/Hero2';
 import Route from '@components/Meta/Route';
@@ -45,6 +46,7 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 			</div>
 			<Hero />
 			<Hero2 />
+			<Banner />
 		</div>
 	);
 };

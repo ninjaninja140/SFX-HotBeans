@@ -69,8 +69,8 @@ export default () => {
 						style={{
 							flex: '1',
 							padding: '50px',
-							paddingTop: '100px',
-							paddingLeft: '100px',
+							paddingLeft: '50px',
+							paddingBottom: '20px',
 							justifyContent: 'flex-end',
 							alignItems: 'center',
 							justifyItems: 'center',
@@ -139,111 +139,183 @@ export default () => {
 					<div
 						style={{
 							flex: '1',
-							padding: '50px',
-							paddingTop: '10px',
-							paddingBottom: '100px',
-							paddingLeft: '100px',
-							justifyContent: 'flex-end',
-							alignItems: 'center',
-							justifyItems: 'center',
-							flexDirection: 'row',
-							alignSelf: 'center',
-							textAlign: 'left',
+							marginTop: '0',
+							paddingTop: '0',
+							paddingLeft: '50px',
+							justifyContent: 'flex-start',
+							alignItems: 'left',
 							display: 'flex',
-							gap: '18px',
+							flexDirection: 'row',
+							alignSelf: 'left',
 						}}>
-						{(Socials as Array<string>).map((link: string) => {
-							const Starter = link.split(':')[0];
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'space-evenly',
+								alignItems: 'left',
+								backgroundColor: '#ffffff',
+								borderRadius: '9999px',
+								padding: '5px 15px',
+								gap: '13px',
+								color: '#5865f2',
+							}}>
+							{(Socials as Array<string>).map((link: string) => {
+								const Starter = link.split(':')[0];
 
-							switch (Starter) {
-								case 'mailto':
-									return (
-										<IoMail
-											style={{
-												width: '20px',
-												height: '20px',
-											}}
-										/>
-									);
-								default:
-									const domain = getDomainWithoutSuffix(link);
+								switch (Starter) {
+									case 'mailto':
+										return (
+											<IoMail
+												style={{
+													width: '35px',
+													height: '35px',
+													cursor: 'pointer',
+												}}
+												onClick={() =>
+													window.open(
+														link,
+														'_blank'
+													)
+												}
+											/>
+										);
+									default:
+										const domain =
+											getDomainWithoutSuffix(link);
 
-									switch (domain) {
-										case 'twitter':
-											return (
-												<IoLogoTwitter
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-										case 'linkedin':
-											return (
-												<IoLogoLinkedin
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-										case 'x':
-											return (
-												<IoLogoTwitter
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-										case 'facebook':
-											return (
-												<IoLogoFacebook
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-										case 'github':
-											return (
-												<IoLogoGithub
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-										case 'docker':
-											return (
-												<IoLogoDocker
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-										case 'npm':
-											return (
-												<IoLogoNpm
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-										default:
-											return (
-												<IoGlobeOutline
-													style={{
-														width: '20px',
-														height: '20px',
-													}}
-												/>
-											);
-									}
-							}
-						})}
+										switch (domain) {
+											case 'twitter':
+												return (
+													<IoLogoTwitter
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+											case 'linkedin':
+												return (
+													<IoLogoLinkedin
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+											case 'x':
+												return (
+													<IoLogoTwitter
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+											case 'facebook':
+												return (
+													<IoLogoFacebook
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+											case 'github':
+												return (
+													<IoLogoGithub
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+											case 'docker':
+												return (
+													<IoLogoDocker
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+											case 'npmjs':
+												return (
+													<IoLogoNpm
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+											default:
+												return (
+													<IoGlobeOutline
+														style={{
+															width: '35px',
+															height: '35px',
+															cursor: 'pointer',
+														}}
+														onClick={() =>
+															window.open(
+																link,
+																'_blank'
+															)
+														}
+													/>
+												);
+										}
+								}
+							})}
+						</div>
 					</div>
 				</div>
 				<div
@@ -336,7 +408,6 @@ export default () => {
 				</span>
 				{(KeyLinks as Array<HeaderProps>).map((LinkProperties: HeaderProps, index: number) => (
 					<Link
-						classes={['no-underline']}
 						href={LinkProperties.href}
 						key={index}
 						style={{
@@ -351,4 +422,3 @@ export default () => {
 		</footer>
 	);
 };
-
