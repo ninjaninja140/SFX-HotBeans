@@ -7,7 +7,6 @@ function importAll(r: __WebpackModuleApi.RequireContext): string[] {
 const images: string[] = importAll(require.context('@content/Banners', false, /\.(png|svg)$/));
 
 export default () => {
-	console.log(images);
 	return (
 		<div
 			style={{
@@ -16,38 +15,17 @@ export default () => {
 				paddingTop: '2%',
 				paddingBottom: '2%',
 				backgroundColor: '#5865f2',
-				margin: '0 auto',
-				left: '0',
-				right: '0',
-				justifyContent: 'space-between',
-				alignItems: 'center',
-				color: 'white',
+				margin: '20px auto',
 				borderRadius: '8px',
 				overflow: 'hidden',
 				position: 'relative',
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
 			}}>
-			<div
-				style={{
-					height: '100%',
-					width: '100%',
-					overflow: 'hidden',
-					whiteSpace: 'nowrap',
-					animation: 'bannermove 60s linear infinite',
-					position: 'absolute',
-					display: 'flex',
-				}}>
-				{images.map((src: string, key: number) => (
-					<img
-						src={src}
-						key={key}
-						style={{
-							height: '100%',
-							flex: '1',
-							width: '100%',
-							paddingLeft: '5%',
-							paddingRight: '5%',
-						}}
-					/>
+			<div className='banner-content'>
+				{images.concat(images).map((src: string, key: number) => (
+					<img src={src} key={key} />
 				))}
 			</div>
 		</div>
