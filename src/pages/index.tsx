@@ -1,6 +1,8 @@
 import Banner from '@components/Banner';
-import Hero from '@components/Homepage/Hero';
-import Hero2 from '@components/Homepage/Hero2';
+import Hero from '@components/Homepage/DesignMadeEasy';
+import Hero2 from '@components/Homepage/FairPrices';
+import Hero3 from '@components/Homepage/OurDevelopers';
+import Hero4 from '@components/Homepage/Trusted';
 import Route from '@components/Meta/Route';
 import { useEffect, useState } from 'react';
 
@@ -47,7 +49,8 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 			<Hero />
 			<Hero2 />
 			<Banner />
+			<Hero3 />
+			<Hero4 />
 		</div>
 	);
 };
-

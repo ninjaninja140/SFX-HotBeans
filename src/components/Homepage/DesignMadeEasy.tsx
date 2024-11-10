@@ -1,5 +1,4 @@
 import Underline from '@components/Text/Underline';
-import { useEffect, useState } from 'react';
 import { IoCodeSlash } from 'react-icons/io5';
 
 export default () => {
@@ -52,4 +51,3 @@ export default () => {
 		</div>
 	);
 };
-
