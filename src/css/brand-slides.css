@@ -4,7 +4,7 @@
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-400%);
     }
 }
 
@@ -12,8 +12,8 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
-    animation: bannermove 30s linear infinite;
-    width: 200%;
+    animation: bannermove 180s linear infinite;
+    width: 400%;
 }
 
 .banner-content img {

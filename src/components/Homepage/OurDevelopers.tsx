@@ -6,7 +6,7 @@ export default () => {
 	};
 
 	return (
-		<div style={{ height: `70vh`, display: 'flex' }}>
+		<div style={{ minHeight: '70vh', display: 'flex', margin: '5% auto' }}>
 			<div
 				style={{
 					...defaults,
@@ -51,3 +51,4 @@ export default () => {
 		</div>
 	);
 };
+

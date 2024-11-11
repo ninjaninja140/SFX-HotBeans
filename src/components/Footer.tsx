@@ -2,6 +2,8 @@ import Link from '@components/Text/Link';
 import Links from '@configuration/Footer.json';
 import KeyLinks from '@configuration/FooterKey.json';
 import Socials from '@configuration/FooterSocials.json';
+import React from 'react';
+import { IconType } from 'react-icons';
 import {
 	IoGlobeOutline,
 	IoLogoDocker,
@@ -32,11 +34,23 @@ interface FooterProps {
 	content: Array<FooterLink>;
 }
 
+const Definitions: Record<string, IconType> = {
+	'icon-twitter': IoLogoTwitter,
+	'icon-mailto': IoMail,
+	'icon-linkedin': IoLogoLinkedin,
+	'icon-x': IoLogoTwitter,
+	'icon-facebook': IoLogoFacebook,
+	'icon-github': IoLogoGithub,
+	'icon-docker': IoLogoDocker,
+	'icon-npmjs': IoLogoNpm,
+	'icon-default': IoGlobeOutline,
+};
+
 export default () => {
 	return (
 		<footer
 			style={{
-				width: '70%',
+				width: '80%',
 				backgroundColor: '#5865f2',
 				borderRadius: '8px',
 				margin: '0 auto',
@@ -53,10 +67,10 @@ export default () => {
 				<div
 					style={{
 						flex: '1',
-						padding: '50px',
-						paddingTop: '100px',
-						paddingBottom: '100px',
-						paddingLeft: '100px',
+						padding: '5%',
+						paddingTop: '10%',
+						paddingBottom: '10%',
+						paddingLeft: '10%',
 						justifyContent: 'flex-end',
 						alignItems: 'center',
 						justifyItems: 'center',
@@ -68,9 +82,8 @@ export default () => {
 					<div
 						style={{
 							flex: '1',
-							padding: '50px',
-							paddingLeft: '50px',
-							paddingBottom: '20px',
+							padding: '25%',
+							paddingBottom: '5%',
 							justifyContent: 'flex-end',
 							alignItems: 'center',
 							justifyItems: 'center',
@@ -96,7 +109,7 @@ export default () => {
 								flex: '3',
 								display: 'flex',
 								flexDirection: 'column',
-								paddingLeft: '20px',
+								paddingLeft: '5%',
 								justifyContent: 'flex-start',
 								alignItems: 'flex-start',
 								justifyItems: 'left',
@@ -110,22 +123,22 @@ export default () => {
 									display: 'flex',
 									alignItems: 'center',
 									whiteSpace: 'nowrap',
-									marginBottom: '5px',
+									marginBottom: '3%',
 								}}>
 								<PiCoffeeBeanFill
 									style={{
-										height: '30px',
-										width: '30px',
+										height: '40px',
+										width: '40px',
 									}}
 									fill='#ffffff'
 								/>
 								<span
 									style={{
-										marginLeft: '12px',
+										marginLeft: '5%',
 										fontFamily: 'FF Neuwelt',
 										textDecoration: 'none',
 										fontWeight: '700',
-										fontSize: '17px',
+										fontSize: '100%',
 										color: '#ffffff',
 									}}>
 									HotBeans WebDev
@@ -141,187 +154,49 @@ export default () => {
 							flex: '1',
 							marginTop: '0',
 							paddingTop: '0',
-							paddingLeft: '50px',
+							paddingLeft: '0',
+							marginLeft: '0',
+							width: '100%',
+							height: '100%',
 							justifyContent: 'flex-start',
 							alignItems: 'left',
 							display: 'flex',
 							flexDirection: 'row',
+							gap: '13px',
+							color: '#ffffff',
 							alignSelf: 'left',
 						}}>
-						<div
-							style={{
-								display: 'flex',
-								justifyContent: 'space-evenly',
-								alignItems: 'left',
-								backgroundColor: '#ffffff',
-								borderRadius: '9999px',
-								padding: '5px 15px',
-								gap: '13px',
-								color: '#5865f2',
-							}}>
-							{(Socials as Array<string>).map((link: string) => {
-								const Starter = link.split(':')[0];
+						{(Socials as Array<string>).map((link: string) => {
+							const Starter = link.split(':')[0];
+							const Style: React.CSSProperties = {
+								width: '30px',
+								height: '30px',
+								cursor: 'pointer',
+							};
+							const Function = () => window.open(link, '_blank');
 
-								switch (Starter) {
-									case 'mailto':
-										return (
-											<IoMail
-												style={{
-													width: '35px',
-													height: '35px',
-													cursor: 'pointer',
-												}}
-												onClick={() =>
-													window.open(
-														link,
-														'_blank'
-													)
-												}
-											/>
-										);
-									default:
-										const domain =
-											getDomainWithoutSuffix(link);
+							if (Starter === 'mailto') {
+								const Icn = Definitions['icon-mailto'];
+								return <Icn style={Style} onClick={Function} />;
+							}
 
-										switch (domain) {
-											case 'twitter':
-												return (
-													<IoLogoTwitter
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-											case 'linkedin':
-												return (
-													<IoLogoLinkedin
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-											case 'x':
-												return (
-													<IoLogoTwitter
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-											case 'facebook':
-												return (
-													<IoLogoFacebook
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-											case 'github':
-												return (
-													<IoLogoGithub
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-											case 'docker':
-												return (
-													<IoLogoDocker
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-											case 'npmjs':
-												return (
-													<IoLogoNpm
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-											default:
-												return (
-													<IoGlobeOutline
-														style={{
-															width: '35px',
-															height: '35px',
-															cursor: 'pointer',
-														}}
-														onClick={() =>
-															window.open(
-																link,
-																'_blank'
-															)
-														}
-													/>
-												);
-										}
-								}
-							})}
-						</div>
+							const domain = getDomainWithoutSuffix(link);
+							const Default = Definitions['icon-default'];
+
+							if (!domain) return;
+							<Default style={Style} onClick={Function} />;
+
+							const Icon = Definitions[`icon-${domain}`];
+
+							if (Icon) return <Icon style={Style} onClick={Function} />;
+							else return <Default style={Style} onClick={Function} />;
+						})}
 					</div>
 				</div>
 				<div
 					style={{
 						flex: '2',
-						padding: '50px',
+						padding: '5%',
 						paddingTop: '100px',
 						paddingBottom: '100px',
 						paddingRight: '100px',
@@ -422,3 +297,4 @@ export default () => {
 		</footer>
 	);
 };
+

@@ -68,3 +68,11 @@ button:hover {
 	color: #5865f2;
 	border-color: #5865f2
 }
+
+.white-button-border {
+	border-color: #ffffff;
+}
+
+.blurple-button-border {
+	border-color: #5865f2;
+}

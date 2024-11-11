@@ -6,7 +6,7 @@ export default () => {
 	};
 
 	return (
-		<div style={{ height: `70vh`, display: 'flex' }}>
+		<div style={{ minHeight: '70vh', display: 'flex', margin: '5% auto' }}>
 			<div
 				style={{
 					...defaults,
@@ -35,15 +35,20 @@ export default () => {
 				}}>
 				<h1>We're trustworthy...</h1>
 				<p>
-					Working with us at HotBeans, we won't make you overpay any more then what price
-					can be agreed on. Pricing here at HotBeans is bespoke, based on the components,
-					design, developers and the functionality. We will not make you overpay, even by
-					a penny. When working with HotBeans, you pay exactly how much you need to pay,
-					no absurd fees, no crazy VAT, no monthly costs*, the way you pay is one payment,
-					all in one go and for exactly how much you want.
+					In our past, HotBeans Website Developers have collaborated with many mainstream
+					media, platforms and devops companies to develop and design spectacular
+					websites. Recently working with Docker in recent times designing their new
+					website has boosted our companies trust levels, bringing in many large names,
+					such as, Roblox, Discord and many other big names in media.
+					<br />
+					<br />
+					Being as trustworthy as possible at HotBeans is a priority in our team, we aim
+					to keep communication between our designers, advisors and developers with you as
+					transparent as possible so the worry of having details kept from you like hidden
+					charges and cut corners is removed.
 				</p>
-				<i>*Monthly billing only applicable to clients with hosting plans.</i>
 			</div>
 		</div>
 	);
 };
+

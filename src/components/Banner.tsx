@@ -15,7 +15,7 @@ export default () => {
 				paddingTop: '2%',
 				paddingBottom: '2%',
 				backgroundColor: '#5865f2',
-				margin: '20px auto',
+				margin: '5% auto',
 				borderRadius: '8px',
 				overflow: 'hidden',
 				position: 'relative',
@@ -31,3 +31,4 @@ export default () => {
 		</div>
 	);
 };
+

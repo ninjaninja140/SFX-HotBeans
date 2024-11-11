@@ -28,7 +28,7 @@ export default () => {
 		<header
 			style={{
 				zIndex: '30',
-				width: isScrolled ? '70%' : 'calc(100% - 16px)',
+				width: isScrolled ? '80%' : 'calc(100% - 16px)',
 				height: isScrolled ? '55px' : '75px',
 				position: 'fixed',
 				display: 'flex',
