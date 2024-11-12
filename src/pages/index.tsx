@@ -1,9 +1,9 @@
 import Banner from '@components/Banner';
-import Hero1 from '@components/Homepage/DesignMadeEasy';
-import Hero2 from '@components/Homepage/FairPrices';
-import Hero3 from '@components/Homepage/OurDevelopers';
-import Hero4 from '@components/Homepage/Trusted';
 import Route from '@components/Meta/Route';
+import Hero1 from '@components/PageComponents/Homepage/DesignMadeEasy';
+import Hero2 from '@components/PageComponents/Homepage/FairPrices';
+import Hero3 from '@components/PageComponents/Homepage/OurDevelopers';
+import Hero4 from '@components/PageComponents/Homepage/Trusted';
 import { useEffect, useState } from 'react';
 
 export default (PageConfig: { Location: string; Description?: string }) => {
@@ -62,8 +62,11 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					paddingLeft: '15%',
 					paddingRight: '15%',
 				}}>
-				<h1 style={{ margin: '0' }}>There's nothing more to see here...</h1>
-				<h2 style={{ margin: '0' }}>Well, there is technically, it's a form to get a quote!</h2>
+				<h1 style={{ margin: '0' }}>You could have your picture here!</h1>
+				<h2 style={{ margin: '0' }}>
+					If you feel like you could be a productive member here at the HotBeans Web
+					Development Team, why not try applying?
+				</h2>
 				<br />
 				<br />
 				<br />
@@ -71,7 +74,7 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					<button
 						style={{ width: '350px' }}
 						className='inverted-button blurple-button-border'>
-						Get a Website Quote Today!
+						To Careers
 					</button>
 				</div>
 			</div>

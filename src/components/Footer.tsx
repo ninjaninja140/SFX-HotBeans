@@ -4,17 +4,9 @@ import KeyLinks from '@configuration/FooterKey.json';
 import Socials from '@configuration/FooterSocials.json';
 import React from 'react';
 import { IconType } from 'react-icons';
-import {
-	IoGlobeOutline,
-	IoLogoDocker,
-	IoLogoFacebook,
-	IoLogoGithub,
-	IoLogoLinkedin,
-	IoLogoNpm,
-	IoLogoTwitter,
-	IoMail,
-} from 'react-icons/io5';
-import { PiCoffeeBeanFill } from 'react-icons/pi';
+import { BiLogoGmail } from 'react-icons/bi';
+import { IoGlobeOutline, IoLogoDocker, IoLogoFacebook, IoLogoGithub, IoLogoLinkedin, IoLogoNpm } from 'react-icons/io5';
+import { PiCoffeeBeanFill, PiXLogo } from 'react-icons/pi';
 import { getDomainWithoutSuffix } from 'tldts';
 
 interface HeaderProps {
@@ -35,10 +27,10 @@ interface FooterProps {
 }
 
 const Definitions: Record<string, IconType> = {
-	'icon-twitter': IoLogoTwitter,
-	'icon-mailto': IoMail,
+	'icon-twitter': PiXLogo,
+	'icon-mailto': BiLogoGmail,
 	'icon-linkedin': IoLogoLinkedin,
-	'icon-x': IoLogoTwitter,
+	'icon-x': PiXLogo,
 	'icon-facebook': IoLogoFacebook,
 	'icon-github': IoLogoGithub,
 	'icon-docker': IoLogoDocker,
@@ -154,7 +146,7 @@ export default () => {
 							flex: '1',
 							marginTop: '0',
 							paddingTop: '0',
-							paddingLeft: '0',
+							paddingLeft: '25%',
 							marginLeft: '0',
 							width: '100%',
 							height: '100%',
