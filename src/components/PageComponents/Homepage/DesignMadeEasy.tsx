@@ -11,7 +11,7 @@ export default () => {
 			<div
 				style={{
 					...defaults,
-					flex: '2',
+					flex: '2.5',
 					paddingLeft: '15%',
 					justifyContent: 'flex-end',
 					alignItems: 'center',
@@ -37,7 +37,7 @@ export default () => {
 				style={{
 					...defaults,
 					paddingRight: '15%',
-					paddingLeft: '15%',
+					paddingLeft: '10%',
 					justifyContent: 'flex-start',
 					alignItems: 'left',
 					textAlign: 'left',
@@ -51,5 +51,4 @@ export default () => {
 		</div>
 	);
 };
-
 

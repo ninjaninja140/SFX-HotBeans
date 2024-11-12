@@ -62,11 +62,8 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					paddingLeft: '15%',
 					paddingRight: '15%',
 				}}>
-				<h1 style={{ margin: '0' }}>You could have your picture here!</h1>
-				<h2 style={{ margin: '0' }}>
-					If you feel like you could be a productive member here at the HotBeans Web
-					Development Team, why not try applying?
-				</h2>
+				<h1 style={{ margin: '0' }}>There's nothing more to see here...</h1>
+				<h2 style={{ margin: '0' }}>Well, there is technically, it's a form to get a quote!</h2>
 				<br />
 				<br />
 				<br />
@@ -74,7 +71,7 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					<button
 						style={{ width: '350px' }}
 						className='inverted-button blurple-button-border'>
-						To Careers
+						Get a Website Quote Today!
 					</button>
 				</div>
 			</div>

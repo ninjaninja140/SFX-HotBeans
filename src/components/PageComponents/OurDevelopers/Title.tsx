@@ -1,4 +1,4 @@
-import { FaHandshakeSimple } from 'react-icons/fa6';
+import { IoIdCardOutline } from 'react-icons/io5';
 
 export default () => {
 	const defaults: React.CSSProperties = {
@@ -10,43 +10,40 @@ export default () => {
 			<div
 				style={{
 					...defaults,
+					flex: '2.5',
 					paddingLeft: '15%',
 					justifyContent: 'flex-end',
 					alignItems: 'center',
 					justifyItems: 'center',
-					textAlign: 'left',
-				}}>
-				<FaHandshakeSimple
-					className='icon-3d-left'
-					fill='#5865f2'
-					style={{ height: '100%', width: '100%' }}
-				/>
-			</div>
-			<div
-				style={{
-					...defaults,
-					flex: '2',
-					paddingRight: '15%',
-					paddingLeft: '15%',
-					justifyContent: 'flex-start',
-					alignItems: 'left',
 					alignSelf: 'center',
 					textAlign: 'left',
 				}}>
 				<h1>Our Developers at HotBeans</h1>
 				<p>
-					In our past, HotBeans Website Developers have collaborated with many mainstream
-					media, platforms and devops companies to develop and design spectacular
-					websites. Recently working with Docker in recent times designing their new
-					website has boosted our companies trust levels, bringing in many large names,
-					such as, Roblox, Discord and many other big names in media.
+					Here at HotBeans, we take on many professional website designers, developers and
+					design & development advisors to make sure our clients can work alongside us to
+					produce an efficient, smart and high-quality website.
 					<br />
-					<br />
-					Being as trustworthy as possible at HotBeans is a priority in our team, we aim
-					to keep communication between our designers, advisors and developers with you as
-					transparent as possible so the worry of having details kept from you like hidden
-					charges and cut corners is removed.
+					We employ people from all backgrounds, ethnically and skill based, we do not
+					believe that qualifications defines the skill of an employee, and that's our
+					special trick behind how our website usually end up the best.
 				</p>
+			</div>
+			<div
+				style={{
+					...defaults,
+					paddingRight: '15%',
+					paddingLeft: '10%',
+					justifyContent: 'flex-start',
+					alignItems: 'left',
+					textAlign: 'left',
+				}}>
+				<IoIdCardOutline
+					className='icon-3d'
+					fill='#5865f2'
+					color='#5865f2'
+					style={{ height: '100%', width: '100%' }}
+				/>
 			</div>
 		</div>
 	);

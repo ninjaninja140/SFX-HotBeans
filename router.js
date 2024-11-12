@@ -79,7 +79,7 @@ function generateRoutes() {
 		routePath += params;
 
 		routes.push({
-			path: routePath,
+			path: routePath.toLowerCase(),
 			element: `<${componentName} Location='${locationName}' Description={${description}} />`,
 			index: isIndexFile,
 		});

@@ -25,8 +25,8 @@ export default () => {
 			<div
 				style={{
 					...defaults,
-					flex: '2',
-					paddingRight: '15%',
+					flex: '2.5',
+					paddingRight: '10%',
 					paddingLeft: '15%',
 					justifyContent: 'flex-start',
 					alignItems: 'left',
