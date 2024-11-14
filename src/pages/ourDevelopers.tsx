@@ -1,3 +1,4 @@
+import EmployeeBadge from '@components/EmployeeBadge';
 import Route from '@components/Meta/Route';
 import Hero from '@components/PageComponents/OurDevelopers/Title';
 import { useEffect, useState } from 'react';
@@ -37,6 +38,7 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 				<br />
 				<br />
 				<br />
+				<EmployeeBadge />
 				<div style={{ display: 'flex' }}>
 					<button
 						style={{ width: '350px' }}
