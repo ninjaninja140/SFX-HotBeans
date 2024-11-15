@@ -30,6 +30,8 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					paddingLeft: '15%',
 					paddingRight: '15%',
 				}}>
+				<EmployeeBadge />
+
 				<h1 style={{ margin: '0' }}>You could have your picture here!</h1>
 				<h2 style={{ margin: '0' }}>
 					If you feel like you could be a productive member here at the HotBeans Web
@@ -38,7 +40,6 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 				<br />
 				<br />
 				<br />
-				<EmployeeBadge />
 				<div style={{ display: 'flex' }}>
 					<button
 						style={{ width: '350px' }}

@@ -2,7 +2,26 @@
 	{
 		"name": "Garry",
 		"surname": "Minendes",
-		"About": "I'm Garry."
+		"title": "Managing Director",
+		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
+	},
+	{
+		"name": "John",
+		"surname": "Minendes",
+		"title": "Managing Director",
+		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
+	},
+	{
+		"name": "Jiles",
+		"surname": "Minendes",
+		"title": "Managing Director",
+		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
+	},
+	{
+		"name": "James",
+		"surname": "Minendes",
+		"title": "Managing Director",
+		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
 	}
 ]
 
