@@ -19,6 +19,7 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		<div>
 			<Route Location={PageConfig.Location} Description={PageConfig.Description} />
 			<Hero />
+			<EmployeeBadge />
 			<div
 				style={{
 					height: '60vh',
@@ -30,8 +31,6 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					paddingLeft: '15%',
 					paddingRight: '15%',
 				}}>
-				<EmployeeBadge />
-
 				<h1 style={{ margin: '0' }}>You could have your picture here!</h1>
 				<h2 style={{ margin: '0' }}>
 					If you feel like you could be a productive member here at the HotBeans Web

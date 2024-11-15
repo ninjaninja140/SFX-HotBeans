@@ -1,27 +1,57 @@
 [
 	{
-		"name": "Garry",
-		"surname": "Minendes",
-		"title": "Managing Director",
-		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
+		"name": "Eden",
+		"surname": "Kneale",
+		"title": "Managing Director and Development Lead",
+		"About": "Hey there! My name is Eden and I manage operations behind HotBeans Website Development! I lead the backend development department of HotBeans, I make sure things are in check, code is working smoothly and everything run smoothly as it should be."
 	},
 	{
-		"name": "John",
-		"surname": "Minendes",
-		"title": "Managing Director",
-		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
+		"name": "Garry",
+		"surname": "Smith",
+		"title": "Vice Managing Director and Design Lead",
+		"About": "I'm Garry, I manage the design department here at HotBeans Website Development. I assist Eden with involvement in the design, developing and advisory departments despite his lead at our Backend Development department and mine on Design."
+	},
+	{
+		"name": "Kyle",
+		"surname": "Briggs",
+		"title": "Advisory Lead",
+		"About": "Hi there, my name is Kyle, I manage the two sub-departments under our Advisory department, Development Advisory and Design Advisory, I make sure our clients receive information on weather ideas they conjure up are possible to be coded and designed."
+	},
+	{
+		"name": "Simon",
+		"surname": "Preston",
+		"title": "Finance Lead",
+		"About": "The man with the money, I'm Simon, I manage the ins and outs of our company sales and spends, I make sure the bills are paid around here at HotBeans. I make sure our client's money is safe and secure before, whilst and during their development process."
 	},
 	{
 		"name": "Jiles",
-		"surname": "Minendes",
-		"title": "Managing Director",
-		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
+		"surname": "Mann",
+		"title": "IT Lead & CyberSecurity Manager",
+		"About": "I'm Jiles. I manage our IT department here at HotBeans, with assistance from Eden, we run a tight ship and make sure all out computers, software and systems are up-to-date, fast, secure and working. I also manage our CyberSecurity department, keeping everyone in the company safe from the threats of the depths of the World Wide Web."
+	},
+	{
+		"name": "John",
+		"surname": "Patterson",
+		"title": "Dedicated CyberSecurity Lead",
+		"About": "Working alongside Jiles, I lead the department of CyberSecurity here at HotBeans. I'm John and I keep our company safe from internet threats at the office, on the go from laptops and phones and from home from desktops, laptops and more."
+	},
+	{
+		"name": "Larry",
+		"surname": "Bennett",
+		"title": "Media and Socials Director",
+		"About": "Hello there, I'm Larry, the man behind all the socials here at HotBeans, emails, Twitters, LinkedIns and more. I manage our media alongside our Staffing Lead, making sure things are where they should be on our socials, effective and informative."
+	},
+	{
+		"name": "Reed",
+		"surname": "Harrington",
+		"title": "Staffing Manager",
+		"About": "Managing our staffing, trainings and applications at HotBeans, I'm Reed. Bringing in the newbies and removing slackers, I manage our employment process here at HotBeans, making sure our company is in tip-top shape all the time, productive and working."
 	},
 	{
 		"name": "James",
-		"surname": "Minendes",
-		"title": "Managing Director",
-		"About": "Hey there! My name is Garry and I manage operations behind HotBeans Website Development! I also lead the communications department, I make sure all our clients stay well informed while their websites are in development."
+		"surname": "Miller",
+		"title": "Concerns Department",
+		"About": "Managing our staff wellbeing, morale and concerns within HotBeans, I make sure everyone is a-okay and comfortable in their working environment, sometimes putting in provisions to make sure all our employees are catered for in their own bespoke way."
 	}
 ]
 

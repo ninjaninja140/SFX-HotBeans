@@ -26,9 +26,21 @@ export default () => {
 			style={{
 				height: 'auto',
 				display: 'grid',
-				gridAutoFlow: 'column',
-				gridTemplateRows: 'auto auto',
-				gridTemplateColumns: 'repeat(3, 330px)',
+				gridAutoFlow: 'dense',
+				gridTemplateRows: 'auto',
+				justifyContent: 'center',
+				alignItems: 'center',
+				justifyItems: 'center',
+				alignContent: 'center',
+				textAlign: 'center',
+				paddingLeft: '15%',
+				paddingRight: '15%',
+				gridTemplateColumns: 'repeat(4, minmax(auto, 1fr))',
+				margin: '0 auto',
+				marginTop: '10px',
+				marginBottom: '140px',
+				gap: '25px',
+				width: 'calc(100% - 30%)',
 			}}>
 			{Staff.map((StaffMember) => (
 				<div
@@ -43,7 +55,9 @@ export default () => {
 						textAlign: 'left',
 						justifyContent: 'left',
 						padding: '20px 25px',
-						margin: '5px 5px',
+						minWidth: '280px',
+						maxWidth: '280px',
+						minHeight: '420px',
 					}}>
 					<div
 						style={{
@@ -62,9 +76,14 @@ export default () => {
 						}}>
 						{StaffMember.Name}
 					</h1>
-					<i style={{ fontSize: '15px' }}>{StaffMember.Title} at HotBeans WebDev</i>
+					<i style={{ fontSize: '15px' }}>{StaffMember.Title}</i>
 					<p style={{ fontSize: '16px' }}>{StaffMember.Description}</p>
-					<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'flex-end',
+							flexDirection: 'column',
+						}}>
 						<img
 							src={StaffMember.Image}
 							alt={StaffMember.Name}
@@ -73,6 +92,8 @@ export default () => {
 								height: '100px',
 								width: '100px',
 								objectFit: 'cover',
+								alignSelf: 'flex-end',
+								marginTop: 'auto',
 							}}
 						/>
 					</div>
