@@ -18,10 +18,10 @@
 		"About": "Hi there, my name is Kyle, I manage the two sub-departments under our Advisory department, Development Advisory and Design Advisory, I make sure our clients receive information on weather ideas they conjure up are possible to be coded and designed."
 	},
 	{
-		"name": "Simon",
-		"surname": "Preston",
-		"title": "Finance Lead",
-		"About": "The man with the money, I'm Simon, I manage the ins and outs of our company sales and spends, I make sure the bills are paid around here at HotBeans. I make sure our client's money is safe and secure before, whilst and during their development process."
+		"name": "Archie",
+		"surname": "Wentworth",
+		"title": "Finance Lead and Investors Advisory",
+		"About": "The man with the money, I'm Archie, I manage the ins and outs of our company sales and spends, I make sure the bills are paid around here at HotBeans. I make sure our client's money is safe and secure before, whilst and during their development process."
 	},
 	{
 		"name": "Jiles",
@@ -52,6 +52,42 @@
 		"surname": "Miller",
 		"title": "Concerns Department",
 		"About": "Managing our staff wellbeing, morale and concerns within HotBeans, I make sure everyone is a-okay and comfortable in their working environment, sometimes putting in provisions to make sure all our employees are catered for in their own bespoke way."
+	},
+	{
+		"name": "Mia",
+		"surname": "Adair",
+		"title": "Provisions Department & Board of Directors",
+		"About": "Hey there! My name is Mia, I help with making sure all our employees here at HotBeans receive the help they need, weather it be in-office counselling, or putting provisions in place for an employee who might require some of that extra help! I also assist with large company meetings and decisions which help innovate here at HotBeans!"
+	},
+	{
+		"name": "Harry",
+		"surname": "Swizzle",
+		"title": "Customer Support Manager",
+		"About": "Hi, my name is Harry! I work alongside Rose here at HotBeans to make sure our customer service team is in tip-top shape, we work around the clock making sure every support call or ticket is answered or is at least in the process of being worked on, you can thank us for the 24/7 high quality customer support!"
+	},
+	{
+		"name": "Rose",
+		"surname": "Rhodes",
+		"title": "Customer Support Department Lead & Board of Directors",
+		"About": "Hello! My name is Rose, and I lead the Customer Support department here at HotBeans Website Development, me and my manager believe the succession, professional image and high trust ratings come from how well a support team is, so we make sure to provide a 24/7 high-quality customer service team from all around the world to help our customers!"
+	},
+	{
+		"name": "Zara",
+		"surname": "Walker",
+		"title": "Hosting Department Lead & Board of Directors",
+		"About": "Making sure all the company servers are up, whilst also making sure our website hosting services are running smoothly and managing hosting package prices here at the company. Hello, I'm Zara, I make sure all hosting is in check, alongside managing operations of hosting for our clients."
+	},
+	{
+		"name": "Lewis",
+		"surname": "Evans",
+		"title": "3D Elements Department & Board of Directors",
+		"About": "Curating the perfect, slick and bespoke 3D elements for our designers, me and my department are always up for the task of designing 3D elements for our client's site, hey there, I'm Lewis, me and my department design the 3D elements on sites by HotBeans."
+	},
+	{
+		"name": "Joshua",
+		"surname": "Hemsworth",
+		"title": "Projects Manager & Board of Directors",
+		"About": "Making sure our developers are working and making sure our website developers are always on a roll, working away at our client's website alongside the designers and advisors, I'm Josh. I make sure Development keeps rolling around here."
 	}
 ]
 

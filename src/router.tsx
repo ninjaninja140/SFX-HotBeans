@@ -1,21 +1,24 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Index from '@pages/index';
-import OurDevelopers from '@pages/ourDevelopers';
+import OurDevelopers from '@pages/ourStaff';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const router = createBrowserRouter([{
-  path: '/',
-  children: [
-  {
-    "path": "/",
-    "element": <Index Location='Index' Description={undefined} />,
-    "index": true
-  },
-  {
-    "path": "/ourdevelopers",
-    "element": <OurDevelopers Location='OurDevelopers' Description={undefined} />,
-    "index": false
-  }
-]
-}]);
+const router = createBrowserRouter([
+	{
+		path: '/',
+		children: [
+			{
+				path: '/',
+				element: <Index Location='Index' Description={undefined} />,
+				index: true,
+			},
+			{
+				path: '/ourstaff',
+				element: <OurDevelopers Location='OurStaff' Description={undefined} />,
+				index: false,
+			},
+		],
+	},
+]);
 
-export default () => <RouterProvider router={router} />
+export default () => <RouterProvider router={router} />;
+

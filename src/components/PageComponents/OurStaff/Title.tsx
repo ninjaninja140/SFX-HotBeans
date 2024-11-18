@@ -18,15 +18,18 @@ export default () => {
 					alignSelf: 'center',
 					textAlign: 'left',
 				}}>
-				<h1>Our Developers at HotBeans</h1>
+				<h1>Our Staff at HotBeans</h1>
 				<p>
 					Here at HotBeans, we take on many professional website designers, developers and
-					design & development advisors to make sure our clients can work alongside us to
-					produce an efficient, smart and high-quality website.
+					design, development advisors, management and more to make sure our clients can
+					work alongside us to produce an efficient, smart and high-quality website whilst
+					being able to uphold a pristine company image and support line between us,
+					clients and potential clients.
 					<br />
-					We employ people from all backgrounds, ethnically and skill based, we do not
-					believe that qualifications defines the skill of an employee, and that's our
-					special trick behind how our website usually end up the best.
+					We employ people from all backgrounds ethnically and skill based, we do not
+					believe that qualifications or skin tone defines the skill, work power, brains
+					and person of an employee, and that's our special trick behind how us and our
+					products always come out on top.
 				</p>
 			</div>
 			<div

@@ -25,7 +25,7 @@ export default () => {
 			}}>
 			<div className='banner-content'>
 				{images.concat(images).map((src: string, key: number) => (
-					<img src={src} key={key} />
+					<img src={src} key={key} color='#ffffff' />
 				))}
 			</div>
 		</div>

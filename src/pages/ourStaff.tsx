@@ -1,25 +1,15 @@
 import EmployeeBadge from '@components/EmployeeBadge';
 import Route from '@components/Meta/Route';
-import Hero from '@components/PageComponents/OurDevelopers/Title';
-import { useEffect, useState } from 'react';
+import Hero from '@components/PageComponents/OurStaff/Title';
+import Section from '@components/Section';
 
 export default (PageConfig: { Location: string; Description?: string }) => {
-	const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
 	return (
 		<div>
 			<Route Location={PageConfig.Location} Description={PageConfig.Description} />
 			<Hero />
 			<EmployeeBadge />
+			<Section title='Any'> </Section>
 			<div
 				style={{
 					height: '60vh',
