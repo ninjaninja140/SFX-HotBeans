@@ -15,12 +15,12 @@ export default (props: Props) => {
 				justifyItems: 'center',
 				alignContent: 'center',
 				textAlign: 'center',
-				paddingLeft: '10%',
-				paddingRight: '10%',
+				paddingLeft: '15%',
+				paddingRight: '15%',
 				margin: '0 auto',
 				marginTop: '10px',
 				marginBottom: '140px',
-				width: 'calc(100% - 20%)',
+				width: 'calc(100% - 30%)',
 			}}>
 			<div
 				style={{

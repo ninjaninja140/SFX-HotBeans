@@ -46,7 +46,7 @@ export default () => {
 				margin: '0 auto',
 				marginTop: '10px',
 				marginBottom: '140px',
-				gap: '20px',
+				gap: '20px 20px',
 				width: 'calc(100% - 20%)',
 			}}>
 			{Staff.map((StaffMember) => (
@@ -62,15 +62,15 @@ export default () => {
 						textAlign: 'left',
 						justifyContent: 'left',
 						padding: '20px 25px',
-						maxWidth: '350px',
+						maxWidth: '450px',
 						minWidth: '250px',
-						minHeight: '420px',
+						minHeight: '400px',
 					}}>
 					<div
 						style={{
-							width: '40%',
+							width: '30%',
 							margin: '0 auto',
-							height: '20px',
+							height: '25px',
 							backgroundColor: 'white',
 							borderRadius: '9999px',
 						}}></div>
@@ -96,8 +96,8 @@ export default () => {
 							alt={StaffMember.Name}
 							style={{
 								borderRadius: '100%',
-								height: '100px',
-								width: '100px',
+								height: '120px',
+								width: '120px',
 								objectFit: 'cover',
 								alignSelf: 'flex-end',
 								marginTop: 'auto',

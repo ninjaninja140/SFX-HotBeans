@@ -59,10 +59,7 @@ export default () => {
 				<div
 					style={{
 						flex: '1',
-						padding: '5%',
-						paddingTop: '10%',
-						paddingBottom: '10%',
-						paddingLeft: '10%',
+						padding: '7%',
 						justifyContent: 'flex-end',
 						alignItems: 'center',
 						justifyItems: 'center',
@@ -74,7 +71,7 @@ export default () => {
 					<div
 						style={{
 							flex: '1',
-							padding: '25%',
+							padding: '20%',
 							paddingBottom: '5%',
 							justifyContent: 'flex-end',
 							alignItems: 'center',

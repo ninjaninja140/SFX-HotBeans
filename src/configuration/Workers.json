@@ -88,6 +88,25 @@
 		"surname": "Hemsworth",
 		"title": "Projects Manager & Board of Directors",
 		"About": "Making sure our developers are working and making sure our website developers are always on a roll, working away at our client's website alongside the designers and advisors, I'm Josh. I make sure Development keeps rolling around here."
+	},
+
+	{
+		"name": "Thomas",
+		"surname": "Carson",
+		"title": "Careers Director & Board of Directors",
+		"About": "Bringing in the new people, writing the application forms, and managing my sub departments, I'm Thomas, I make sure there's never an empty position here at HotBeans, I look for and bring in the best to keep the company turning!"
+	},
+	{
+		"name": "Daniel",
+		"surname": "\"The Bad Cop\"",
+		"title": "Programmes Director & Board of Directors",
+		"About": "Curating the perfect, slick and bespoke 3D elements for our designers, me and my department are always up for the task of designing 3D elements for our client's site, hey there, I'm Lewis, me and my department design the 3D elements on sites by HotBeans."
+	},
+	{
+		"name": "Thomas",
+		"surname": "Autin-Crowe",
+		"title": "Projects Manager & Board of Directors",
+		"About": "Making sure our developers are working and making sure our website developers are always on a roll, working away at our client's website alongside the designers and advisors, I'm Josh. I make sure Development keeps rolling around here."
 	}
 ]
 

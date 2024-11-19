@@ -9,7 +9,16 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 			<Route Location={PageConfig.Location} Description={PageConfig.Description} />
 			<Hero />
 			<EmployeeBadge />
-			<Section title='Any'> </Section>
+			<Section title='Our Developers'>
+				Here at HotBeans Website Development, we hire a range of developers, Backend Developers,
+				FrontEnd Developers, Designers and 3D Component Modellers. These people who make up our
+				varying Developer teams give HotBeans its spectacular title, recognition and popularity.
+				<br />
+				<br />
+				We employ people of any background and any qualifications, to us, your background and
+				qualifications do not matter, we employ people based on skill. We believe that ethnicity
+				and qualifications define a good developer, but rather their skill and what they can do.
+			</Section>
 			<div
 				style={{
 					height: '60vh',

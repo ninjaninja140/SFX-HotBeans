@@ -12,13 +12,9 @@
 				"target": "_blank"
 			},
 			{
-				"label": "Contact Us",
+				"label": "Contact Us (Open 24/7!)",
 				"href": "/contact",
 				"target": "_blank"
-			},
-			{
-				"label": "Careers Portal",
-				"href": "/portal/careers"
 			},
 			{
 				"label": "Programs Portal",
@@ -31,10 +27,6 @@
 			{
 				"label": "Our Partners",
 				"href": "/portal/courses"
-			},
-			{
-				"label": "Pricing",
-				"href": "/pricing"
 			}
 		]
 	},
@@ -70,16 +62,6 @@
 				"label": "Our \"Fair Pricing\" Policy",
 				"href": "https://bracketed.co.uk/redirects/discord",
 				"target": "_blank"
-			},
-			{
-				"label": "Course Offers",
-				"href": "https://bracketed.co.uk/redirects/discord",
-				"target": "_blank"
-			},
-			{
-				"label": "Training Offers",
-				"href": "https://bracketed.co.uk/redirects/discord",
-				"target": "_blank"
 			}
 		]
 	},
@@ -107,23 +89,13 @@
 				"target": "_blank"
 			},
 			{
-				"label": "Developer Courses (We offer!)",
+				"label": "Developer Courses",
 				"href": "/courses/developers",
 				"target": "_blank"
 			},
 			{
-				"label": "Design Courses (We offer!)",
+				"label": "Design Courses",
 				"href": "/courses/designers",
-				"target": "_blank"
-			},
-			{
-				"label": "All Courses",
-				"href": "/courses",
-				"target": "_blank"
-			},
-			{
-				"label": "All Programs",
-				"href": "/programs",
 				"target": "_blank"
 			}
 		]

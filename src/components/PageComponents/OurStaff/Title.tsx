@@ -12,13 +12,13 @@ export default () => {
 					...defaults,
 					flex: '2.5',
 					paddingLeft: '15%',
-					justifyContent: 'flex-end',
-					alignItems: 'center',
+					justifyContent: 'flex-start',
+					alignItems: 'left',
 					justifyItems: 'center',
 					alignSelf: 'center',
 					textAlign: 'left',
 				}}>
-				<h1>Our Staff at HotBeans</h1>
+				<h1>The Spectacular people who make up HotBeans</h1>
 				<p>
 					Here at HotBeans, we take on many professional website designers, developers and
 					design, development advisors, management and more to make sure our clients can
