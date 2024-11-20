@@ -2,6 +2,7 @@ import EmployeeBadge from '@components/EmployeeBadge';
 import Route from '@components/Meta/Route';
 import Hero from '@components/PageComponents/OurStaff/Title';
 import Section from '@components/Section';
+import Link from '@components/Text/Link';
 
 export default (PageConfig: { Location: string; Description?: string }) => {
 	return (
@@ -18,6 +19,14 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 				We employ people of any background and any qualifications, to us, your background and
 				qualifications do not matter, we employ people based on skill. We believe that ethnicity
 				and qualifications define a good developer, but rather their skill and what they can do.
+			</Section>
+			<Section title='Our Courses'>
+				Available at our{' '}
+				<Link href='/courses' icon={true} underline={true}>
+					Courses
+				</Link>{' '}
+				page, we have a range of courses that can help and train young developers to be just as
+				good as our professionals are here at HotBeans,
 			</Section>
 			<div
 				style={{
@@ -49,4 +58,3 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		</div>
 	);
 };
-

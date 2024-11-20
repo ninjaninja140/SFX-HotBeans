@@ -19,7 +19,7 @@ export default (props: Props) => {
 				paddingRight: '15%',
 				margin: '0 auto',
 				marginTop: '10px',
-				marginBottom: '140px',
+				marginBottom: '40px',
 				width: 'calc(100% - 30%)',
 			}}>
 			<div
@@ -49,4 +49,3 @@ export default (props: Props) => {
 		</div>
 	);
 };
-
