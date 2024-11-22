@@ -20,13 +20,26 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 				qualifications do not matter, we employ people based on skill. We believe that ethnicity
 				and qualifications define a good developer, but rather their skill and what they can do.
 			</Section>
-			<Section title='Our Courses'>
+			<Section title='Our Courses and Programs'>
 				Available at our{' '}
-				<Link href='/courses' icon={true} underline={true}>
+				<Link href='/courses' icon underline>
 					Courses
 				</Link>{' '}
-				page, we have a range of courses that can help and train young developers to be just as
-				good as our professionals are here at HotBeans,
+				and
+				<Link href='/programs' icon underline>
+					Programs
+				</Link>{' '}
+				pages, we have a range of courses and programmes that can help, employ and train young
+				developers to be just as good as our professionals are here at HotBeans, perhaps also
+				have the chance to meet them and work alongside then at your very own spot in the
+				HotBeans Website Development team!
+				<br />
+				<br />
+				<i style={{ fontSize: '16px' }}>Why do you offer courses?</i> We don't, at HotBeans we
+				have a dedicated department towards finding and trial-running the best design and
+				development courses so you can be just as good and if not better then our Developers
+				here, so you can be offered a place on our team by the end of your course if you
+				couldn't meet our requirements at first.
 			</Section>
 			<div
 				style={{
@@ -58,3 +71,4 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		</div>
 	);
 };
+

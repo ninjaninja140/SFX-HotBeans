@@ -31,36 +31,31 @@
 		]
 	},
 	{
-		"title": "Company",
+		"title": "Company & Legal",
 		"content": [
 			{
 				"label": "Companies House",
-				"href": "https://bracketed.co.uk/redirects/twitter",
-				"target": "_blank"
-			},
-			{
-				"label": "Legal",
-				"href": "https://bracketed.co.uk/redirects/twitter",
+				"href": "https://find-and-update.company-information.service.gov.uk/company/08778322",
 				"target": "_blank"
 			},
 			{
 				"label": "Terms of Service",
-				"href": "https://bracketed.co.uk/redirects/github",
+				"href": "https://jadevelopment.co.uk/pages/terms-of-service",
 				"target": "_blank"
 			},
 			{
 				"label": "Privacy Policy",
-				"href": "https://bracketed.co.uk/redirects/discord",
+				"href": "https://jadevelopment.co.uk/pages/privacy-policy",
 				"target": "_blank"
 			},
 			{
 				"label": "Right of Removal",
-				"href": "https://bracketed.co.uk/redirects/discord",
+				"href": "https://www.gov.uk/government/publications/deletion-of-data",
 				"target": "_blank"
 			},
 			{
 				"label": "Our \"Fair Pricing\" Policy",
-				"href": "https://bracketed.co.uk/redirects/discord",
+				"href": "https://www.fca.org.uk/publication/discussion/dp18-09.pdf",
 				"target": "_blank"
 			}
 		]
