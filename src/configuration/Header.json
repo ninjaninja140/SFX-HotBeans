@@ -1,11 +1,11 @@
 [
 	{
 		"title": "About us",
-		"href": "/"
+		"href": "/about"
 	},
 	{
 		"title": "Our Works",
-		"href": "/"
+		"href": "/ourworks"
 	},
 	{
 		"title": "Our Staff",
@@ -13,15 +13,15 @@
 	},
 	{
 		"title": "Pricing",
-		"href": "/"
+		"href": "/pricing"
 	},
 	{
 		"title": "Careers",
-		"href": "/"
+		"href": "/careers"
 	},
 	{
 		"title": "Contact us",
-		"href": "/"
+		"href": "/contact"
 	}
 ]
 
