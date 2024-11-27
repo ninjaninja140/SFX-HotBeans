@@ -1,0 +1,199 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
+import prettier from 'prettier';
+import { RouteObject } from 'react-router-dom';
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const pagesDirectory = path.join(__dirname, 'src/pages');
+const srcDirectory = path.join(__dirname, 'src');
+const configDirectory = path.join(__dirname, 'src/configuration');
+
+const routes: Array<RouteObject> = [];
+const sitemap: Array<SitemapObject> = [];
+
+const PrettierConfig: prettier.Options = {
+	parser: 'typescript',
+	arrowParens: 'always',
+	bracketSameLine: true,
+	bracketSpacing: true,
+	endOfLine: 'crlf',
+	htmlWhitespaceSensitivity: 'css',
+	jsxSingleQuote: true,
+	printWidth: 120,
+	proseWrap: 'preserve',
+	quoteProps: 'as-needed',
+	semi: true,
+	tabWidth: 8,
+	trailingComma: 'es5',
+	useTabs: true,
+};
+
+interface SitemapObject {
+	description: string;
+	label: string;
+	href: string;
+}
+
+function capitalize(str: string) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function formatName(str: string) {
+	const formatted = str.replace(/^(\d+)(.*)/, (_, num, rest) => `${rest}${num}`);
+	return formatted.replace(/[-_\/](\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
+}
+
+function getPageFiles(dir: string) {
+	const dirents = fs.readdirSync(dir, { withFileTypes: true });
+	let files: Array<string> = [];
+
+	for (const dirent of dirents) {
+		const fullPath: string = path.resolve(dir, dirent.name);
+
+		if (dirent.isDirectory()) files = files.concat(getPageFiles(fullPath));
+		else if (dirent.isFile() && dirent.name.endsWith('.tsx')) files.push(fullPath);
+	}
+
+	return files;
+}
+
+const pages = getPageFiles(pagesDirectory);
+
+const indexContent = pages
+	.map((file) => {
+		const relativePath = `@pages/${path.relative(pagesDirectory, file).replace(/\\/g, '/').replace('.tsx', '')}`;
+		const fileName = path.basename(file, '.tsx');
+		const dirName = path.dirname(path.relative(pagesDirectory, file)).replace(/\\/g, '/');
+
+		const isRoot = dirName === '.';
+		const uniqueExportName = isRoot
+			? capitalize(formatName(fileName))
+			: capitalize(formatName(`${dirName}/${fileName}`));
+
+		return `import ${uniqueExportName} from '${relativePath}';`;
+	})
+	.join('\n');
+
+function readMetaFile(filePath: string) {
+	const metaFilePath = `${filePath}.meta.json`;
+	if (fs.existsSync(metaFilePath)) {
+		return JSON.parse(fs.readFileSync(metaFilePath, 'utf8'));
+	}
+	return {};
+}
+
+async function generateRoutes() {
+	try {
+		for (const page of pages) {
+			const fileName = path.basename(page, '.tsx');
+			const relativePath = `./${path.relative(pagesDirectory, page).replace(/\\/g, '/').replace('.tsx', '')}`;
+			const dirName = path.dirname(path.relative(pagesDirectory, page)).replace(/\\/g, '/');
+
+			const meta = readMetaFile(page.replace('.tsx', ''));
+			const componentName = capitalize(
+				formatName(dirName === '.' ? fileName : `${dirName}/${fileName}`)
+			);
+
+			const description = meta.description ? `'${meta.description}'` : undefined;
+			const params = meta.params ? meta.params.map((p: string) => `/:${p}`).join('/') : '';
+
+			const isIndexFile = fileName === 'index';
+			const locationName = meta.name ? meta.name : capitalize(fileName);
+			const location = meta.location ? meta.location.toLowerCase() : undefined;
+
+			const locked = meta.locked ? (meta.locked === true ? true : false) : false;
+
+			let routePath: string = location
+				? location
+				: isIndexFile
+					? dirName === '.'
+						? '/'
+						: `/${dirName}`
+					: relativePath.replace(/^\.\//, '/');
+
+			routePath += params;
+
+			routes.push({
+				path: routePath.toLowerCase(),
+				element: locked
+					? `(process.env.NODE_ENV === 'development' ? <${componentName} Location='${locationName}' Description={${description}} /> : <Unauthorised/>)`
+					: `<${componentName} Location='${locationName}' Description={${description}} />`,
+				index: isIndexFile,
+			});
+
+			const anyRoute = /\*/.test(routePath.toLowerCase());
+
+			if (!(anyRoute || locked))
+				sitemap.push({
+					href: routePath.toLowerCase(),
+					description: description
+						? description
+						: 'Design websites alongside professionals. Design with HotBeans website developers.',
+					label: locationName,
+				});
+
+			console.log(
+				`Generated Route '${locationName}' from ${fileName}.tsx with location ${routePath.toLowerCase()}`
+			);
+			if (!(anyRoute || locked))
+				console.log(`Added Route '${locationName}' from ${fileName}.tsx to Route map`);
+		}
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+(async () => {
+	console.log('Generating router & route map files...');
+
+	if (!(await generateRoutes())) {
+		console.error('There was an error while processing the site routes.');
+		process.exit(1);
+	}
+
+	const router: RouteObject = {
+		path: '/',
+		children: routes,
+	};
+
+	console.log('Formatting router file...');
+	const routerContent = await prettier.format(
+		`// Generated by Router.ts by ninjaninja140.
+
+// Dependency Imports
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Unauthorised from '@components/Unauthorised';
+
+// Page Imports
+${indexContent}
+
+// Router Object
+const router = createBrowserRouter([{
+  path: '${router.path}',
+  children: ${JSON.stringify(router.children, null, 2)
+		.replace(/"(<.*?>)"/g, '$1')
+		.replace(/"(\(.*?\))"/g, '$1')
+		.replace(/: (true|false)/g, ': $1')}
+}]);
+
+// Router Exports
+export default () => <RouterProvider router={router} />
+`,
+		PrettierConfig
+	);
+
+	console.log('Formatted router file successfully!');
+
+	fs.writeFileSync(path.join(srcDirectory, './router.tsx'), routerContent);
+	console.log('Router file generated successfully!');
+
+	console.log('Formatting route map...');
+	const sitemapContent = await prettier.format(JSON.stringify(sitemap), { ...PrettierConfig, parser: 'json' });
+	console.log('Route map formatted successfully!');
+
+	fs.writeFileSync(path.join(configDirectory, './Routes.map.json'), sitemapContent);
+	console.log('Route map file generated successfully!');
+})();

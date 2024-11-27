@@ -1,34 +1,36 @@
-const path = require('path');
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
-module.exports = {
-	typescript: {
-		enableTypeChecking: true /* (default value) */,
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export const typescript = {
+	enableTypeChecking: true,
+};
+export const webpack = {
+	alias: {
+		'@components': resolve(__dirname, 'src/components'),
+		'@pages': resolve(__dirname, 'src/pages'),
+		'@css': resolve(__dirname, 'src/css'),
+		'@content': resolve(__dirname, 'src/content'),
+		'@src': resolve(__dirname, 'src'),
+		'@configuration': resolve(__dirname, 'src/configuration'),
+		'@typings': resolve(__dirname, 'src/typings'),
 	},
-	webpack: {
-		alias: {
-			'@components': path.resolve(__dirname, 'src/components'),
-			'@pages': path.resolve(__dirname, 'src/pages'),
-			'@css': path.resolve(__dirname, 'src/css'),
-			'@content': path.resolve(__dirname, 'src/content'),
-			'@src': path.resolve(__dirname, 'src'),
-			'@configuration': path.resolve(__dirname, 'src/configuration'),
-			'@typings': path.resolve(__dirname, 'src/typings'),
-		},
-		module: {
-			rules: [
-				{
-					test: /\.svg$/,
-					use: ['@svgr/webpack'],
-				},
-			],
-		},
-		configure: (webpackConfig) => {
-			webpackConfig.resolve.fallback = {
-				...webpackConfig.resolve.fallback,
-				path: require.resolve('path-browserify'),
-				fs: require.resolve('browserify-fs'),
-			};
-			return webpackConfig;
-		},
+	module: {
+		rules: [
+			{
+				test: /\.svg$/,
+				use: ['@svgr/webpack'],
+			},
+		],
+	},
+	configure: (webpackConfig) => {
+		webpackConfig.resolve.fallback = {
+			...webpackConfig.resolve.fallback,
+			path: resolve('path-browserify'),
+			fs: resolve('browserify-fs'),
+		};
+		return webpackConfig;
 	},
 };

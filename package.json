@@ -2,8 +2,11 @@
 	"name": "@sfx/hotbeans",
 	"version": "0.1.0",
 	"private": true,
+	"type": "module",
+	"homepage": "https://hotbeans.pages.dev",
 	"dependencies": {
 		"@craco/craco": "^7.1.0",
+		"@prettier/plugin-xml": "^3.4.1",
 		"@types/webpack-env": "^1.18.5",
 		"browserify-fs": "^1.0.0",
 		"path-browserify": "^1.0.1",
@@ -16,13 +19,16 @@
 		"react-router-dom": "^6.28.0",
 		"react-scripts": "5.0.1",
 		"tldts": "^6.1.59",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.6.3",
 		"webpack": "^5.96.1",
 		"webpack-env": "^0.8.0"
 	},
 	"scripts": {
-		"start": "yarn node ./router.js && craco start",
-		"build": "yarn node ./router.js && craco build",
+		"gen-routes": "node --loader ts-node/esm ./router.ts",
+		"gen-sitemap": "node --loader ts-node/esm ./sitemap.ts",
+		"start": "yarn gen-routes && yarn gen-sitemap && craco start",
+		"build": "yarn gen-routes && yarn gen-sitemap  && craco build",
 		"test": "craco test",
 		"eject": "craco eject"
 	},

@@ -1,4 +1,10 @@
 {
+	"ts-node": {
+		"target": "ES2020",
+		"module": "CommonJS",
+		"strict": true,
+		"esModuleInterop": true
+	},
 	"compilerOptions": {
 		"target": "ES5",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -27,6 +33,5 @@
 			"@typings/*": ["typings/*"]
 		}
 	},
-	"include": ["src"]
+	"include": ["src", "router.ts"]
 }
-
