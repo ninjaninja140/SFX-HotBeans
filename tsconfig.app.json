@@ -34,8 +34,6 @@
 		},
 
 		/* Linting */
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
 		"noUncheckedSideEffectImports": true,
 
 		/* Bundler mode */
