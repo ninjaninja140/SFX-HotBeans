@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Unauthorised from "@components/Unauthorised";
 
 // Page Imports
-import Index from "@pages/index";
 import NotFound from "@pages/NotFound";
+import Index from "@pages/index";
 import OurStaff from "@pages/ourStaff";
 
 // Router Object
@@ -14,11 +14,6 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		children: [
-			{
-				path: "/",
-				element: <Index Location='Index' Description={undefined} />,
-				index: true,
-			},
 			{
 				path: "*",
 				element: (
@@ -30,6 +25,11 @@ const router = createBrowserRouter([
 					/>
 				),
 				index: false,
+			},
+			{
+				path: "/",
+				element: <Index Location='Index' Description={undefined} />,
+				index: true,
 			},
 			{
 				path: "/ourstaff",

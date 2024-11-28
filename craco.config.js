@@ -34,3 +34,4 @@ export const webpack = {
 		return webpackConfig;
 	},
 };
+
