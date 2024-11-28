@@ -52,4 +52,3 @@ export default () => (
 		<meta name='msapplication-tap-highlight' content='no' />
 	</Helmet>
 );
-

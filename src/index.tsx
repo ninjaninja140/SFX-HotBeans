@@ -1,5 +1,5 @@
 import '@css/application.css';
-import Router from '@src/router';
+import Router from '@src/Router';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -27,7 +27,7 @@ const Application = () => {
 	);
 };
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<Head />
 		<Header />
@@ -35,4 +35,3 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 		<Footer />
 	</React.StrictMode>
 );
-

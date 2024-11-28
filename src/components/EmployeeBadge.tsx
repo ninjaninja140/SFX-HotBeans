@@ -1,17 +1,18 @@
 import Workers from '@configuration/Workers.json';
 
-function importAll(r: __WebpackModuleApi.RequireContext): string[] {
-	return Array.from(new Map((r.keys().map(r) as string[]).map((path) => [path.split('/').pop(), path])).values());
+function importAll(globResult: Record<string, () => Promise<unknown>>): string[] {
+	const resolvedPaths = Object.keys(globResult);
+	return Array.from(new Map(resolvedPaths.map((path) => [path.split('/').pop(), path])).values());
 }
 
-const images: string[] = importAll(require.context('@content/Workers', false, /\.(png|jpe?g|gif)$/));
+const images: string[] = importAll(import.meta.glob('/src/content/Workers/*.{png,jpg,jpeg,gif}'));
 
 function GetImage(Name: string) {
 	if (!Workers.find((Worker) => Worker.name === Name)) return undefined;
-	const Image = images.find((Image) => Image.startsWith(`/static/media/${Name}`));
+	const Image = images.find((Image) => Image.startsWith(`/src/content/Workers/${Name}`));
 
 	if (Image) return Image;
-	else return images.find((Image) => Image.startsWith(`/static/media/Empty`));
+	else return images.find((Image) => Image.startsWith(`/src/content/Workers/Empty`));
 }
 
 function GetEmployees() {
@@ -27,6 +28,8 @@ function GetEmployees() {
 
 export default () => {
 	const Staff = GetEmployees();
+
+	console.log(images);
 
 	return (
 		<div
@@ -109,4 +112,3 @@ export default () => {
 		</div>
 	);
 };
-

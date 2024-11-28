@@ -5,8 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Unauthorised from "@components/Unauthorised";
 
 // Page Imports
-import NotFound from "@pages/NotFound";
+import HiOurStaff from "@pages/hi/ourStaff";
 import Index from "@pages/index";
+import NotFound from "@pages/NotFound";
 import OurStaff from "@pages/ourStaff";
 
 // Router Object
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
 			{
 				path: "*",
 				element: (
-					<NotFound
+					<HiOurStaff
 						Location='404 Not Found'
 						Description={
 							"The specified page could not be found on this website, maybe you typed it incorrectly?."
@@ -30,11 +31,6 @@ const router = createBrowserRouter([
 				path: "/",
 				element: <Index Location='Index' Description={undefined} />,
 				index: true,
-			},
-			{
-				path: "/ourstaff",
-				element: <OurStaff Location='OurStaff' Description={undefined} />,
-				index: false,
 			},
 		],
 	},

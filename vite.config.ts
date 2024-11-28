@@ -1,11 +1,18 @@
 import react from '@vitejs/plugin-react';
-import { fileURLToPath } from 'node:url';
-import { defineConfig } from 'vite';
+import url from 'node:url';
+import { UserConfig } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { Router } from './src/generators/routes';
+import { Sitemap } from './src/generators/sitemap';
 
 // https://vite.dev/config/
-//https://stackblitz.com/edit/vitejs-vite-2fm1ar?file=vite.config.ts&terminal=dev
-export default defineConfig({
+/** @type {import('vite').UserConfig} */
+export default {
+	server: {
+		watch: {
+			ignored: ['**/src/Router.tsx', '**/src/configuration/Routes.json', '**/public/sitemap.xml'],
+		},
+	},
 	plugins: [
 		react(),
 		nodePolyfills({
@@ -15,42 +22,49 @@ export default defineConfig({
 				fs: 'browserify-fs',
 			},
 		}),
+		{
+			name: 'build-scripts',
+			async buildStart() {
+				console.log('Base URL:', process.env.VITE_BASE_URL);
+				await new Router().run();
+				await new Sitemap().run();
+			},
+		},
 	],
 	resolve: {
 		alias: [
 			{
 				find: '@',
-				replacement: fileURLToPath(new URL('.', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('.', import.meta.url)),
 			},
 			{
 				find: '@src',
-				replacement: fileURLToPath(new URL('./src', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./src', import.meta.url)),
 			},
 			{
 				find: '@components',
-				replacement: fileURLToPath(new URL('./src/components', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./src/components', import.meta.url)),
 			},
 			{
 				find: '@pages',
-				replacement: fileURLToPath(new URL('./src/pages', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./src/pages', import.meta.url)),
 			},
 			{
 				find: '@css',
-				replacement: fileURLToPath(new URL('./src/css', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./src/css', import.meta.url)),
 			},
 			{
 				find: '@content',
-				replacement: fileURLToPath(new URL('./src/content', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./src/content', import.meta.url)),
 			},
 			{
 				find: '@configuration',
-				replacement: fileURLToPath(new URL('./src/configuration', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./src/configuration', import.meta.url)),
 			},
 			{
 				find: '@typings',
-				replacement: fileURLToPath(new URL('./src/typings', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./src/typings', import.meta.url)),
 			},
 		],
 	},
-});
-
+} satisfies UserConfig;

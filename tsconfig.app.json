@@ -1,0 +1,49 @@
+{
+	"ts-node": {
+		"target": "ES2020",
+		"module": "CommonJS",
+		"strict": true,
+		"esModuleInterop": true
+	},
+	"compilerOptions": {
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "ESNext",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+
+		"baseUrl": "src",
+		"types": ["node"],
+		"paths": {
+			"@components/*": ["components/*"],
+			"@pages/*": ["pages/*"],
+			"@css/*": ["css/*"],
+			"@content/*": ["content/*"],
+			"@src/*": ["*"],
+			"@configuration/*": ["configuration/*"],
+			"@typings/*": ["typings/*"]
+		},
+
+		/* Linting */
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noUncheckedSideEffectImports": true,
+
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"moduleDetection": "force",
+		"noEmit": true,
+		"jsx": "react-jsx"
+	},
+	"include": ["src", "src/generators/router.ts", "src/generators/sitemap.ts"]
+}

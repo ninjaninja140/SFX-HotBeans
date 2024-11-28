@@ -1,10 +1,11 @@
 import '@css/brand-slides.css';
 
-function importAll(r: __WebpackModuleApi.RequireContext): string[] {
-	return Array.from(new Map((r.keys().map(r) as string[]).map((path) => [path.split('/').pop(), path])).values());
+function importAll(globResult: Record<string, () => Promise<unknown>>): string[] {
+	const resolvedPaths = Object.keys(globResult);
+	return Array.from(new Map(resolvedPaths.map((path) => [path.split('/').pop(), path])).values());
 }
 
-const images: string[] = importAll(require.context('@content/Banners', false, /\.(png|svg)$/));
+const images: string[] = importAll(import.meta.glob('/src/content/Banners/*.{png,svg}'));
 
 export default () => {
 	return (
@@ -31,4 +32,3 @@ export default () => {
 		</div>
 	);
 };
-
