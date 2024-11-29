@@ -18,7 +18,6 @@ interface SitemapObject {
 
 const Map: Array<SitemapObject> = RouteMap;
 const XMLArray: Array<string> = [];
-const Hostname: string = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : Package.homepage;
 
 const PrettierConfig: prettier.Options = {
 	parser: 'typescript',
@@ -67,9 +66,15 @@ export class Sitemap {
 	private readonly __dirname = path.dirname(this.__filename);
 	private readonly publicDirectory = path.join(this.__dirname, '../../public');
 
-	async run() {
+	async run(port?: number) {
 		const stopwatch = new Stopwatch();
 		this.logger.info('Building new Sitemap.xml...');
+		this.logger.info(port);
+
+		const Hostname: string =
+			process.env.NODE_ENV === 'development'
+				? `http://localhost:${port ?? '5173'}`
+				: Package.homepage;
 
 		for (const Route of Map)
 			XMLArray.push(`<url>
@@ -103,3 +108,4 @@ ${XMLArray.join('\n\n')}
 		);
 	}
 }
+

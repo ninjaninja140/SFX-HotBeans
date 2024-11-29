@@ -24,14 +24,14 @@ export default {
 		}),
 		{
 			name: 'build-scripts',
-			async buildStart() {
+			async buildStart(s) {
 				await new Router().run();
-				await new Sitemap().run();
+				await new Sitemap().run(this.environment.config.server.port);
 			},
 			async hotUpdate(options) {
-				console.log(options);
+				console.log(options.server.config.server);
 				await new Router().run();
-				await new Sitemap().run();
+				await new Sitemap().run(options.server.config.server.port);
 			},
 		},
 	],
