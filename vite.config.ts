@@ -25,7 +25,11 @@ export default {
 		{
 			name: 'build-scripts',
 			async buildStart() {
-				console.log('Base URL:', process.env.VITE_BASE_URL);
+				await new Router().run();
+				await new Sitemap().run();
+			},
+			async hotUpdate(options) {
+				console.log(options);
 				await new Router().run();
 				await new Sitemap().run();
 			},
@@ -68,3 +72,4 @@ export default {
 		],
 	},
 } satisfies UserConfig;
+

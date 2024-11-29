@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom/client';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
 import Head from '@components/Meta/Head';
-import '@css/application.css';
 
 const Application = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -35,3 +34,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 		<Footer />
 	</React.StrictMode>
 );
+
