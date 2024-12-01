@@ -18,12 +18,12 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					display: 'flex',
 					gap: '100px',
 				}}>
-				<div style={{ flex: '1', textAlign: 'left' }}>
+				<div style={{ flex: '1', textAlign: 'left', containerType: 'inline-size' }}>
 					<h1
 						style={{
 							fontFamily: 'Gotham',
 							fontWeight: '800',
-							fontSize: '300px',
+							fontSize: '15vw',
 							padding: '0',
 							margin: '0',
 						}}>
