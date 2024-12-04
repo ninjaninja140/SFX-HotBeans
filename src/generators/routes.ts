@@ -259,3 +259,5 @@ export default () => <RouterProvider router={router} />
 		);
 	}
 }
+
+await new Router().run()

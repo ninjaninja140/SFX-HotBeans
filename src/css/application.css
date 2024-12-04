@@ -9,6 +9,7 @@
 @import url("./buttons.css");
 @import url("./headers.css");
 @import url("./icons.css");
+@import url("./text.css");
 
 body {
   margin: 0;
@@ -26,4 +27,19 @@ code {
 
 .no-underline {
   text-decoration: none;
+}
+
+#gradient-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(5px);
+  border-radius: 7px;
+  --gradient-color-1: #5865f2;
+  --gradient-color-2: #515de0;
+  --gradient-color-3: #4b59eb;
+  --gradient-color-4: #5865f2;
 }

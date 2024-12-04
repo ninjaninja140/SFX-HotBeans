@@ -1,6 +1,9 @@
+import Loading from '@components/Loading';
+import NotFound from '@components/NotFound';
+
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import Router from './Router';
+import { AppRoutes } from './routes';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -21,7 +24,15 @@ const Application = () => {
 
 	return (
 		<div style={{ paddingTop: isScrolled ? '63px' : '83px' }}>
-			<Router />
+			<AppRoutes
+				loadingPage={<Loading Location='Loading page...' />}
+				notFoundPage={
+					<NotFound
+						Location='404 Page not Found'
+						Description='Appears that this page may not exist, or, you might not be able to view it!'
+					/>
+				}
+			/>
 		</div>
 	);
 };
@@ -34,3 +45,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 		<Footer />
 	</React.StrictMode>
 );
+

@@ -1,7 +1,17 @@
 [
 	{
+		"href": "/notfound",
+		"description": "Design websites alongside professionals. Design with HotBeans website developers.",
+		"label": "NotFound"
+	},
+	{
 		"href": "/",
 		"description": "Design websites alongside professionals. Design with HotBeans website developers.",
 		"label": "Index"
+	},
+	{
+		"href": "/our-staff",
+		"description": "Design websites alongside professionals. Design with HotBeans website developers.",
+		"label": "Our Staff"
 	}
 ]

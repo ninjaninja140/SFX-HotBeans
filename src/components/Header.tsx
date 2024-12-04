@@ -38,9 +38,11 @@ export default () => {
 				justifyContent: 'space-between',
 				alignItems: 'center',
 				color: 'white',
-				backgroundColor: '#5865F2',
+				backgroundColor: 'rgba(76, 89, 235, 0.9)',
 				borderRadius: '8px',
 				transition: 'all 0.3s cubic-bezier(0.76, 0, 0.24, 1)',
+				backdropFilter: 'blur(5px)',
+				boxShadow: '5px 5px 10px 0 rgba(0, 0, 0, 0.2)',
 			}}>
 			<div
 				style={{
@@ -128,7 +130,7 @@ export default () => {
 						whiteSpace: 'nowrap',
 						alignItems: 'right',
 					}}>
-					<button>
+					<button className='white-button'>
 						{isScrolled ? (
 							<IoPricetag style={{ height: '100%', width: '100%' }} />
 						) : (

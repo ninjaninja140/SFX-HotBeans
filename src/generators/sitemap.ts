@@ -69,7 +69,6 @@ export class Sitemap {
 	async run(port?: number) {
 		const stopwatch = new Stopwatch();
 		this.logger.info('Building new Sitemap.xml...');
-		this.logger.info(port);
 
 		const Hostname: string =
 			process.env.NODE_ENV === 'development'
@@ -108,4 +107,6 @@ ${XMLArray.join('\n\n')}
 		);
 	}
 }
+
+await new Sitemap().run();
 

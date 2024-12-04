@@ -1,10 +1,12 @@
 import Banner from '@components/Banner';
+import { Gradient } from '@components/Gradient';
 import Route from '@components/Meta/Route';
 import Hero1 from '@components/PageComponents/Homepage/DesignMadeEasy';
 import Hero2 from '@components/PageComponents/Homepage/FairPrices';
 import Hero3 from '@components/PageComponents/Homepage/OurDevelopers';
 import Hero4 from '@components/PageComponents/Homepage/Trusted';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
+import { IoChevronDown } from 'react-icons/io5';
 
 export default (PageConfig: { Location: string; Description?: string }) => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -16,6 +18,12 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
+	useLayoutEffect(() => {
+		const gradient = new Gradient();
+		//@ts-ignore
+		gradient.initGradient('#gradient-canvas');
 	}, []);
 
 	return (
@@ -30,21 +38,28 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 					alignContent: 'center',
 					textAlign: 'center',
 				}}>
-				<h1 style={{ margin: '0' }}>HotBeans Website Development</h1>
-				<h2 style={{ margin: '0' }}>Professional Web Developers, at your arsenal!</h2>
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<div style={{ display: 'flex', gap: '18px' }}>
-					<button className='blurple-button'>Get a Quote</button>
-					<button className='blurple-button'>Contact Us</button>
+				<canvas id='gradient-canvas' data-transition-in='true' width='100%' height='100%' />
+				<h1 style={{ margin: '0', color: 'white' }}>HotBeans Website Development</h1>
+				<h2 style={{ margin: '0', color: 'white' }}>
+					Professional Web Developers, at your arsenal!
+				</h2>
+				<div style={{ display: 'flex', gap: '18px', marginTop: '40px' }}>
+					<button className='white-button'>Get a Quote</button>
+					<button className='white-button'>Contact Us</button>
 				</div>
+				<IoChevronDown
+					style={{
+						color: 'white',
+						height: '30px',
+						width: '100%',
+						marginTop: '40px',
+						cursor: 'pointer',
+					}}
+					onClick={() => {
+						var el = document.getElementById('DesignMadeEasy');
+						el!.scrollIntoView({ behavior: 'smooth' });
+					}}
+				/>
 			</div>
 			<Hero1 />
 			<Hero2 />

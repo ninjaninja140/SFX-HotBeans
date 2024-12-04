@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react';
 import url from 'node:url';
 import { UserConfig } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
-import { Router } from './src/generators/routes';
+import Routes from 'vite-plugin-router';
 import { Sitemap } from './src/generators/sitemap';
 
 // https://vite.dev/config/
@@ -15,6 +15,9 @@ export default {
 	},
 	plugins: [
 		react(),
+		Routes.ViteRouter({
+			dir: 'src/pages',
+		}),
 		nodePolyfills({
 			protocolImports: true,
 			overrides: {
@@ -24,13 +27,13 @@ export default {
 		}),
 		{
 			name: 'build-scripts',
-			async buildStart(s) {
-				await new Router().run();
+			async buildStart() {
+				//await new Router().run();
 				await new Sitemap().run(this.environment.config.server.port);
 			},
 			async hotUpdate(options) {
 				console.log(options.server.config.server);
-				await new Router().run();
+				//await new Router().run();
 				await new Sitemap().run(options.server.config.server.port);
 			},
 		},
