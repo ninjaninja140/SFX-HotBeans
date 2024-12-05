@@ -24,15 +24,7 @@ const Application = () => {
 
 	return (
 		<div style={{ paddingTop: isScrolled ? '63px' : '83px' }}>
-			<AppRoutes
-				loadingPage={<Loading Location='Loading page...' />}
-				notFoundPage={
-					<NotFound
-						Location='404 Page not Found'
-						Description='Appears that this page may not exist, or, you might not be able to view it!'
-					/>
-				}
-			/>
+			<AppRoutes loadingPage={<Loading />} notFoundPage={<NotFound />} />
 		</div>
 	);
 };
@@ -45,4 +37,3 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 		<Footer />
 	</React.StrictMode>
 );
-

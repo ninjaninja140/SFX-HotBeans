@@ -3,7 +3,10 @@ import RouteTags from '@components/Meta/Route';
 export default () => {
 	return (
 		<div>
-			<RouteTags Location={'404 | Page not found'} />
+			<RouteTags
+				Location={'404 | Page not found'}
+				Description='Appears that this page may not exist, or, you might not be able to view it!'
+			/>
 
 			<div
 				style={{
