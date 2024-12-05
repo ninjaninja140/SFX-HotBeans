@@ -38,7 +38,7 @@
 	},
 	"scripts": {
 		"start": "vite",
-		"build": "bun ./src/generators/routes.ts && bun ./src/generators/sitemap.ts && tsc -b && vite build",
+		"build": "tsc -b && vite build",
 		"lint": "eslint .",
 		"preview": "vite preview"
 	},
