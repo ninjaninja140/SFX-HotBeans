@@ -60,7 +60,15 @@ export default () => {
 				<br />
 				<br />
 				<br />
-				<div style={{ display: 'flex' }}>
+				<div
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						justifyItems: 'center',
+						alignContent: 'center',
+						textAlign: 'center',
+					}}>
 					<button
 						style={{ width: '350px' }}
 						className='inverted-button blurple-button-border'>

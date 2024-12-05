@@ -43,7 +43,17 @@ export default () => {
 				<h2 style={{ margin: '0', color: 'white' }}>
 					Professional Web Developers, at your arsenal!
 				</h2>
-				<div style={{ display: 'flex', gap: '18px', marginTop: '40px' }}>
+				<div
+					style={{
+						display: 'flex',
+						gap: '18px',
+						marginTop: '40px',
+						justifyContent: 'center',
+						alignItems: 'center',
+						justifyItems: 'center',
+						alignContent: 'center',
+						textAlign: 'center',
+					}}>
 					<button className='white-button'>Get a Quote</button>
 					<button className='white-button'>Contact Us</button>
 				</div>
@@ -82,7 +92,15 @@ export default () => {
 				<br />
 				<br />
 				<br />
-				<div style={{ display: 'flex' }}>
+				<div
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						justifyItems: 'center',
+						alignContent: 'center',
+						textAlign: 'center',
+					}}>
 					<button
 						style={{ width: '350px' }}
 						className='inverted-button blurple-button-border'>
