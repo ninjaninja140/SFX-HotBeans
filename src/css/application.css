@@ -37,9 +37,8 @@ code {
   height: 100%;
   z-index: -1;
   backdrop-filter: blur(5px);
-  border-radius: 7px;
   --gradient-color-1: #5865f2;
   --gradient-color-2: #515de0;
   --gradient-color-3: #4b59eb;
-  --gradient-color-4: #5865f2;
+  --gradient-color-4: #5d68e0;
 }

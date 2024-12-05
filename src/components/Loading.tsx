@@ -2,7 +2,7 @@ import RouteTags from '@components/Meta/Route';
 import { useLayoutEffect } from 'react';
 import { Gradient } from './Gradient';
 
-export default (PageConfig: { Location: string; Description?: string }) => {
+export default () => {
 	useLayoutEffect(() => {
 		const gradient = new Gradient();
 		//@ts-ignore
@@ -11,7 +11,7 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 
 	return (
 		<div>
-			<RouteTags Location={PageConfig.Location} Description={PageConfig.Description} />
+			<RouteTags Location={'Loading...'} />
 
 			<div
 				style={{
@@ -50,4 +50,3 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		</div>
 	);
 };
-

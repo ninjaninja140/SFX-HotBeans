@@ -1,9 +1,9 @@
 import RouteTags from '@components/Meta/Route';
 
-export default (PageConfig: { Location: string; Description?: string }) => {
+export default () => {
 	return (
 		<div>
-			<RouteTags Location={PageConfig.Location} Description={PageConfig.Description} />
+			<RouteTags Location={'404 | Page not found'} />
 
 			<div
 				style={{
@@ -61,4 +61,3 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		</div>
 	);
 };
-

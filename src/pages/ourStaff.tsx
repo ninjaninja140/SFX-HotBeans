@@ -4,10 +4,10 @@ import Hero from '@components/PageComponents/OurStaff/Title';
 import Section from '@components/Section';
 import Link from '@components/Text/Link';
 
-export default (PageConfig: { Location: string; Description?: string }) => {
+export default () => {
 	return (
 		<div>
-			<Route Location={PageConfig.Location} Description={PageConfig.Description} />
+			<Route Location={'Our Staff'} />
 			<Hero />
 			<EmployeeBadge />
 			<Section title='Our Developers'>
@@ -71,4 +71,3 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		</div>
 	);
 };
-

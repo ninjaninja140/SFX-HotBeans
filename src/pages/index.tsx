@@ -8,7 +8,7 @@ import Hero4 from '@components/PageComponents/Homepage/Trusted';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { IoChevronDown } from 'react-icons/io5';
 
-export default (PageConfig: { Location: string; Description?: string }) => {
+export default () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -28,7 +28,7 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 
 	return (
 		<div>
-			<Route Location={PageConfig.Location} Description={PageConfig.Description} />
+			<Route Location={'Home'} />
 			<div
 				style={{
 					height: `calc(100vh - ${isScrolled ? '55px' : '75px'} - 8px)`,
@@ -93,4 +93,3 @@ export default (PageConfig: { Location: string; Description?: string }) => {
 		</div>
 	);
 };
-

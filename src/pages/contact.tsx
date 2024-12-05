@@ -4,7 +4,7 @@ import Section from '@components/Section';
 import { useSearchParams } from 'react-router';
 
 export default () => {
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 
 	const AutofillSubject = searchParams.get('subject-ref');
 
@@ -103,4 +103,3 @@ export default () => {
 		</div>
 	);
 };
-
