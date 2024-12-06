@@ -1,6 +1,7 @@
 import Route from '@components/Meta/Route';
 import Hero from '@components/PageComponents/Contact/Title';
 import Section from '@components/Section';
+import { Notification } from '@utilities/Notification';
 import { useSearchParams } from 'react-router';
 
 export default () => {
@@ -69,7 +70,7 @@ export default () => {
 							justifyItems: 'right',
 							display: 'flex',
 						}}>
-						<button>Submit</button>
+						<button onClick={() => new Notification({'message': 'HELLO!!'})}>Submit</button>
 					</div>
 				</form>
 			</Section>

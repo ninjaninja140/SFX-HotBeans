@@ -25,6 +25,7 @@
 		"types": ["node"],
 		"paths": {
 			"@components/*": ["components/*"],
+			"@utilities/*": ["utilities/*"],
 			"@pages/*": ["pages/*"],
 			"@css/*": ["css/*"],
 			"@content/*": ["content/*"],
@@ -45,3 +46,4 @@
 	},
 	"include": ["src", "src/generators/router.ts", "src/generators/sitemap.ts"]
 }
+

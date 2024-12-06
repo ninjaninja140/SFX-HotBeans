@@ -918,6 +918,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.1"
     "@types/react-helmet": "npm:^6.1.11"
     "@vitejs/plugin-react": "npm:^4.3.4"
+    animate.css: "npm:^4.1.1"
     browserify-fs: "npm:^1.0.0"
     bun: "npm:^1.1.38"
     chalk: "npm:^5.3.0"
@@ -936,6 +937,7 @@ __metadata:
     react-icons: "npm:^5.4.0"
     react-router: "npm:^7.0.2"
     react-router-dom: "npm:^7.0.2"
+    react-toastify: "npm:^10.0.6"
     tldts: "npm:^6.1.65"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.7.2"
@@ -1360,6 +1362,13 @@ __metadata:
     json-schema-traverse: "npm:^0.4.1"
     uri-js: "npm:^4.2.2"
   checksum: 10c0/41e23642cbe545889245b9d2a45854ebba51cda6c778ebced9649420d9205f2efb39cb43dbc41e358409223b1ea43303ae4839db682c848b891e4811da1a5a71
+  languageName: node
+  linkType: hard
+
+"animate.css@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "animate.css@npm:4.1.1"
+  checksum: 10c0/28fcf5a5f502e4c12186846d22aa1cd63b835955160a97116930c78bff8a89135aa5c57f94010252a29456ada7cfc8ed8791cac02521ec6402befaf883937159
   languageName: node
   linkType: hard
 
@@ -1927,6 +1936,13 @@ __metadata:
   version: 0.1.19
   resolution: "clone@npm:0.1.19"
   checksum: 10c0/593474606fc5ab34c94364bd1e8d58526f63cbc8061236b73ffafb1675174206e9d0317aab66a87159128aef082500c3bd50063da64acc2604b7af8762d92a24
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
   languageName: node
   linkType: hard
 
@@ -4740,6 +4756,18 @@ __metadata:
   peerDependencies:
     react: ^16.3.0 || ^17.0.0 || ^18.0.0
   checksum: 10c0/5d934cae438f701ce646f566750ae6a445e99185ce1a026108f9db728147f7962a22ecf8db79ff26089953a3799b3607766904f4f10194ce42bcd5a1aa0215e8
+  languageName: node
+  linkType: hard
+
+"react-toastify@npm:^10.0.6":
+  version: 10.0.6
+  resolution: "react-toastify@npm:10.0.6"
+  dependencies:
+    clsx: "npm:^2.1.0"
+  peerDependencies:
+    react: ">=18"
+    react-dom: ">=18"
+  checksum: 10c0/4042b716d008295d0feab32488d1e88ec655a1b7a9176fa7d253c70387578a8a0c04aca0ff86d20e1722f3b4baadae8970f50f462940d67a90453c307dd350a9
   languageName: node
   linkType: hard
 

@@ -10,6 +10,7 @@
 @import url("./headers.css");
 @import url("./icons.css");
 @import url("./text.css");
+@import url('./toastify.css');
 
 body {
   margin: 0;

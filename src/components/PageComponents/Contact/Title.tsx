@@ -20,16 +20,12 @@ export default () => {
 				}}>
 				<h1>Contact us</h1>
 				<p>
-					Here at HotBeans, we take on many professional website designers, developers and
-					design, development advisors, management and more to make sure our clients can
-					work alongside us to produce an efficient, smart and high-quality website whilst
-					being able to uphold a pristine company image and support line between us,
-					clients and potential clients.
-					<br />
-					We employ people from all backgrounds ethnically and skill based, we do not
-					believe that qualifications or skin tone defines the skill, work power, brains
-					and person of an employee, and that's our special trick behind how us and our
-					products always come out on top.
+					At the heart of our company, we believe that the core supporting pillar of a
+					well function company is a quality support team, that's why here at HotBeans
+					Website Development, we hire a 24/7 support team based in various countries all
+					around the world so we are able to provide our customers a quick, reliable and
+					quality support experience, whether it be to do with general support, quotes and
+					more.
 				</p>
 			</div>
 			<div

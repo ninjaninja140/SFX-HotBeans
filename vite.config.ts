@@ -32,7 +32,6 @@ export default {
 				await new Sitemap().run(this.environment.config.server.port);
 			},
 			async hotUpdate(options) {
-				console.log(options.server.config.server);
 				//await new Router().run();
 				await new Sitemap().run(options.server.config.server.port);
 			},
@@ -51,6 +50,10 @@ export default {
 			{
 				find: '@components',
 				replacement: url.fileURLToPath(new URL('./src/components', import.meta.url)),
+			},
+			{
+				find: '@utilities',
+				replacement: url.fileURLToPath(new URL('./src/utilities', import.meta.url)),
 			},
 			{
 				find: '@pages',
