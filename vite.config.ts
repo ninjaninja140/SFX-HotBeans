@@ -10,7 +10,7 @@ import { Sitemap } from './src/generators/sitemap';
 export default {
 	server: {
 		watch: {
-			ignored: ['**/src/Router.tsx', '**/src/configuration/Routes.json', '**/public/sitemap.xml'],
+			ignored: ['**/src/Router.tsx', '**/src/configuration/Routes.json', '**/public/sitemap.xml', '**/src/routes.tsx'],
 		},
 	},
 	plugins: [
