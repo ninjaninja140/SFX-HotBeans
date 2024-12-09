@@ -90,8 +90,18 @@ export default () => {
 								alignSelf: 'center',
 								textAlign: 'left',
 							}}>
-							<button style={{ width: '100%' }}>Get a Quote</button>
-							<button style={{ width: '100%' }}>Contact Us</button>
+							<button
+								style={{ width: '100%' }}
+								onClick={() =>
+									(location.href = `/contact?subject-ref=Website%20Quote%20-%20${new Date().toLocaleDateString()}`)
+								}>
+								Get a Quote
+							</button>
+							<button
+								style={{ width: '100%' }}
+								onClick={() => (location.href = '/contact')}>
+								Contact Us
+							</button>
 						</div>
 						<div
 							style={{
@@ -286,4 +296,3 @@ export default () => {
 		</footer>
 	);
 };
-

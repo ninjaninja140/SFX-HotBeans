@@ -8,6 +8,10 @@ interface Props {
 export default (props: Props) => {
 	return (
 		<div
+			id={props.title
+				.toLowerCase()
+				.replace(/[^\w ]/g, '')
+				.replace(/\ /g, '-')}
 			style={{
 				height: 'auto',
 				justifyContent: 'center',

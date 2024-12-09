@@ -3,8 +3,10 @@ import NotFound from '@components/NotFound';
 
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import { ToastContainer } from 'react-toastify';
-import { AppRoutes } from './routes';
+
+import { AppRoutes } from './Router';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -34,17 +36,18 @@ const Application = () => {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<Head />
-		<ToastContainer
-			theme='dark'
-			newestOnTop={true}
-			draggable={true}
-			style={{ marginRight: '130px' }}
-			stacked
-		/>
-		<Header />
-		<Application />
-		<Footer />
+		<HelmetProvider>
+			<Head />
+			<ToastContainer
+				theme='dark'
+				newestOnTop={true}
+				draggable={true}
+				style={{ marginRight: '130px' }}
+				stacked
+			/>
+			<Header />
+			<Application />
+			<Footer />
+		</HelmetProvider>
 	</React.StrictMode>
 );
-

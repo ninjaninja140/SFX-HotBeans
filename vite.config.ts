@@ -1,41 +1,32 @@
+import { ViteRouter } from '@bracketed/vite-plugin-router';
 import react from '@vitejs/plugin-react';
 import url from 'node:url';
 import { UserConfig } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
-import Routes from 'vite-plugin-router';
-import { Sitemap } from './src/generators/sitemap';
 
 // https://vite.dev/config/
 /** @type {import('vite').UserConfig} */
 export default {
 	server: {
 		watch: {
-			ignored: ['**/src/Router.tsx', '**/src/configuration/Routes.json', '**/public/sitemap.xml', '**/src/routes.tsx'],
+			ignored: [
+				'**/src/Router.tsx',
+				'**/src/configuration/Routes.json',
+				'**/public/sitemap.xml',
+				'**/src/routes.tsx',
+			],
 		},
 	},
 	plugins: [
 		react(),
-		Routes.ViteRouter({
+		new ViteRouter({
 			dir: 'src/pages',
-		}),
+			suspense: true,
+			'404': true,
+		}).affix(),
 		nodePolyfills({
 			protocolImports: true,
-			overrides: {
-				path: 'path-browserify',
-				fs: 'browserify-fs',
-			},
 		}),
-		{
-			name: 'build-scripts',
-			async buildStart() {
-				//await new Router().run();
-				await new Sitemap().run(this.environment.config.server.port);
-			},
-			async hotUpdate(options) {
-				//await new Router().run();
-				await new Sitemap().run(options.server.config.server.port);
-			},
-		},
 	],
 	resolve: {
 		alias: [
@@ -78,4 +69,3 @@ export default {
 		],
 	},
 } satisfies UserConfig;
-
