@@ -9,6 +9,7 @@
 import type { Props } from '@bracketed/vite-plugin-router/types';
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Redirect } from "@bracketed/vite-plugin-router";
 
 const R0 = lazy(() => import("./pages/about"));
 const R1 = lazy(() => import("./pages/contact"));
@@ -30,7 +31,10 @@ export function AppRoutes(props: Props) {
 					<Route path={"/contact"} key={"/contact"} element={<R1></R1>}></Route>
 					<Route path={"/"} key={"/"} element={<R2></R2>}></Route>
 					<Route path={"/our-staff"} key={"/our-staff"} element={<R3></R3>}></Route>
-
+					<Route
+						path={"/local"}
+						key={"/local"}
+						element={<Redirect href={"https://google.com"} />}></Route>
 					<Route path='*' element={props.notFoundPage || <div>404</div>} />
 				</Routes>
 			</Suspense>

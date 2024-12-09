@@ -1,19 +1,17 @@
-import Loading from '@components/Loading';
-import NotFound from '@components/NotFound';
-
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { ToastContainer } from 'react-toastify';
 
-import { AppRoutes } from './Router';
+import Footer from '@components/Footer';
+import Header from '@components/Header';
+import Head from '@components/Meta/Head';
+import Loading from '@components/Pages/Loading';
+import NotFound from '@components/Pages/NotFound';
+import { AppRoutes } from '@src/Router';
 
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Head from './components/Meta/Head';
-
+import '@css/application.css';
 import 'animate.css/animate.min.css';
-import './css/application.css';
 
 const Application = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 export default () => (
-	<Helmet>
+	<Helmet prioritizeSeoTags>
 		{/* Standard Head Meta */}
 		<meta charSet='utf-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1' />

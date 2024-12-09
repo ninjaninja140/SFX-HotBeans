@@ -1,6 +1,6 @@
 import RouteTags from '@components/Meta/Route';
 import { useLayoutEffect } from 'react';
-import { Gradient } from './Gradient';
+import { Gradient } from '../Gradient';
 
 export default () => {
 	useLayoutEffect(() => {

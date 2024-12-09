@@ -23,16 +23,24 @@ export default {
 			dir: 'src/pages',
 			suspense: true,
 			'404': true,
+
+			redirects: {
+				'/local': 'https://google.com',
+			},
 		}).affix(),
 		nodePolyfills({
 			protocolImports: true,
+			overrides: {
+				path: 'path-browserify',
+				fs: 'browserify-fs',
+			},
 		}),
 	],
 	resolve: {
 		alias: [
 			{
 				find: '@',
-				replacement: url.fileURLToPath(new URL('.', import.meta.url)),
+				replacement: url.fileURLToPath(new URL('./', import.meta.url)),
 			},
 			{
 				find: '@src',
