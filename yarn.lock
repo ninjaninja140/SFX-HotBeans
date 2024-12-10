@@ -248,9 +248,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bracketed/vite-plugin-router@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "@bracketed/vite-plugin-router@npm:1.2.1"
+"@bracketed/vite-plugin-router@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@bracketed/vite-plugin-router@npm:1.2.3"
   dependencies:
     "@types/react": "npm:^19.0.1"
     chalk: "npm:^5.3.0"
@@ -264,7 +264,7 @@ __metadata:
     react-dom: ^19.0.0
     react-router-dom: ^7.0.2
     vite: ^6.0.3
-  checksum: 10c0/2b8d12c095a973aed958e3fc7dc3b40729f36869e188119ab4b1b369731437a53a3f3453c325acc748da7c7a15de8dddc45cb4457b357dd04d8dca4d5e392d16
+  checksum: 10c0/8655a398f54f8ea3459df7e46a4dc50f39c0b3b194fefbd802942083f974d2209ce3fe326ff9ff8c64a341c2f052476c56ae6c7fcb4e59e9ff59c7bb0e16371a
   languageName: node
   linkType: hard
 
@@ -530,7 +530,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-inject@npm:^5.0.5":
+"@rollup/plugin-inject@npm:^5.0.3, @rollup/plugin-inject@npm:^5.0.5":
   version: 5.0.5
   resolution: "@rollup/plugin-inject@npm:5.0.5"
   dependencies:
@@ -692,15 +692,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sfx/hotbeans@workspace:."
   dependencies:
-    "@bracketed/vite-plugin-router": "npm:^1.2.1"
+    "@bracketed/vite-plugin-router": "npm:^1.2.3"
     "@types/node": "npm:^22.10.1"
-    "@types/path-browserify": "npm:^1"
+    "@types/path-browserify": "npm:^1.0.3"
     "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.1"
+    "@types/react-dom": "npm:^19.0.2"
     "@types/validator": "npm:^13.12.2"
     "@vitejs/plugin-react": "npm:^4.3.4"
     animate.css: "npm:^4.1.1"
     browserify-fs: "npm:^1.0.0"
+    node-stdlib-browser: "npm:^1.3.0"
     path-browserify: "npm:^1.0.1"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
@@ -714,6 +715,7 @@ __metadata:
     validator: "npm:^13.12.0"
     vite: "npm:^6.0.3"
     vite-plugin-node-polyfills: "npm:^0.22.0"
+    vite-plugin-node-stdlib-browser: "npm:^0.2.1"
     vite-plugin-watch-and-run: "npm:^1.7.1"
   languageName: unknown
   linkType: soft
@@ -782,36 +784,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/path-browserify@npm:^1":
+"@types/path-browserify@npm:^1.0.3":
   version: 1.0.3
   resolution: "@types/path-browserify@npm:1.0.3"
   checksum: 10c0/6ed6de375c210dbc20d171ab547be6065ce9904463ca8ca63443a3b23efc7234ff5400d62be05b9be36fc2e863b77592c2e607896988ad39a45276b8a7e42d70
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*":
-  version: 15.7.13
-  resolution: "@types/prop-types@npm:15.7.13"
-  checksum: 10c0/1b20fc67281902c6743379960247bc161f3f0406ffc0df8e7058745a85ea1538612109db0406290512947f9632fe9e10e7337bf0ce6338a91d6c948df16a7c61
-  languageName: node
-  linkType: hard
-
-"@types/react-dom@npm:^19.0.1":
-  version: 19.0.1
-  resolution: "@types/react-dom@npm:19.0.1"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 10c0/fb40069a7c5c70475155dff91d25ff5a51226c14d45c8ad55894480366876426981c8be63ef322486af879bb220bf48443f2344c1a89cb75a47a1a761acee9d3
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:*":
-  version: 18.3.11
-  resolution: "@types/react@npm:18.3.11"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: 10c0/ce80512246ca5bda69db85b9f4f1835189334acfb6b2c4f3eda8cabff1ff1a3ea9ce4f3b895bdbc18c94140aa45592331aa3fdeb557f525c1b048de7ce84fc0e
+"@types/react-dom@npm:^19.0.2":
+  version: 19.0.2
+  resolution: "@types/react-dom@npm:19.0.2"
+  peerDependencies:
+    "@types/react": ^19.0.0
+  checksum: 10c0/3d0c7b78dbe8df64ea769f30af990a5950173a8321c745fe11094d765423f7964c3519dca6e7cd36b4be6521c8efc690bdd3b79b327b229dd1e9d5a8bad677dd
   languageName: node
   linkType: hard
 
@@ -2593,7 +2578,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-stdlib-browser@npm:^1.2.0":
+"node-stdlib-browser@npm:^1.2.0, node-stdlib-browser@npm:^1.3.0":
   version: 1.3.0
   resolution: "node-stdlib-browser@npm:1.3.0"
   dependencies:
@@ -3731,6 +3716,18 @@ __metadata:
   peerDependencies:
     vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
   checksum: 10c0/f8ddc452eb6fba280977d037f8a6406aa522e69590641ce72ce5bb31c3498856a9f63ab3671bc6a822dcd1ff9ba5cac02cacef4a0e170fd8500cdeeb38c81675
+  languageName: node
+  linkType: hard
+
+"vite-plugin-node-stdlib-browser@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "vite-plugin-node-stdlib-browser@npm:0.2.1"
+  dependencies:
+    "@rollup/plugin-inject": "npm:^5.0.3"
+  peerDependencies:
+    node-stdlib-browser: ^1.2.0
+    vite: ^2.0.0 || ^3.0.0 || ^4.0.0
+  checksum: 10c0/4686bde59d0396d8684433e1a14ddce868dc422f80e306a0c1cb5e86564d9f7c38a67865ca339e4ff57784ec4bada149034038cad6911a2dfcac8debfc9bd20a
   languageName: node
   linkType: hard
 

@@ -3,6 +3,7 @@ import React from 'react';
 interface Props {
 	children: React.ReactNode;
 	title: string;
+	style?: React.CSSProperties;
 }
 
 export default (props: Props) => {
@@ -48,7 +49,7 @@ export default (props: Props) => {
 					}}>
 					{props.title}
 				</h1>
-				<p style={{ fontSize: '16px' }}>{props.children}</p>
+				<p style={{ fontSize: '16px', ...props.style }}>{props.children}</p>
 			</div>
 		</div>
 	);

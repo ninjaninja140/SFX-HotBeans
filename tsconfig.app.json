@@ -34,10 +34,8 @@
 			"@typings/*": ["typings/*"]
 		},
 
-		/* Linting */
 		"noUncheckedSideEffectImports": true,
 
-		/* Bundler mode */
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"moduleDetection": "force",
@@ -46,4 +44,3 @@
 	},
 	"include": ["src", "src/generators/router.ts", "src/generators/sitemap.ts"]
 }
-

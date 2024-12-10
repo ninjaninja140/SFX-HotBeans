@@ -7,6 +7,9 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 // https://vite.dev/config/
 /** @type {import('vite').UserConfig} */
 export default {
+	optimizeDeps: {
+		exclude: ['node-stdlib-browser'],
+	},
 	server: {
 		watch: {
 			ignored: [
