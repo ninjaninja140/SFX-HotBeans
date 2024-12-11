@@ -8,7 +8,7 @@ export default () => {
 			<Route Location='About us' />
 			<Hero />
 
-			<Section title='Who are we?' style={{ fontSize: '17x' }}>
+			<Section title='Who are we?' style={{ fontSize: '19px', paddingLeft: '13px', paddingRight: '13px' }}>
 				HotBeans Website Development is a software development company, however, not your
 				average run-of-the-mill Web Dev company, as in a single development package, HotBeans
 				will provide the services you would never think to see when you come to a website design

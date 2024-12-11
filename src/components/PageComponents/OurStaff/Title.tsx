@@ -1,4 +1,4 @@
-import { IoIdCardOutline } from 'react-icons/io5';
+import { IoChevronDown, IoIdCardOutline } from 'react-icons/io5';
 
 export default () => {
 	const defaults: React.CSSProperties = {
@@ -31,6 +31,16 @@ export default () => {
 					and person of an employee, and that's our special trick behind how us and our
 					products always come out on top.
 				</p>
+				<IoChevronDown
+					style={{
+						color: '#5865f2',
+						height: '30px',
+						width: '100%',
+						marginTop: '40px',
+						cursor: 'pointer',
+					}}
+					onClick={() => document.getElementById('employees')!.scrollIntoView({ behavior: 'smooth' })}
+				/>
 			</div>
 			<div
 				style={{
