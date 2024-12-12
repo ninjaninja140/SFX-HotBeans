@@ -248,23 +248,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bracketed/vite-plugin-router@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@bracketed/vite-plugin-router@npm:1.2.3"
+"@bracketed/vite-plugin-router@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "@bracketed/vite-plugin-router@npm:1.2.6"
   dependencies:
     "@types/react": "npm:^19.0.1"
-    chalk: "npm:^5.3.0"
-    chokidar: "npm:^4.0.1"
     colorette: "npm:^2.0.20"
     debounce: "npm:^2.2.0"
-    prettier: "npm:^3.4.2"
-    tslib: "npm:^2.8.1"
   peerDependencies:
     react: ^19.0.0
     react-dom: ^19.0.0
     react-router-dom: ^7.0.2
     vite: ^6.0.3
-  checksum: 10c0/8655a398f54f8ea3459df7e46a4dc50f39c0b3b194fefbd802942083f974d2209ce3fe326ff9ff8c64a341c2f052476c56ae6c7fcb4e59e9ff59c7bb0e16371a
+  checksum: 10c0/d2ad731595726c63184d2f443abccdd256f13dffbf2c865b8afec35425a2950cdf878c924b6a37247b66cf87e3927a2eaa98d7760c02dd07fc7f75e8bca900a1
   languageName: node
   linkType: hard
 
@@ -692,8 +688,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sfx/hotbeans@workspace:."
   dependencies:
-    "@bracketed/vite-plugin-router": "npm:^1.2.3"
-    "@types/node": "npm:^22.10.1"
+    "@bracketed/vite-plugin-router": "npm:^1.2.6"
+    "@types/node": "npm:^22.10.2"
     "@types/path-browserify": "npm:^1.0.3"
     "@types/react": "npm:^19.0.1"
     "@types/react-dom": "npm:^19.0.2"
@@ -710,7 +706,7 @@ __metadata:
     react-router: "npm:^7.0.2"
     react-router-dom: "npm:^7.0.2"
     react-toastify: "npm:^10.0.6"
-    tldts: "npm:^6.1.66"
+    tldts: "npm:^6.1.67"
     typescript: "npm:^5.7.2"
     validator: "npm:^13.12.0"
     vite: "npm:^6.0.3"
@@ -775,12 +771,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.10.1":
-  version: 22.10.1
-  resolution: "@types/node@npm:22.10.1"
+"@types/node@npm:^22.10.2":
+  version: 22.10.2
+  resolution: "@types/node@npm:22.10.2"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/0fbb6d29fa35d807f0223a4db709c598ac08d66820240a2cd6a8a69b8f0bc921d65b339d850a666b43b4e779f967e6ed6cf6f0fca3575e08241e6b900364c234
+  checksum: 10c0/2c7b71a040f1ef5320938eca8ebc946e6905caa9bbf3d5665d9b3774a8d15ea9fab1582b849a6d28c7fc80756a62c5666bc66b69f42f4d5dafd1ccb193cdb4ac
   languageName: node
   linkType: hard
 
@@ -1175,22 +1171,6 @@ __metadata:
   version: 1.0.30001669
   resolution: "caniuse-lite@npm:1.0.30001669"
   checksum: 10c0/f125f23440d3dbb6c25ffb8d55f4ce48af36a84d0932b152b3b74f143a4170cbe92e02b0a9676209c86609bf7bf34119ff10cc2bc7c1b7ea40e936cc16598408
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "chalk@npm:5.3.0"
-  checksum: 10c0/8297d436b2c0f95801103ff2ef67268d362021b8210daf8ddbe349695333eb3610a71122172ff3b0272f1ef2cf7cc2c41fdaa4715f52e49ffe04c56340feed09
-  languageName: node
-  linkType: hard
-
-"chokidar@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "chokidar@npm:4.0.1"
-  dependencies:
-    readdirp: "npm:^4.0.1"
-  checksum: 10c0/4bb7a3adc304059810bb6c420c43261a15bb44f610d77c35547addc84faa0374265c3adc67f25d06f363d9a4571962b02679268c40de07676d260de1986efea9
   languageName: node
   linkType: hard
 
@@ -2855,15 +2835,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.4.2":
-  version: 3.4.2
-  resolution: "prettier@npm:3.4.2"
-  bin:
-    prettier: bin/prettier.cjs
-  checksum: 10c0/99e076a26ed0aba4ebc043880d0f08bbb8c59a4c6641cdee6cdadf2205bdd87aa1d7823f50c3aea41e015e99878d37c58d7b5f0e663bba0ef047f94e36b96446
-  languageName: node
-  linkType: hard
-
 "proc-log@npm:^4.1.0, proc-log@npm:^4.2.0":
   version: 4.2.0
   resolution: "proc-log@npm:4.2.0"
@@ -3108,13 +3079,6 @@ __metadata:
     isarray: "npm:0.0.1"
     string_decoder: "npm:~0.10.x"
   checksum: 10c0/02272551396ed8930ddee1a088bdf0379f0f7cc47ac49ed8804e998076cb7daec9fbd2b1fd9c0490ec72e56e8bb3651abeb8080492b8e0a9c3f2158330908ed6
-  languageName: node
-  linkType: hard
-
-"readdirp@npm:^4.0.1":
-  version: 4.0.2
-  resolution: "readdirp@npm:4.0.2"
-  checksum: 10c0/a16ecd8ef3286dcd90648c3b103e3826db2b766cdb4a988752c43a83f683d01c7059158d623cbcd8bdfb39e65d302d285be2d208e7d9f34d022d912b929217dd
   languageName: node
   linkType: hard
 
@@ -3542,21 +3506,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tldts-core@npm:^6.1.66":
-  version: 6.1.66
-  resolution: "tldts-core@npm:6.1.66"
-  checksum: 10c0/8bc781d8e209db1c776d5c3b816bdd14dade27078756ce616a71760f9cf3859ac3cb251afd6687163cda434047045077d6558cb7058adef53f525611ddde061c
+"tldts-core@npm:^6.1.67":
+  version: 6.1.67
+  resolution: "tldts-core@npm:6.1.67"
+  checksum: 10c0/7841c8d53250bdadfdd049f5f7cde4a71f08b4a33a3f024dd62a2d68512e9eca44141395abad3841aa5024a48b47a6e11a4ef23715baab3be8986d2ed2513431
   languageName: node
   linkType: hard
 
-"tldts@npm:^6.1.66":
-  version: 6.1.66
-  resolution: "tldts@npm:6.1.66"
+"tldts@npm:^6.1.67":
+  version: 6.1.67
+  resolution: "tldts@npm:6.1.67"
   dependencies:
-    tldts-core: "npm:^6.1.66"
+    tldts-core: "npm:^6.1.67"
   bin:
     tldts: bin/cli.js
-  checksum: 10c0/2b195dcda6b309666d24b1157f88a92167cf4b5c1504a84838a495d02c4c11c672e149924ca4ef8b087132395b6df0e651daa7e031c087105c020bccfd5574ba
+  checksum: 10c0/074edcd718ede006ff0e189701a4fda472686998aa6155ef4920e3ca17f4b54afb7f1afc9668ce33a3de523dd562eb9266e0610efd05cb2d9e9f19d9fa7510d4
   languageName: node
   linkType: hard
 
@@ -3573,13 +3537,6 @@ __metadata:
   dependencies:
     is-number: "npm:^7.0.0"
   checksum: 10c0/487988b0a19c654ff3e1961b87f471702e708fa8a8dd02a298ef16da7206692e8552a0250e8b3e8759270f62e9d8314616f6da274734d3b558b1fc7b7724e892
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "tslib@npm:2.8.1"
-  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
   languageName: node
   linkType: hard
 
