@@ -39,7 +39,13 @@ export default () => {
 						marginTop: '40px',
 						cursor: 'pointer',
 					}}
-					onClick={() => document.getElementById('employees')!.scrollIntoView({ behavior: 'smooth' })}
+					onClick={() =>
+						document.getElementById('employees')!.scrollIntoView({
+							behavior: 'smooth',
+							block: 'center',
+							inline: 'center',
+						})
+					}
 				/>
 			</div>
 			<div
@@ -61,4 +67,3 @@ export default () => {
 		</div>
 	);
 };
-

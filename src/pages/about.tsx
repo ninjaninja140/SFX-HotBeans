@@ -1,11 +1,24 @@
 import Route from '@components/Meta/Route';
 import Hero from '@components/PageComponents/About/Title';
 import Section from '@components/Section';
+import Cloudflare from '@content/Banners/Cloudflare.svg?react';
+import ScrollTo from '@utilities/ScrollTo';
+
+const Logo = Cloudflare as React.FunctionComponent<
+	React.SVGProps<SVGSVGElement> & {
+		title?: string;
+		titleId?: string;
+		desc?: string;
+		descId?: string;
+	}
+>;
 
 export default () => {
 	return (
 		<div>
 			<Route Location='About us' />
+			<ScrollTo />
+
 			<Hero />
 
 			<Section
@@ -89,8 +102,56 @@ export default () => {
 			<Section
 				title='Our History'
 				style={{ fontSize: '19px', paddingLeft: '13px', paddingRight: '13px' }}>
-				HotBeans has come far from where it started. Originally, HotBeans was a very small and
-				independent software company.
+				HotBeans has come far from where it started. Originally, HotBeans was a small and
+				independent software company, funded and mainly ran solely by its founder, Eden Kneale.
+				The HotBeans Team was a whole lot smaller too, today, HotBeans has over a hundred
+				employees globally, but before then, HotBeans was almost quite literally a garage
+				project, with the founders, Eden and Garry working together, hoping to make it big with
+				their startup.
+				<br />
+				<br />
+				However, unfortunately the world of startups wasn't very welcoming of HotBeans, and the
+				sudden lack of funding coming from Eden himself began to dwindle more and more to the
+				point HotBeans was on the line of closing its garage doors for the first and final time.
+				<br />
+				<br />
+				But as almost all hope was lost, our first mainstream corporation approached us in need
+				of a new infrastructure for its software and systems, Cloudflare. Cloudflare's
+				appearance and commission at HotBeans was enough to save the company, have it registered
+				on the Companies House and allow the company to purchase servers and new computers for
+				better development. Upon finishing the new software, Cloudflare once again approached
+				us, this time with a proposal instead of a commission request, they asked about
+				purchasing our company and making it a Cloudflare brand, to boost our sales and provide
+				a constant and steady flow of funding to keep the company afloat. Surprised, the
+				founders agreed, and a deal was struck, the garage doors closed for the final time, and
+				the doors to a new office were opened.
+				<br />
+				<br />
+				For a while, HotBeans was still a two man sub-company of Cloudflare, but over time we
+				expanded and changed our policies to allow ourselves to hire more people of different
+				skill and types of professions, our name under Cloudflare brought in new customers and
+				slowly but surely, HotBeans grew to become more then just a software company, but
+				pivoting to mainly a website design company too, eventually becoming the HotBeans
+				Website Development we all know and love today.
+				<br />
+				<br />
+				<b>Thank you Cloudflare, we love you! ❤︎</b>
+				<Logo height='100' style={{ width: '100%', marginTop: '40px' }} />
+			</Section>
+			<Section title='How we operate' style={{ fontSize: '19px', paddingLeft: '13px', paddingRight: '13px' }}>
+				At HotBeans, we try to create a relaxed employee environment, we try to get as many
+				people we can into our London office at a time, as we have a belief people work better
+				in the work place rather than at home, as for the overseas workers, we have small
+				workspaces dotted about that we rent to make sure all of our employees share the same
+				and if not similar experiences on a day to day basis, we attempt to be as inclusive as
+				we can, connecting all our offices together via live voice and video calls and similar
+				if not the same work environments.
+				<br />
+				<br />
+				We try to listen to our employees at HotBeans, we prefer to hear the voice of everyone
+				rather than just investors, shareholders and management, we try to be equal throughout
+				the company, where everyone works on the same level playing field so we can eliminate
+				discrimination and any sort of unfairness in the workplace.
 			</Section>
 		</div>
 	);

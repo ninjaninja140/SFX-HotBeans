@@ -3,11 +3,14 @@ import Route from '@components/Meta/Route';
 import Hero from '@components/PageComponents/OurStaff/Title';
 import Section from '@components/Section';
 import Link from '@components/Text/Link';
+import ScrollTo from '@utilities/ScrollTo';
 
 export default () => {
 	return (
 		<div>
 			<Route Location={'Our Staff'} />
+			<ScrollTo />
+
 			<Hero />
 			<EmployeeBadge />
 			<Section title='Our Developers'>

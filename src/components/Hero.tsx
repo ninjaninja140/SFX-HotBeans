@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import { IconType } from 'react-icons';
 
 interface HeroParams {

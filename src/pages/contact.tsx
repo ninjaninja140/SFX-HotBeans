@@ -4,6 +4,7 @@ import Section from '@components/Section';
 import Underline from '@components/Text/Underline';
 import { createMailtoLink } from '@utilities/MailTo';
 import { Notification } from '@utilities/Notification';
+import ScrollTo from '@utilities/ScrollTo';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import validator from 'validator';
@@ -27,6 +28,8 @@ export default () => {
 	return (
 		<div>
 			<Route Location='Contact us' />
+			<ScrollTo />
+
 			<Hero />
 			<Section title='Contact us here'>
 				<div style={{ paddingLeft: '10px', paddingRight: '35px' }}>
@@ -78,7 +81,6 @@ export default () => {
 						style={{
 							width: '100%',
 							height: '200px',
-							marginBottom: '5px',
 						}}
 					/>
 					<input
@@ -86,7 +88,7 @@ export default () => {
 						id='extra'
 						type='text'
 						placeholder='Other Information'
-						style={{ width: '100%' }}
+						style={{ width: '100%', marginTop: '12px' }}
 						onBlur={(e) => setExtras(e.target.value)}
 					/>
 					<p

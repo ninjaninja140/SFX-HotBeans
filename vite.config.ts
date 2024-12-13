@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import url from 'node:url';
 import { UserConfig } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import svgr from 'vite-plugin-svgr';
 
 // https://vite.dev/config/
 /** @type {import('vite').UserConfig} */
@@ -22,6 +23,7 @@ export default {
 	},
 	plugins: [
 		react(),
+		svgr(),
 		new ViteRouter({
 			dir: 'src/pages',
 			suspense: true,

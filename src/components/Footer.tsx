@@ -93,7 +93,7 @@ export default () => {
 							<button
 								style={{ width: '100%' }}
 								onClick={() =>
-									(location.href = `/contact?subject-ref=Website%20Quote%20-%20${new Date().toLocaleDateString()}`)
+									(location.href = `/contact?subject-ref=Website%20Quote%20-%20${new Date().toLocaleDateString()}&scroll-to=contact-us-here`)
 								}>
 								Get a Quote
 							</button>

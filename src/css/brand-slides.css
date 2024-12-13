@@ -1,24 +1,13 @@
 @keyframes bannermove {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
 
     100% {
-        transform: translateX(-400%);
+        transform: translateX(-50%);
     }
 }
 
-.banner-content {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: bannermove 180s linear infinite;
-    width: 400%;
-}
-
-.banner-content img {
-    object-fit: contain;
-    height: auto;
-    width: 15%;
-    margin: 0 60px;
+.animate {
+    animation: bannermove 120s linear infinite;
 }

@@ -8,12 +8,12 @@
 			},
 			{
 				"label": "Our Staff",
-				"href": "/ourstaff",
+				"href": "/our-staff",
 				"target": "_blank"
 			},
 			{
 				"label": "Contact Us (Open 24/7!)",
-				"href": "/contact",
+				"href": "/contact-us",
 				"target": "_blank"
 			},
 			{
@@ -26,7 +26,7 @@
 			},
 			{
 				"label": "Our Partners",
-				"href": "/portal/courses"
+				"href": "/?scroll-to=partners"
 			}
 		]
 	},
@@ -96,4 +96,3 @@
 		]
 	}
 ]
-

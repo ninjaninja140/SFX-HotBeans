@@ -130,7 +130,11 @@ export default () => {
 						whiteSpace: 'nowrap',
 						alignItems: 'right',
 					}}>
-					<button className='white-button'>
+					<button
+						className='white-button'
+						onClick={() =>
+							(window.location.href = `/contact?subject-ref=Website%20Quote%20-%20${new Date().toLocaleDateString()}&scroll-to=contact-us-here`)
+						}>
 						{isScrolled ? (
 							<IoPricetag style={{ height: '100%', width: '100%' }} />
 						) : (
@@ -142,4 +146,3 @@ export default () => {
 		</header>
 	);
 };
-

@@ -1,0 +1,63 @@
+/* Maax Normal */
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Maax Bold */
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Maax Normal Italic*/
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-Italic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Maax Light*/
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-Light.otf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Maax Bold Italic*/
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-BoldItalic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Maax Black*/
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-Black.otf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Maax SemiBold*/
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-Medium.otf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Maax SemiBold Italic*/
+@font-face {
+    font-family: 'Maax';
+    src: url('MaaxTrial-MediumItalic.otf');
+    font-weight: 600;
+    font-style: italic;
+}

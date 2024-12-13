@@ -20,7 +20,7 @@ export default () => {
 				}}>
 				<h1>About us</h1>
 				<p>
-					I'd like to formally welcome you to our website, on this page, you can learn all
+					Since I've got your attention, I'd like to formally welcome you to our website. On this page, you can learn all
 					there is to know about HotBeans Website Development, its history, what it stands
 					for, how we tend to operate and more.
 				</p>
@@ -34,7 +34,11 @@ export default () => {
 					}}
 					onClick={() => {
 						var el = document.getElementById('who-are-we');
-						el!.scrollIntoView({ behavior: 'smooth' });
+						el!.scrollIntoView({
+							behavior: 'smooth',
+							block: 'center',
+							inline: 'center',
+						});
 					}}
 				/>
 			</div>

@@ -5,6 +5,7 @@ import Hero1 from '@components/PageComponents/Homepage/DesignMadeEasy';
 import Hero2 from '@components/PageComponents/Homepage/FairPrices';
 import Hero3 from '@components/PageComponents/Homepage/OurDevelopers';
 import Hero4 from '@components/PageComponents/Homepage/Trusted';
+import ScrollTo from '@utilities/ScrollTo';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { IoChevronDown } from 'react-icons/io5';
 
@@ -29,6 +30,8 @@ export default () => {
 	return (
 		<div>
 			<Route Location={'Home'} />
+			<ScrollTo />
+
 			<div
 				style={{
 					height: `calc(100vh - ${isScrolled ? '55px' : '75px'} - 8px)`,
@@ -54,8 +57,14 @@ export default () => {
 						alignContent: 'center',
 						textAlign: 'center',
 					}}>
-					<button className='white-button'>Get a Quote</button>
-					<button className='white-button'>Contact Us</button>
+					<button
+						className='white-button'
+						onClick={() =>
+							(window.location.href = `/contact?subject-ref=Website%20Quote%20-%20${new Date().toLocaleDateString()}&scroll-to=contact-us-here`)
+						}>
+						Get a Quote
+					</button>
+					<button className='white-button' onClick={() => window.location.href = '/contact'}>Contact Us</button>
 				</div>
 				<IoChevronDown
 					style={{
@@ -67,7 +76,11 @@ export default () => {
 					}}
 					onClick={() => {
 						var el = document.getElementById('DesignMadeEasy');
-						el!.scrollIntoView({ behavior: 'smooth' });
+						el!.scrollIntoView({
+							behavior: 'smooth',
+							block: 'center',
+							inline: 'center',
+						});
 					}}
 				/>
 			</div>
@@ -103,7 +116,10 @@ export default () => {
 					}}>
 					<button
 						style={{ width: '350px' }}
-						className='inverted-button blurple-button-border'>
+						className='inverted-button blurple-button-border'
+						onClick={() =>
+							(location.href = `/contact?subject-ref=Website%20Quote%20-%20${new Date().toLocaleDateString()}&scroll-to=contact-us-here`)
+						}>
 						Get a Website Quote Today!
 					</button>
 				</div>

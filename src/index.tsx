@@ -8,6 +8,7 @@ import Header from '@components/Header';
 import Head from '@components/Meta/Head';
 import Loading from '@components/Pages/Loading';
 import NotFound from '@components/Pages/NotFound';
+
 import { AppRoutes } from '@src/Router';
 
 import '@css/application.css';
