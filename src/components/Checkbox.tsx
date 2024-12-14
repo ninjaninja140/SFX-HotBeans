@@ -9,9 +9,13 @@ interface Params {
 	children?: ReactNode;
 	colour?: string;
 	activeColour?: string;
+	activeBorderColour?: string;
 	idleColour?: string;
+	idleBorder?: string;
 	textColour?: string;
+	checkColour?: string;
 	textStyle?: CSSProperties;
+	checkboxStyle?: CSSProperties;
 }
 
 export default ({
@@ -20,29 +24,42 @@ export default ({
 	style = {},
 	children,
 	activeColour = '#5865f2',
+	activeBorderColour,
 	idleColour = '#ffffff',
+	idleBorder = '#cccccc',
 	textColour = '#5865f2',
+	checkColour = '#ffffff',
 	textStyle = {},
+	checkboxStyle = {},
 }: Params) => {
 	const [background, setColour] = useState<string>('#ffffff');
 	const [border, setBorder] = useState<string>('#cccccc');
 	const [checkBoxEnabledState, setCheckBoxEnabledState] = useState<number>(0);
+	const [isChecked, setIsChecked] = useState(value);
 
-	function setColours() {
+	function setColours(value: boolean) {
 		if (value === true) {
 			setColour(activeColour);
-			setBorder(activeColour);
+			setBorder(activeBorderColour ?? activeColour);
 			setCheckBoxEnabledState(1);
 		} else {
 			setColour(idleColour);
-			setBorder('#cccccc');
+			setBorder(style.borderColor || (value ? activeColour : idleBorder));
 			setCheckBoxEnabledState(0);
 		}
 	}
 
-	useEffectOnce(() => setBorder(style.borderColor || (value ? activeColour : '#cccccc')));
+	const handleClick = () => {
+		const newValue = !isChecked;
+		setIsChecked(newValue);
+		setColours(newValue);
+		onChange(newValue);
+	};
+
+	useEffectOnce(() => setIsChecked(value));
+	useEffectOnce(() => setBorder(style.borderColor || (value ? activeColour : idleBorder)));
 	useEffectOnce(() => setColour(idleColour));
-	useEffectOnce(() => setColours());
+	useEffectOnce(() => setColours(value));
 
 	return (
 		<div
@@ -56,11 +73,7 @@ export default ({
 				padding: '0',
 				...style,
 			}}
-			onClick={() => {
-				value = !value;
-				setColours();
-				onChange(value);
-			}}>
+			onClick={handleClick}>
 			<div
 				style={{
 					width: '12px',
@@ -77,13 +90,13 @@ export default ({
 					alignContent: 'center',
 					justifyItems: 'center',
 					transition: 'background-color 0.3s ease',
-					...style,
+					...checkboxStyle,
 				}}>
 				<IoCheckmarkSharp
 					style={{
 						opacity: checkBoxEnabledState,
 						transition: 'opacity 0.3s ease',
-						color: '#ffffff',
+						color: checkColour,
 						width: '100%',
 						height: '100%',
 					}}

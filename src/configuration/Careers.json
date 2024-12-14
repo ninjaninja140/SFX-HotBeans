@@ -4,6 +4,7 @@
 		"Salary": 60000,
 		"About": "Hey there! My name is Eden and I manage operations behind HotBeans Website Development! I lead the backend development department of HotBeans, I make sure things are in check, code is working smoothly and everything run smoothly as it should be.",
 		"Tags": ["Design"],
-		"Type": "Full-Time"
+		"Type": "Full-Time",
+		"Arrangement": "Hybrid"
 	}
 ]
