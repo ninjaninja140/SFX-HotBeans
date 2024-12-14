@@ -3,6 +3,7 @@ import Hero from '@components/PageComponents/About/Title';
 import Section from '@components/Section';
 import Cloudflare from '@content/Banners/Cloudflare.svg?react';
 import ScrollTo from '@utilities/ScrollTo';
+import { Fragment } from 'react/jsx-runtime';
 
 const Logo = Cloudflare as React.FunctionComponent<
 	React.SVGProps<SVGSVGElement> & {
@@ -15,7 +16,7 @@ const Logo = Cloudflare as React.FunctionComponent<
 
 export default () => {
 	return (
-		<div>
+		<Fragment>
 			<Route Location='About us' />
 			<ScrollTo />
 
@@ -138,7 +139,9 @@ export default () => {
 				<b>Thank you Cloudflare, we love you! ❤︎</b>
 				<Logo height='100' style={{ width: '100%', marginTop: '40px' }} />
 			</Section>
-			<Section title='How we operate' style={{ fontSize: '19px', paddingLeft: '13px', paddingRight: '13px' }}>
+			<Section
+				title='How we operate'
+				style={{ fontSize: '19px', paddingLeft: '13px', paddingRight: '13px' }}>
 				At HotBeans, we try to create a relaxed employee environment, we try to get as many
 				people we can into our London office at a time, as we have a belief people work better
 				in the work place rather than at home, as for the overseas workers, we have small
@@ -153,6 +156,6 @@ export default () => {
 				the company, where everyone works on the same level playing field so we can eliminate
 				discrimination and any sort of unfairness in the workplace.
 			</Section>
-		</div>
+		</Fragment>
 	);
 };

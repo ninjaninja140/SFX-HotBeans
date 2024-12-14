@@ -12,9 +12,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Redirect } from '@bracketed/vite-plugin-router';
 
 const R0 = lazy(() => import('./pages/about'));
-const R1 = lazy(() => import('./pages/contact'));
-const R2 = lazy(() => import('./pages/'));
-const R3 = lazy(() => import('./pages/ourStaff'));
+const R1 = lazy(() => import('./pages/careers'));
+const R2 = lazy(() => import('./pages/contact'));
+const R3 = lazy(() => import('./pages/'));
+const R4 = lazy(() => import('./pages/ourStaff'));
 
 
 /**
@@ -29,9 +30,10 @@ export function AppRoutes(props: Props) {
 	<Suspense fallback={props.loadingPage || <div>Loading...</div>}>
         <Routes>
           <Route path={"/about-us"} key={"/about-us"} element={<R0></R0>}></Route>
-<Route path={"/contact"} key={"/contact"} element={<R1></R1>}></Route>
-<Route path={"/"} key={"/"} element={<R2></R2>}></Route>
-<Route path={"/our-staff"} key={"/our-staff"} element={<R3></R3>}></Route>
+<Route path={"/careers"} key={"/careers"} element={<R1></R1>}></Route>
+<Route path={"/contact"} key={"/contact"} element={<R2></R2>}></Route>
+<Route path={"/"} key={"/"} element={<R3></R3>}></Route>
+<Route path={"/our-staff"} key={"/our-staff"} element={<R4></R4>}></Route>
 		  <Route path={"/local"} key={"/local"} element={<Redirect href={"https://google.com"}/>}></Route>
 		  <Route path="*" element={props.notFoundPage || <div>404</div>} />
         </Routes>

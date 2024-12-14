@@ -4,10 +4,11 @@ import Hero from '@components/PageComponents/OurStaff/Title';
 import Section from '@components/Section';
 import Link from '@components/Text/Link';
 import ScrollTo from '@utilities/ScrollTo';
+import { Fragment } from 'react';
 
 export default () => {
 	return (
-		<div>
+		<Fragment>
 			<Route Location={'Our Staff'} />
 			<ScrollTo />
 
@@ -79,6 +80,6 @@ export default () => {
 					</button>
 				</div>
 			</div>
-		</div>
+		</Fragment>
 	);
 };

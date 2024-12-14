@@ -6,7 +6,7 @@ import Hero2 from '@components/PageComponents/Homepage/FairPrices';
 import Hero3 from '@components/PageComponents/Homepage/OurDevelopers';
 import Hero4 from '@components/PageComponents/Homepage/Trusted';
 import ScrollTo from '@utilities/ScrollTo';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { Fragment, useEffect, useLayoutEffect, useState } from 'react';
 import { IoChevronDown } from 'react-icons/io5';
 
 export default () => {
@@ -28,7 +28,7 @@ export default () => {
 	}, []);
 
 	return (
-		<div>
+		<Fragment>
 			<Route Location={'Home'} />
 			<ScrollTo />
 
@@ -64,7 +64,11 @@ export default () => {
 						}>
 						Get a Quote
 					</button>
-					<button className='white-button' onClick={() => window.location.href = '/contact'}>Contact Us</button>
+					<button
+						className='white-button'
+						onClick={() => (window.location.href = '/contact')}>
+						Contact Us
+					</button>
 				</div>
 				<IoChevronDown
 					style={{
@@ -124,6 +128,6 @@ export default () => {
 					</button>
 				</div>
 			</div>
-		</div>
+		</Fragment>
 	);
 };

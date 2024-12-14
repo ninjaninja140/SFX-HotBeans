@@ -5,7 +5,7 @@ import Underline from '@components/Text/Underline';
 import { createMailtoLink } from '@utilities/MailTo';
 import { Notification } from '@utilities/Notification';
 import ScrollTo from '@utilities/ScrollTo';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import validator from 'validator';
 
@@ -26,7 +26,7 @@ export default () => {
 	}, []);
 
 	return (
-		<div>
+		<Fragment>
 			<Route Location='Contact us' />
 			<ScrollTo />
 
@@ -147,17 +147,24 @@ export default () => {
 			</Section>
 
 			<Section title='Visit us in person'>
-				<p>Our London offices are open from 9:30 AM until 5:30 PM or until 1:40 on a Friday, come visit us if you feel like you'd rather talk to us in person!</p>
+				<p>
+					Our London offices are open from 9:30 AM until 5:30 PM or until 1:40 on a
+					Friday, come visit us if you feel like you'd rather talk to us in person!
+				</p>
 				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6203580973543!2d-0.11807139999999999!3d51.50183390000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487603530e92fa39%3A0xf872835bbffc7170!2sCloudflare!5e0!3m2!1sen!2suk!4v1734009026858!5m2!1sen!2suk"
-					height="450"
-					style={{ border: '0', width: '100%', borderRadius: '20px', }}
+					src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6203580973543!2d-0.11807139999999999!3d51.50183390000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487603530e92fa39%3A0xf872835bbffc7170!2sCloudflare!5e0!3m2!1sen!2suk!4v1734009026858!5m2!1sen!2suk'
+					height='450'
+					style={{ border: '0', width: '100%', borderRadius: '20px' }}
 					allowFullScreen
-					loading="lazy"
-					referrerPolicy="no-referrer-when-downgrade"
+					loading='lazy'
+					referrerPolicy='no-referrer-when-downgrade'
 				/>
-				<p>Our Offices are always open for clients to come talk to their team in-person and for potential clients to come get their quotas sorted in-office then rather over email.</p>
+				<p>
+					Our Offices are always open for clients to come talk to their team in-person and
+					for potential clients to come get their quotas sorted in-office then rather over
+					email.
+				</p>
 			</Section>
-		</div>
+		</Fragment>
 	);
 };
