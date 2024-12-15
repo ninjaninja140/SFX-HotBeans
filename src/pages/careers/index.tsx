@@ -1,10 +1,11 @@
 import Route from '@components/Meta/Route';
 import Hero from '@components/PageComponents/Careers/Hero';
 import SelectionDropdown from '@components/SelectionDropdown';
+import Vacancy from '@components/Vacancy';
 import VacanciesJSON from '@configuration/Careers.json';
 import ScrollTo from '@utilities/ScrollTo';
+import { Fragment } from 'react';
 import { IoFilter } from 'react-icons/io5';
-import { Fragment } from 'react/jsx-runtime';
 
 interface Vacancy {
 	Title: string;
@@ -30,13 +31,6 @@ const Tags: Array<string> = [
 const Type: Array<string> = ['Full-Time', 'Part-Time', 'Apprenticeship'];
 
 const Arrangements: Array<string> = ['In-Office', 'Remote', 'Hybrid', 'Flexible'];
-
-const ArrangementDefinitions: Record<string, string> = {
-	'In-Office': 'In-Office',
-	Remote: 'Fully remote',
-	Hybrid: 'Hybrid (some in-office days)',
-	Flexible: 'Flexible (no required in-office days)',
-};
 
 export default () => {
 	return (
@@ -102,7 +96,7 @@ export default () => {
 								fontWeight: '600',
 								marginBottom: '30px',
 							}}>
-							Showing undefined Results
+							Showing {Vacancies.length} Results
 						</h3>
 						<div
 							style={{
@@ -110,57 +104,8 @@ export default () => {
 								textAlign: 'left',
 								alignItems: 'left',
 							}}>
-							{Vacancies.map((v) => (
-								<div
-									style={{
-										borderTopColor: '#5865f2',
-										borderTopStyle: 'solid',
-										borderTopWidth: '2px',
-										padding: '1rem',
-										display: 'flex',
-									}}>
-									<div style={{ flex: '3.5' }}>
-										<h3
-											style={{
-												padding: '0',
-												margin: '0',
-												fontWeight: '600',
-												fontSize: 'clamp(1.0625rem,1.0625rem + .0625 * (100vw - 480px) / 1440 * 16,1.125rem)',
-												marginBottom: '1rem',
-											}}>
-											{v.Title}
-										</h3>
-										<p
-											style={{
-												width: '100%',
-												padding: '0',
-												margin: '0',
-												fontSize: 'clamp(.9375rem,.9375rem + .0625 * (100vw - 480px) / 1440 * 16,1rem)',
-												color: '#454fbf',
-												fontFamily: 'monospace',
-											}}>{`${v.Type}, ${ArrangementDefinitions[v.Arrangement]} — ${v.Tags?.join(', ')}`}</p>
-									</div>
-									<div
-										style={{
-											flex: '0.5',
-											textAlign: 'center',
-											justifyContent: 'center',
-											alignItems: 'center',
-										}}>
-										<p
-											style={{
-												width: '100%',
-												padding: '0',
-												margin: '0',
-												fontSize: 'clamp(.9375rem,.9375rem + .0625 * (100vw - 480px) / 1440 * 16,1rem)',
-												color: '#454fbf',
-												fontFamily: 'monospace',
-												textAlign: 'right',
-											}}>
-											{v.Salary}
-										</p>
-									</div>
-								</div>
+							{Vacancies.map((v, vid) => (
+								<Vacancy vacancy={v} id={vid + 1} />
 							))}
 						</div>
 					</div>

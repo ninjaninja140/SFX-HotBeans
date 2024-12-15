@@ -19,7 +19,6 @@ export default () => {
 		<Fragment>
 			<Route Location='About us' />
 			<ScrollTo />
-
 			<Hero />
 
 			<Section

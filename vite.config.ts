@@ -13,12 +13,7 @@ export default {
 	},
 	server: {
 		watch: {
-			ignored: [
-				'**/src/Router.tsx',
-				'**/src/configuration/Routes.json',
-				'**/public/sitemap.xml',
-				'**/src/routes.tsx',
-			],
+			ignored: ['**/src/Router.tsx'],
 		},
 	},
 	plugins: [
@@ -28,10 +23,6 @@ export default {
 			dir: 'src/pages',
 			suspense: true,
 			'404': true,
-
-			redirects: {
-				'/local': 'https://google.com',
-			},
 		}).affix(),
 		nodePolyfills({
 			protocolImports: true,
