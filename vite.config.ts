@@ -10,6 +10,7 @@ import svgr from 'vite-plugin-svgr';
 export default {
 	build: {
 		target: 'es2022',
+		chunkSizeWarningLimit: 800,
 	},
 	optimizeDeps: {
 		exclude: ['node-stdlib-browser'],

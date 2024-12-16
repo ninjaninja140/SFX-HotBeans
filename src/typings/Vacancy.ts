@@ -1,4 +1,5 @@
 export interface Vacancy {
+	VacancyId: number;
 	Title: string;
 	Salary: number;
 	About: React.ReactNode;

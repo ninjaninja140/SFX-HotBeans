@@ -156,8 +156,8 @@ export default () => {
 								textAlign: 'left',
 								alignItems: 'left',
 							}}>
-							{currentVacancies.map((v, vid) => (
-								<Vacancy vacancy={v} id={vid + 1} />
+							{currentVacancies.map((v) => (
+								<Vacancy vacancy={v} id={v.VacancyId} />
 							))}
 						</div>
 						<div

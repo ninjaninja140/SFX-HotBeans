@@ -22,7 +22,8 @@ export default () => {
 	};
 
 	const { id } = useParams();
-	const Vacancy: Vacancy = Vacancies[Number(id) - 1];
+
+	const Vacancy: Vacancy | undefined = Vacancies.find((v) => v.VacancyId === Number(id));
 
 	if (!Vacancy) return <JobsFallback />;
 

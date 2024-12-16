@@ -24,18 +24,17 @@ export default ({ vacancy, id }: { vacancy: Vacancy; id: number }) => {
 				display: 'flex',
 			}}>
 			<div style={{ flex: '3.5' }}>
-				<h3
+				<a
 					style={{
 						padding: '0',
 						margin: '0',
 						fontWeight: '600',
 						fontSize: 'clamp(1.0625rem,1.0625rem + .0625 * (100vw - 480px) / 1440 * 16,1.125rem)',
-						marginBottom: '1rem',
 						cursor: 'pointer',
+						color: '#5865f2',
+						userSelect: 'none',
 					}}
-					onClick={() =>
-						window.open(`${window.location.origin}/careers/jobs/${id}`, '_self')
-					}>
+					href={`${window.location.origin}/careers/jobs/${id}`}>
 					{vacancy.Title} —{' '}
 					<span
 						style={{
@@ -51,12 +50,13 @@ export default ({ vacancy, id }: { vacancy: Vacancy; id: number }) => {
 							maximumFractionDigits: 1,
 						}).format(vacancy.Salary)}
 					</span>
-				</h3>
+				</a>
 				<p
 					style={{
 						width: '100%',
 						padding: '0',
 						margin: '0',
+						marginTop: '0.6rem',
 						fontSize: 'clamp(.9375rem,.9375rem + .0625 * (100vw - 480px) / 1440 * 16,1rem)',
 						color: '#000000',
 						fontFamily: 'GG Sans',

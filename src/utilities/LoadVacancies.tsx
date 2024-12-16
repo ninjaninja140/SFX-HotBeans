@@ -5,14 +5,17 @@ import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 
 export const loadVacancies = async (): Promise<Vacancy[]> => {
-	const files = import.meta.glob(`/src/configuration/Vacancies/*.md`, { as: 'raw' });
+	const files = import.meta.glob(`/src/configuration/Vacancies/*.md`, { query: '?raw', import: 'default' });
 	const vacancies: Vacancy[] = [];
+	let Index = 0;
 
 	for (const path in files) {
-		const content = await files[path]();
+		Index++;
+		const content = (await files[path]()) as string;
 		const { data, content: markdownContent } = matter(content);
 
 		vacancies.push({
+			VacancyId: Index,
 			Title: data.Title,
 			Salary: data.Salary,
 			Tags: data.Tags,
