@@ -8,6 +8,9 @@ import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 /** @type {import('vite').UserConfig} */
 export default {
+	build: {
+		target: 'es2022',
+	},
 	optimizeDeps: {
 		exclude: ['node-stdlib-browser'],
 	},
