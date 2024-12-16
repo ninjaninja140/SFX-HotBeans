@@ -22,9 +22,24 @@ body {
   padding: 8px
 }
 
+pre>code {
+  padding: none;
+  background-color: none;
+  border-radius: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  padding: 0.2rem;
+  background-color: #f2f2f2;
+  border-radius: 0.2rem;
+}
+
+pre {
+  padding: 1rem;
+  background-color: #f2f2f2;
+  border-radius: 0.2rem;
 }
 
 .no-underline {

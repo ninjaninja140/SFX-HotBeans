@@ -2,21 +2,12 @@ import Route from '@components/Meta/Route';
 import Hero from '@components/PageComponents/Careers/Hero';
 import SelectionDropdown from '@components/SelectionDropdown';
 import Vacancy from '@components/Vacancy';
-import VacanciesJSON from '@configuration/Careers.json';
+import VacancyArray from '@src/typings/Vacancy';
+import { Vacancies } from '@utilities/LoadVacancies';
+import paginate from '@utilities/Pageinate';
 import ScrollTo from '@utilities/ScrollTo';
-import { Fragment } from 'react';
-import { IoFilter } from 'react-icons/io5';
-
-interface Vacancy {
-	Title: string;
-	Salary: number;
-	About: string;
-	Tags: Array<string> | undefined;
-	Type: string;
-	Arrangement: string;
-}
-
-const Vacancies: Array<Vacancy> = VacanciesJSON;
+import { Fragment, useMemo, useState } from 'react';
+import { IoFilter, IoRefresh } from 'react-icons/io5';
 
 const Tags: Array<string> = [
 	'Design',
@@ -33,6 +24,34 @@ const Type: Array<string> = ['Full-Time', 'Part-Time', 'Apprenticeship'];
 const Arrangements: Array<string> = ['In-Office', 'Remote', 'Hybrid', 'Flexible'];
 
 export default () => {
+	const [currentPage, setCurrentPage] = useState<number>(1);
+	const paginatedVacancies = useMemo(() => paginate(Vacancies, 6) as Array<VacancyArray>, []);
+	const totalPages = paginatedVacancies.length;
+	const currentVacancies = paginatedVacancies[currentPage - 1] || [];
+
+	const getPageRange = (): Array<number | string> => {
+		const visiblePages: Array<number | string> = [];
+		const rangeBefore = 2;
+		const rangeAfter = 2;
+
+		if (currentPage > rangeBefore + 2) visiblePages.push(1);
+		if (currentPage > rangeBefore + 3) visiblePages.push('...');
+
+		for (let i = Math.max(1, currentPage - rangeBefore); i < currentPage; i++) visiblePages.push(i);
+
+		visiblePages.push(currentPage);
+
+		for (let i = currentPage + 1; i <= Math.min(totalPages, currentPage + rangeAfter); i++)
+			visiblePages.push(i);
+
+		if (currentPage < totalPages - rangeAfter - 2) visiblePages.push('...');
+		if (currentPage < totalPages - rangeAfter - 1) visiblePages.push(totalPages);
+
+		return visiblePages;
+	};
+
+	const handlePageChange = (page: number) => setCurrentPage(page);
+
 	return (
 		<Fragment>
 			<Route Location='Careers' />
@@ -79,6 +98,39 @@ export default () => {
 						/>
 						<SelectionDropdown title='Arrangements' array={Arrangements} />
 						<SelectionDropdown title='Career Type' array={Type} />
+						<div
+							style={{
+								display: 'flex',
+								alignContent: 'center',
+								alignItems: 'center',
+								justifyItems: 'center',
+								cursor: 'pointer',
+							}}
+							onClick={() =>
+								window.open(
+									`${window.location.origin}/careers?scroll-to=vacancies`,
+									'_self'
+								)
+							}>
+							<div
+								style={{
+									width: '17px',
+									height: '17px',
+									borderRadius: '0.2rem',
+									border: '#454fbf solid 2px',
+									color: '#454fbf',
+									padding: '7px',
+									marginRight: '10px',
+								}}>
+								<IoRefresh
+									style={{
+										height: '100%',
+										width: '100%',
+									}}
+								/>
+							</div>
+							<p>Refresh Results</p>
+						</div>
 					</div>
 					<div
 						style={{
@@ -96,7 +148,7 @@ export default () => {
 								fontWeight: '600',
 								marginBottom: '30px',
 							}}>
-							Showing {Vacancies.length} Results
+							Showing {Vacancies.length} Results with {totalPages} Pages
 						</h3>
 						<div
 							style={{
@@ -104,8 +156,46 @@ export default () => {
 								textAlign: 'left',
 								alignItems: 'left',
 							}}>
-							{Vacancies.map((v, vid) => (
+							{currentVacancies.map((v, vid) => (
 								<Vacancy vacancy={v} id={vid + 1} />
+							))}
+						</div>
+						<div
+							style={{
+								marginTop: '20px',
+								display: 'flex',
+								gap: '5px',
+								alignItems: 'center',
+								justifyContent: 'center',
+							}}>
+							{getPageRange().map((page, idx) => (
+								<div
+									key={idx}
+									onClick={() =>
+										typeof page === 'number' &&
+										handlePageChange(page)
+									}
+									style={{
+										width: '17px',
+										height: '17px',
+										borderRadius: '0.2rem',
+										border: '#454fbf solid 2px',
+										color: '#454fbf',
+										padding: '7px',
+										cursor: 'pointer',
+										textAlign: 'center',
+										alignContent: 'center',
+										justifyContent: 'center',
+										alignItems: 'center',
+										justifyItems: 'center',
+										display: 'flex',
+										pointerEvents:
+											typeof page === 'number'
+												? 'auto'
+												: 'none',
+									}}>
+									{page === '...' ? '...' : page}
+								</div>
 							))}
 						</div>
 					</div>

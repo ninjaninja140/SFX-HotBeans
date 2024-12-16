@@ -1,15 +1,7 @@
+import { Vacancy } from '@src/typings/Vacancy';
 import { Notification } from '@utilities/Notification';
 import { IoShareOutline } from 'react-icons/io5';
 import { useCopyToClipboard } from 'react-use';
-
-interface Vacancy {
-	Title: string;
-	Salary: number;
-	About: string;
-	Tags: Array<string> | undefined;
-	Type: string;
-	Arrangement: string;
-}
 
 const ArrangementDefinitions: Record<string, string> = {
 	'In-Office': 'In-Office',
@@ -42,7 +34,7 @@ export default ({ vacancy, id }: { vacancy: Vacancy; id: number }) => {
 						cursor: 'pointer',
 					}}
 					onClick={() =>
-						window.open(`${window.location.origin}/careers/jobs/${id}`, '_blank')
+						window.open(`${window.location.origin}/careers/jobs/${id}`, '_self')
 					}>
 					{vacancy.Title} —{' '}
 					<span
