@@ -1,4 +1,5 @@
 import Route from '@components/Meta/Route';
+import JobsFallback from '@components/Pages/JobsFallback';
 import '@css/vacancy.css';
 import { Vacancy } from '@src/typings/Vacancy';
 import { Vacancies } from '@utilities/LoadVacancies';
@@ -22,6 +23,8 @@ export default () => {
 
 	const { id } = useParams();
 	const Vacancy: Vacancy = Vacancies[Number(id) - 1];
+
+	if (!Vacancy) return <JobsFallback />;
 
 	return (
 		<Fragment>
