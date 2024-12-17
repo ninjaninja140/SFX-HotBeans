@@ -10,8 +10,8 @@ import { useParams } from 'react-router';
 import { Fragment } from 'react/jsx-runtime';
 
 const ArrangementDefinitions: Record<string, string> = {
-	'In-Office': 'In-Office',
-	Remote: 'Fully remote',
+	'In-Office': 'In-Office, London, UK',
+	Remote: 'Fully remote, Global',
 	Hybrid: 'Hybrid (some in-office days)',
 	Flexible: 'Flexible (no required in-office days)',
 };
@@ -84,7 +84,15 @@ export default () => {
 							</p>
 						))}
 					</div>
-					<button>Apply Now</button>
+					<button
+						onClick={() =>
+							window.open(
+								`${window.location.origin}/careers/jobs/${id}/apply`,
+								'_self'
+							)
+						}>
+						Apply Now
+					</button>
 					<div style={{ marginTop: '40px' }}>
 						<div
 							style={{
@@ -94,12 +102,12 @@ export default () => {
 								justifyItems: 'center',
 								cursor: 'pointer',
 							}}
-							onClick={() => {
+							onClick={() =>
 								window.open(
 									`${window.location.origin}/careers?scroll-to=vacancies`,
 									'_self'
-								);
-							}}>
+								)
+							}>
 							<div
 								style={{
 									width: '17px',

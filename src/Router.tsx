@@ -13,10 +13,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const R0 = lazy(() => import('./pages/about'));
 const R1 = lazy(() => import('./pages/careers/'));
-const R2 = lazy(() => import('./pages/careers/jobs/[id]'));
-const R3 = lazy(() => import('./pages/contact'));
-const R4 = lazy(() => import('./pages/'));
-const R5 = lazy(() => import('./pages/ourStaff'));
+const R2 = lazy(() => import('./pages/careers/jobs/[id]/apply'));
+const R3 = lazy(() => import('./pages/careers/jobs/[id]/'));
+const R4 = lazy(() => import('./pages/contact'));
+const R5 = lazy(() => import('./pages/'));
+const R6 = lazy(() => import('./pages/ourStaff'));
 
 
 /**
@@ -32,10 +33,11 @@ export function AppRoutes(props: Props) {
         <Routes>
           <Route path={"/about-us"} key={"/about-us"} element={<R0></R0>}></Route>
 <Route path={"/careers"} key={"/careers"} element={<R1></R1>}></Route>
-<Route path={"/careers/jobs/:id"} key={"/careers/jobs/:id"} element={<R2></R2>}></Route>
-<Route path={"/contact"} key={"/contact"} element={<R3></R3>}></Route>
-<Route path={"/"} key={"/"} element={<R4></R4>}></Route>
-<Route path={"/our-staff"} key={"/our-staff"} element={<R5></R5>}></Route>
+<Route path={"/careers/jobs/:id/apply"} key={"/careers/jobs/:id/apply"} element={<R2></R2>}></Route>
+<Route path={"/careers/jobs/:id"} key={"/careers/jobs/:id"} element={<R3></R3>}></Route>
+<Route path={"/contact"} key={"/contact"} element={<R4></R4>}></Route>
+<Route path={"/"} key={"/"} element={<R5></R5>}></Route>
+<Route path={"/our-staff"} key={"/our-staff"} element={<R6></R6>}></Route>
 		  
 		  <Route path="*" element={props.notFoundPage || <div>404</div>} />
         </Routes>

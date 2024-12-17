@@ -27,6 +27,16 @@ export default ({
 			alignContent: 'center',
 			alignItems: 'center',
 			justifyItems: 'center',
+		}}
+		onClick={() => {
+			if (document.getElementById(id))
+				return document.getElementById(id)!.scrollIntoView({
+					behavior: 'smooth',
+					block: 'center',
+					inline: 'center',
+				});
+
+			return;
 		}}>
 		{children ? (
 			<p
@@ -46,16 +56,6 @@ export default ({
 				height: '100%',
 				width: 'auto',
 				...chevronStyle,
-			}}
-			onClick={() => {
-				if (document.getElementById(id))
-					return document.getElementById(id)!.scrollIntoView({
-						behavior: 'smooth',
-						block: 'center',
-						inline: 'center',
-					});
-
-				return;
 			}}
 		/>
 	</div>
