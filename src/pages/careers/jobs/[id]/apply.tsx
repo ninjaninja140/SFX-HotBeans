@@ -6,6 +6,7 @@ import { Vacancy } from '@src/typings/Vacancy';
 import { Vacancies } from '@utilities/LoadVacancies';
 import ScrollTo from '@utilities/ScrollTo';
 import _ from 'lodash';
+import { useState } from 'react';
 import { useParams } from 'react-router';
 import { Fragment } from 'react/jsx-runtime';
 
@@ -17,6 +18,12 @@ const ArrangementDefinitions: Record<string, string> = {
 };
 
 export default () => {
+	const [email, setEmail] = useState<string>();
+	const [first, setFirstname] = useState<string>();
+	const [last, setLastname] = useState<string>();
+	const [number, setPhoneNumber] = useState<string>();
+	const [location, setLocation] = useState<string>();
+
 	const defaults: React.CSSProperties = {
 		flex: '1',
 	};
@@ -107,71 +114,71 @@ export default () => {
 								Required: <Required />
 							</p>
 						</div>
-						<form action=''>
-							<h3>
-								First Name <Required />
-							</h3>
-							<input
-								style={{ borderRadius: '0.2rem', width: '100%' }}
-								placeholder='First Name'
-								type='text'
-							/>
-							<h3>
-								Last Name <Required />
-							</h3>
-							<input
-								style={{ borderRadius: '0.2rem', width: '100%' }}
-								placeholder='Last Name'
-								type='text'
-							/>
-							<h3>
-								Email <Required />
-							</h3>
-							<input
-								style={{ borderRadius: '0.2rem', width: '100%' }}
-								placeholder='Email'
-								type='email'
-							/>
-							<h3>Phone Number</h3>
-							<input
-								style={{ borderRadius: '0.2rem', width: '100%' }}
-								placeholder='Phone Number'
-								type='tel'
-							/>
-							<h3>Location (City)</h3>
-							<input
-								style={{ borderRadius: '0.2rem', width: '100%' }}
-								placeholder='London, United Kingdom'
-								type='text'
-							/>
-							<button
-								style={{ marginTop: '0.5rem', marginBottom: '2rem' }}
-								onClick={() => {
-									//https://nominatim.openstreetmap.org/reverse?lat=<value>&lon=<value>&<params>
-									window.navigator.geolocation.getCurrentPosition(
-										(p) => console.log(p),
-										(e) => console.error(e),
-										{ maximumAge: Infinity }
-									);
-								}}>
-								Locate Me
-							</button>
-							<hr />
-							<h3>
-								Resume/CV <Required />
-							</h3>
-							<input
-								type='file'
-								style={{ width: '100%' }}
-								accept='.md,.rtf,.txt,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.pdf'
-							/>
-							<br />
-							<input
-								type='url'
-								placeholder='Website-based alternative'
-								style={{ marginTop: '0.5rem', width: '100%' }}
-							/>
-						</form>
+						<h3>
+							First Name <Required />
+						</h3>
+						<input
+							style={{ borderRadius: '0.2rem', width: '100%' }}
+							placeholder='First Name'
+							type='text'
+						/>
+						<h3>
+							Last Name <Required />
+						</h3>
+						<input
+							style={{ borderRadius: '0.2rem', width: '100%' }}
+							placeholder='Last Name'
+							type='text'
+						/>
+						<h3>
+							Email <Required />
+						</h3>
+						<input
+							style={{ borderRadius: '0.2rem', width: '100%' }}
+							placeholder='Email'
+							type='email'
+						/>
+						<h3>Phone Number</h3>
+						<input
+							style={{ borderRadius: '0.2rem', width: '100%' }}
+							placeholder='Phone Number'
+							type='tel'
+						/>
+						<h3>Location (City)</h3>
+						<input
+							style={{ borderRadius: '0.2rem', width: '100%' }}
+							placeholder='London, United Kingdom'
+							type='text'
+						/>
+						<button
+							style={{ marginTop: '0.5rem' }}
+							onClick={() => {
+								//https://nominatim.openstreetmap.org/reverse?lat=<value>&lon=<value>&<params>
+								window.navigator.geolocation.getCurrentPosition(
+									(p) => console.log(p),
+									(e) => console.error(e),
+									{ maximumAge: Infinity }
+								);
+							}}>
+							Locate Me
+						</button>
+						<h3>
+							Resume/CV <Required />
+						</h3>
+						<input
+							type='file'
+							style={{ borderRadius: '0.2rem', width: '100%' }}
+							onChange={(i) => {
+								if (i.target.files?.length === 1) {
+									return console.log('file');
+								}
+								console.log('no file');
+							}}
+							accept='.md,.rtf,.txt,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.pdf'
+						/>
+						<button style={{ width: '100%', marginTop: '40px' }}>
+							Submit Application
+						</button>
 					</div>
 				</div>
 			</div>
