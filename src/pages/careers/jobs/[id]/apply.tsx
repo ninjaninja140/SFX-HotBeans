@@ -51,56 +51,62 @@ export default () => {
 						alignSelf: 'center',
 						textAlign: 'center',
 					}}>
-					<h1
-						style={{
-							fontSize: 'clamp(2.5rem,2.5rem + 1 * (100vw - 480px) / 1440 * 16,3.5rem)',
-							lineHeight: '1.24',
-							margin: 0,
-							padding: 0,
-						}}>
-						{Vacancy.Title}
-					</h1>
-					<div
-						style={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignContent: 'center',
-							textAlign: 'center',
-							alignItems: 'center',
-							justifyItems: 'center',
-							marginBottom: '25px',
-						}}>
-						{_.flatMap(
-							[
-								`ID: ${id}`,
-								Vacancy.Type,
-								ArrangementDefinitions[Vacancy.Arrangement],
-							],
-							(v, i, a) => (a.length - 1 !== i ? [v, '/'] : v)
-						).map((s) => (
-							<p
-								style={{
-									paddingLeft: '25px',
-									fontWeight: s === '/' ? '700' : '400',
-									fontFamily: s === '/' ? 'GG Sans' : 'Maax',
-									color: s === '/' ? '#5865f2' : '#000000',
-									fontSize: s === '/' ? '1.5rem' : '1.2rem',
-									pointerEvents: 'none',
-								}}>
-								{s}
-							</p>
-						))}
+					<div style={{ marginTop: '10rem', marginBottom: '10rem' }}>
+						<h1
+							style={{
+								fontSize: 'clamp(2.5rem,2.5rem + 1 * (100vw - 480px) / 1440 * 16,3.5rem)',
+								lineHeight: '1.24',
+								margin: 0,
+								padding: 0,
+							}}>
+							{Vacancy.Title}
+						</h1>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								alignContent: 'center',
+								textAlign: 'center',
+								alignItems: 'center',
+								justifyItems: 'center',
+								marginBottom: '25px',
+							}}>
+							{_.flatMap(
+								[
+									`ID: ${id}`,
+									Vacancy.Type,
+									ArrangementDefinitions[Vacancy.Arrangement],
+								],
+								(v, i, a) => (a.length - 1 !== i ? [v, '/'] : v)
+							).map((s) => (
+								<p
+									style={{
+										paddingLeft: '25px',
+										fontWeight: s === '/' ? '700' : '400',
+										fontFamily:
+											s === '/' ? 'GG Sans' : 'Maax',
+										color:
+											s === '/'
+												? '#5865f2'
+												: '#000000',
+										fontSize:
+											s === '/' ? '1.5rem' : '1.2rem',
+										pointerEvents: 'none',
+									}}>
+									{s}
+								</p>
+							))}
+						</div>
+						<button
+							onClick={() =>
+								window.open(
+									`${window.location.origin}/careers/jobs/${id}`,
+									'_self'
+								)
+							}>
+							View Vacancy Description
+						</button>
 					</div>
-					<button
-						style={{ marginBottom: '2rem' }}
-						onClick={() =>
-							window.open(
-								`${window.location.origin}/careers/jobs/${id}`,
-								'_self'
-							)
-						}>
-						View Vacancy Description
-					</button>
 					<hr />
 					<div className='vacancy' style={{ width: '100%' }}>
 						<div
