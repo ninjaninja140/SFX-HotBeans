@@ -1,14 +1,18 @@
 import Route from '@components/Meta/Route';
 import JobsFallback from '@components/Pages/JobsFallback';
 import Required from '@components/Text/Required';
+import Underline from '@components/Text/Underline';
 import '@css/vacancy.css';
 import { Vacancy } from '@src/typings/Vacancy';
 import { Vacancies } from '@utilities/LoadVacancies';
+import { Notification } from '@utilities/Notification';
 import ScrollTo from '@utilities/ScrollTo';
+import axios from 'axios';
 import _ from 'lodash';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import { Fragment } from 'react/jsx-runtime';
+import validator from 'validator';
 
 const ArrangementDefinitions: Record<string, string> = {
 	'In-Office': 'In-Office, London, UK',
@@ -18,11 +22,14 @@ const ArrangementDefinitions: Record<string, string> = {
 };
 
 export default () => {
-	const [email, setEmail] = useState<string>();
-	const [first, setFirstname] = useState<string>();
-	const [last, setLastname] = useState<string>();
-	const [number, setPhoneNumber] = useState<string>();
+	const [email, setEmail] = useState<boolean>(false);
+	const [first, setFirstname] = useState<boolean>(false);
+	const [last, setLastname] = useState<boolean>(false);
+	const [number, setPhoneNumber] = useState<boolean>(false);
 	const [location, setLocation] = useState<string>();
+	const [loadingLocation, setLoadingLocation] = useState<boolean>(false);
+	const [cv, setCV] = useState<boolean>(false);
+	const [cvValue, setCVValue] = useState<string>('');
 
 	const defaults: React.CSSProperties = {
 		flex: '1',
@@ -143,26 +150,113 @@ export default () => {
 							style={{ borderRadius: '0.2rem', width: '100%' }}
 							placeholder='Email'
 							type='email'
+							onChange={(i) => {
+								if (!(i.target.value === ''))
+									validator.isEmail(i.target.value) === true
+										? (() => setEmail(true))()
+										: (() => setEmail(false))();
+								else setEmail(false);
+							}}
 						/>
+						{email ? undefined : (
+							<div style={{ marginBottom: '12px' }}>
+								<i style={{ color: '#FEE75C', fontSize: '14px' }}>
+									Invalid form of input, please make sure this is
+									an <Underline>Email</Underline>.
+								</i>
+							</div>
+						)}
 						<h3>Phone Number</h3>
+						<i style={{ fontSize: '14px', marginBottom: '0.2rem' }}>
+							If the system incorrectly marks your phone number, try another
+							way of typing it.
+						</i>
 						<input
 							style={{ borderRadius: '0.2rem', width: '100%' }}
 							placeholder='Phone Number'
 							type='tel'
+							onChange={(i) => {
+								if (
+									i.target.value.match(
+										/(?<=[ ])[\d \-+()]+$|(?<=[ ])[\d \-+()]+(?=[ ]\w)/
+									)
+								)
+									return setPhoneNumber(true);
+
+								return setPhoneNumber(false);
+							}}
 						/>
+						{number ? undefined : (
+							<div style={{ marginBottom: '12px' }}>
+								<i style={{ color: '#FEE75C', fontSize: '14px' }}>
+									Invalid form of input, please make sure this is
+									a form of <Underline>Phone Number</Underline>.
+								</i>
+							</div>
+						)}
 						<h3>Location (City)</h3>
 						<input
 							style={{ borderRadius: '0.2rem', width: '100%' }}
-							placeholder='London, United Kingdom'
+							placeholder='Example: London, United Kingdom'
 							type='text'
+							readOnly={loadingLocation}
+							value={location}
+							onChange={(i) => setLocation(i.target.value)}
 						/>
 						<button
 							style={{ marginTop: '0.5rem' }}
 							onClick={() => {
-								//https://nominatim.openstreetmap.org/reverse?lat=<value>&lon=<value>&<params>
+								setLoadingLocation(true);
+								setLocation('');
+								new Notification({
+									message: 'Loading from current location...',
+								});
+
 								window.navigator.geolocation.getCurrentPosition(
-									(p) => console.log(p),
-									(e) => console.error(e),
+									(p) => {
+										axios.get(
+											`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${p.coords.latitude}&lon=${p.coords.longitude}`,
+											{
+												headers: {
+													Accept: 'application/json',
+												},
+											}
+										)
+											.then((d) => {
+												const data = d.data;
+
+												setLocation(
+													data.address
+														.city +
+														', ' +
+														data
+															.address
+															.country
+												);
+												setLoadingLocation(
+													false
+												);
+												new Notification({
+													message: 'Loaded location successfully!',
+												});
+											})
+											.catch(() => {
+												setLoadingLocation(
+													false
+												);
+												return new Notification(
+													{
+														message: 'Unable to get live location, location services access was denied.',
+													}
+												);
+											});
+									},
+									() => {
+										setLoadingLocation(false);
+										return new Notification({
+											message: 'Unable to get live location, location services access was denied.',
+										});
+									},
 									{ maximumAge: Infinity }
 								);
 							}}>
@@ -174,14 +268,44 @@ export default () => {
 						<input
 							type='file'
 							style={{ borderRadius: '0.2rem', width: '100%' }}
+							value={cvValue}
 							onChange={(i) => {
-								if (i.target.files?.length === 1) {
-									return console.log('file');
-								}
-								console.log('no file');
+								setCVValue(i.target.value);
+								if (i.target.files?.length === 1) return setCV(true);
+								return setCV(false);
 							}}
 							accept='.md,.rtf,.txt,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.pdf'
 						/>
+						{cv ? (
+							<button
+								style={{ marginTop: '0.5rem' }}
+								onClick={() => {
+									setCVValue('');
+									setCV(false);
+								}}>
+								Remove CV
+							</button>
+						) : (
+							<div style={{ marginBottom: '12px' }}>
+								<i
+									style={{
+										color: '#FEE75C',
+										fontSize: '14px',
+									}}>
+									Please make sure you have a{' '}
+									<Underline>CV</Underline> attached to continue.
+								</i>
+							</div>
+						)}
+
+						<h3>Extra Information</h3>
+						<textarea
+							style={{
+								borderRadius: '0.2rem',
+								width: '100%',
+								minHeight: '7rem',
+							}}
+							placeholder='Extra information to submit on your application'></textarea>
 						<button style={{ width: '100%', marginTop: '40px' }}>
 							Submit Application
 						</button>
