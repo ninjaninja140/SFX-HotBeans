@@ -18,7 +18,9 @@ class Notification {
 
 	private readonly sendClientNotification = () =>
 		toast(this.message, {
+			ariaLabel: this.message,
 			toastId: this.messageId,
+			pauseOnHover: true,
 			icon: false,
 			draggable: true,
 			transition: cssTransition({
@@ -41,13 +43,7 @@ class Notification {
 				gap: '1.25rem',
 				alignItems: 'center',
 			},
-			progressStyle: {
-				backgroundColor: '#5865f2',
-				height: '0.35rem',
-				borderRadius: '5px',
-				marginTop: 'auto',
-			},
-
+			hideProgressBar: true,
 			closeButton: (
 				<svg width='24' height='24' viewBox='0 0 24 24'>
 					<path
@@ -60,4 +56,3 @@ class Notification {
 }
 
 export { Notification };
-

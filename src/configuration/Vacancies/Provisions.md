@@ -1,5 +1,5 @@
 ---
-Title: 'Pastoral Provisions Team Member'
+Title: 'Provisions Team Member'
 Salary: 45000
 Tags:
         - Customer Relations
@@ -10,7 +10,7 @@ Arrangement: 'Hybrid'
 
 # About the Role
 
-As a Pastoral Provisions Team Member at HotBeans Website Development, you will be responsible for providing emotional and personal support to employees and clients. Your role will focus on offering guidance, pastoral care, and providing resources to those in need. You will work closely with staff members to ensure their personal and professional needs are met, particularly in times of stress or difficulty. As part of a broader team, you will help create a supportive work environment where every individual feels valued, heard, and supported.
+As a Provisions Team Member at HotBeans Website Development, you will be responsible for providing emotional and personal support to employees and clients. Your role will focus on offering guidance, pastoral care, and providing resources to those in need. You will work closely with staff members to ensure their personal and professional needs are met, particularly in times of stress or difficulty. As part of a broader team, you will help create a supportive work environment where every individual feels valued, heard, and supported.
 
 This part-time, hybrid role allows for flexibility in work hours and location, ensuring that your care can be provided both remotely and in-office as needed. You will be able to create a significant, positive impact on the emotional and mental wellbeing of those you serve.
 
@@ -27,7 +27,7 @@ This part-time, hybrid role allows for flexibility in work hours and location, e
 
 ### Technical Skills
 
-- **Counselling or Pastoral Training:** A background in counselling, pastoral care, or social work is preferred.
+- **Counselling or Training:** A background in counselling, pastoral care, or social work is preferred.
 - **Crisis Intervention:** Experience in providing support during emotional or personal crises.
 - **Resource Management:** Ability to connect individuals with appropriate resources, including mental health services, spiritual support, and wellness programs.
 

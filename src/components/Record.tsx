@@ -10,6 +10,13 @@ const ArrangementDefinitions: Record<string, string> = {
 	Flexible: 'Flexible (no required in-office days)',
 };
 
+interface ComponentProps {
+	title: string | React.ReactNode | React.ReactElement;
+	id: number | string;
+	copyable: boolean | undefined;
+	href: string | undefined;
+}
+
 export default ({ vacancy, id, copyable = true }: { vacancy: Vacancy; id: number; copyable?: boolean }) => {
 	const [state, copyToClipboard] = useCopyToClipboard();
 

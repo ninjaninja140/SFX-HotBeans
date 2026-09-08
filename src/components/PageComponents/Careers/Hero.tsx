@@ -33,9 +33,6 @@ export default () => {
 						Vacancies
 					</ClickToScroll>
 					<ClickToScroll id='jobs' styles={{ flex: '1' }}>
-						Descriptions
-					</ClickToScroll>
-					<ClickToScroll id='jobs' styles={{ flex: '1' }}>
 						Programmes
 					</ClickToScroll>
 					<ClickToScroll id='jobs' styles={{ flex: '1' }}>

@@ -52,6 +52,8 @@ export default () => {
 
 	const handlePageChange = (page: number) => setCurrentPage(page);
 
+	console.log(window.location);
+
 	return (
 		<Fragment>
 			<Route Location='Careers' />
@@ -91,11 +93,7 @@ export default () => {
 							}}>
 							Filters <IoFilter style={{ marginLeft: '15px' }} />
 						</h3>
-						<SelectionDropdown
-							title='Discipline'
-							array={Tags}
-							onSelection={(a) => console.log(a)}
-						/>
+						<SelectionDropdown title='Discipline' array={Tags} />
 						<SelectionDropdown title='Arrangements' array={Arrangements} />
 						<SelectionDropdown title='Career Type' array={Type} />
 						<div
